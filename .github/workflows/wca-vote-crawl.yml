@@ -8,6 +8,8 @@ on:
 jobs:
   crawl:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
@@ -27,5 +29,5 @@ jobs:
           commit_message: "Update WCA vote data"
           file_pattern: wca_votes.json
           commit_user_name: 'github-actions[bot]'
-          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          commit_user_email: '41898282+github-actions[bot]@users.noreply.github.com'
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
