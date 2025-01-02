@@ -2,6 +2,7 @@ import urllib.request
 import json
 from datetime import datetime
 import wca_nominee_crawler
+from pytz import timezone
 
 class CrawlVotes:
     def __init__(self):
@@ -16,7 +17,9 @@ class CrawlVotes:
             self.wca_votes = wca_nominee_crawler.CrawlNominees().crawl_nominees()
 
     def crawl_votes(self, wca_votes):
-        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        vietnam_tz = timezone('Asia/Ho_Chi_Minh')
+        current_time = datetime.now(vietnam_tz).strftime("%Y-%m-%d %H:%M:%S")
+
         lst_ids = [f"w{award}-{member}" for award in wca_votes 
                 for member in wca_votes[award]['nominees']]
         
