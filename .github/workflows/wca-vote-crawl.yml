@@ -1,0 +1,31 @@
+name: WCA Vote Crawl
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13.1'
+
+      - name: Run crawler
+        run: python wca_vote_crawler.py
+
+      - name: Update WCA vote data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update WCA vote data"
+          file_pattern: wca_votes.json
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
