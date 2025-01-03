@@ -1,54 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>WeChoice Awards 2024 Vote Visualization</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            font-family: sans-serif;
-            max-width: 92%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .controls {
-            margin-bottom: 20px;
-        }
-        .control-group {
-            margin-bottom: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCA 2024 Vote Count</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <h1>WeChoice Awards 2024 Vote Count</h1>
+
+<body class="text-black font-sans">
+    <header class="bg-red-600 text-white p-4 md:p-5 flex justify-between items-center">
+        <div class="logo flex items-center">
+            <img src="https://event.mediacdn.vn/web_images/wca_2024/wca24-logo-minimal-red.svg" alt="WeChoice Logo" class="h-8 md:h-12">
+            <h1 class="ml-2 md:ml-4 text-lg md:text-xl font-bold">WeChoice Awards 2024 Vote Count</h1>
+        </div>
+        <div class="links">
+            <button id="homeButton" class="bg-black text-white py-1 px-2 md:py-2 md:px-4 rounded-full hover:bg-gray-800 transition text-sm md:text-base">Đi đến WeChoice</button>
+        </div>
+    </header>
+
+    <main class="p-4 md:p-5">
+        <div class="controls bg-gray-100 p-4 md:p-5 rounded mb-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
+                <div class="flex flex-grow">
+                    <label for="award" class="block mb-2">Hạng mục:</label>
+                    <select id="awardSelect" class="w-full p-2 border rounded"></select>
+                </div>
+                <div class="flex flex-grow">
+                    <label for="startDate" class="block mb-2">Thời gian bắt đầu:</label>
+                    <input type="date" id="startDate" class="w-full p-2 border rounded">
+                </div>
+                <div class="flex flex-grow">
+                    <label for="endDate" class="block mb-2">Thời gian kết thúc:</label>
+                    <input type="date" id="endDate" class="w-full p-2 border rounded">
+                </div>
+                <div class="flex flex-grow">
+                    <label for="timeRange" class="block mb-2">Khoảng thời gian:</label>
+                    <select id="timeRange" class="w-full p-2 border rounded">
+                        <option value="15m">15 Phút</option>
+                        <option value="30m">30 Phút</option>
+                        <option value="1h">1 Giờ</option>
+                        <option value="all">Tất cả</option>
+                    </select>
+                </div>
+                <button id="modeToggle" class="w-full bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 transition mb-2">Xem tổng số vote</button>
+                <button id="nomineeToggle" class="w-full bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 transition mb-2">Xem tất cả các đề cử</button>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row">
+            <div class="ranking bg-gray-100 p-4 rounded-lg shadow-md md:w-1/5 md:mr-4 overflow-y-auto">
+                <h2 class="text-lg font-semibold mb-2 flex items-center justify-center">Bảng xếp hạng</h2>
+                <div class="shadow-md border-2 border-red-500 animate-pulse"></div>
+                <span id="lastUpdateTime" class="text-base font-bold text-red-600 block animate-pulse pb-3 flex items-center justify-center"></span>
+                <ul id="rankingList"></ul>
+            </div>
+
+            <div class="chart bg-gray-100 rounded-lg shadow-md md:w-4/5">
+                <canvas id="voteChart"></canvas>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="flex justify-between items-center p-4 bg-black text-white">
+        <div class="text-left">
+            <p>Được tạo bởi @lzhoang2801</p>
+        </div>
+        <div class="flex space-x-4">
+            <a href="https://facebook.com/lzhoang2601" target="_blank" class="hover:text-gray-400 transition">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/lzhoang2302" target="_blank" class="hover:text-gray-400 transition">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
     
-    <div class="controls">
-        <div class="control-group">
-            <label for="awardSelect">Award:</label>
-            <select id="awardSelect"></select>
-        </div>
-        <div class="control-group">
-            <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate">
-            <label for="endDate">End Date:</label>
-            <input type="date" id="endDate">
-        </div>
-        <div class="control-group">
-            <label for="timeRange">Time Range:</label>
-            <select id="timeRange">
-                <option value="15m">15 Minutes</option>
-                <option value="30m">30 Minutes</option>
-                <option value="1h">1 Hour</option>
-                <option value="all">All</option>
-            </select>
-        </div>
-        <div class="control-group">
-            <button id="modeToggle">Switch to Total Vote Mode</button>
-            <button id="nomineeToggle">Switch to All Nominees</button>
-        </div>
-    </div>
-
-    <canvas id="voteChart"></canvas>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         class VoteVisualizer {
             constructor() {
@@ -64,36 +95,49 @@
 
             initializeElements() {
                 this.awardSelect = document.getElementById('awardSelect');
+                this.rankingList = document.getElementById('rankingList');
                 this.voteChartCanvas = document.getElementById('voteChart');
                 this.startDateInput = document.getElementById('startDate');
                 this.endDateInput = document.getElementById('endDate');
                 this.timeRangeSelect = document.getElementById('timeRange');
                 this.timeRangeSelect.value = '15m';
+                this.lastUpdateTime = document.getElementById('lastUpdateTime');
             }
 
             setupEventListeners() {
                 this.awardSelect.addEventListener('change', () => {
                     this.currentAwardId = this.awardSelect.value;
                     this.updateChart();
+                    this.updateRankingList();
                 });
 
                 const modeToggleButton = document.getElementById('modeToggle');
                 modeToggleButton.addEventListener('click', () => {
                     this.displayMode = this.displayMode === 'total' ? 'difference' : 'total';
-                    modeToggleButton.textContent = this.displayMode === 'total' ? 'Switch to Vote Difference Mode' : 'Switch to Total Vote Mode';
+                    modeToggleButton.textContent = this.displayMode === 'total' ? 'Xem tổng số vote chênh lệch' : 'Xem tổng số vote';
                     this.updateChart();
+                    this.updateRankingList();
                 });
 
                 const nomineeToggleButton = document.getElementById('nomineeToggle');
                 nomineeToggleButton.addEventListener('click', () => {
                     this.nomineeMode = this.nomineeMode === 'top5' ? 'all' : 'top5';
-                    nomineeToggleButton.textContent = this.nomineeMode === 'top5' ? 'Switch to All Nominees' : 'Switch to Top 5 Nominees';
+                    nomineeToggleButton.textContent = this.nomineeMode === 'top5' ? 'Xem tất cả các đề cử' : 'Xem top 5 đề cử';
                     this.updateChart();
                 });
 
-                this.startDateInput.addEventListener('change', () => this.updateChart());
-                this.endDateInput.addEventListener('change', () => this.updateChart());
-                this.timeRangeSelect.addEventListener('change', () => this.updateChart());
+                this.startDateInput.addEventListener('change', () => {
+                    this.updateChart();
+                    this.updateRankingList();
+                });
+                this.endDateInput.addEventListener('change', () => {
+                    this.updateChart();
+                    this.updateRankingList();
+                });
+                this.timeRangeSelect.addEventListener('change', () => {
+                    this.updateChart();
+                    this.updateRankingList();
+                });
             }
 
             startDataFetching() {
@@ -110,6 +154,7 @@
                         this.populateAwardDropdown();
                     } else {
                         this.updateChart();
+                        this.updateRankingList();
                     }
                 } catch (error) {
                     console.error("Error fetching data:", error);
@@ -127,6 +172,7 @@
                 this.currentAwardId = this.awardSelect.value;
                 this.setDateRange();
                 this.updateChart();
+                this.updateRankingList();
             }
 
             setDateRange() {
@@ -155,6 +201,58 @@
                 const g = Math.floor(Math.random() * 256);
                 const b = Math.floor(Math.random() * 256);
                 return `rgb(${r}, ${g}, ${b})`;
+            }
+
+            updateRankingList() {
+                if (!this.currentAwardId || !this.data) return;
+
+                const nominees = this.data[this.currentAwardId].nominees;
+                const currentVotes = Object.entries(nominees).map(([id, nominee]) => {
+                    const lastVote = nominee.vote_history[nominee.vote_history.length - 1];
+                    return {
+                        id,
+                        name: nominee.nominee_name,
+                        votes: parseInt(lastVote.count),
+                        avatar: nominee.ava_link,
+                        timestamp: lastVote.timestamp
+                    };
+                })
+                .sort((a, b) => b.votes - a.votes)
+                .slice(0, 10);
+
+                const latestTimestamp = currentVotes[0].timestamp;
+                this.lastUpdateTime.innerHTML = `Cập nhật lần cuối: ${new Date(latestTimestamp).toLocaleString()}`;
+
+                const getRankColor = (index) => {
+                    switch(index) {
+                        case 0: return 'bg-yellow-500';
+                        case 1: return 'bg-gray-400';
+                        case 2: return 'bg-gray-400';
+                        default: return 'bg-gray-200';
+                    }
+                };
+
+                const getTextColor = (index) => {
+                    switch(index) {
+                        case 0: return 'text-white';
+                        case 1: return 'text-white';
+                        case 2: return 'text-white';
+                        default: return 'text-gray-800';
+                    }
+                };
+
+                this.rankingList.innerHTML = currentVotes.map((nominee, index) => `
+                    <li class="flex items-center p-2 bg-white rounded shadow mb-2">
+                        <div class="rank-badge w-8 h-8 ${getRankColor(index)} rounded-full flex items-center justify-center ${getTextColor(index)} font-bold mr-2">
+                            #${index + 1}
+                        </div>
+                        <img src="${nominee.avatar}" alt="${nominee.name}" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex flex-col flex-grow">
+                            <span class="font-medium text-gray-800">${nominee.name}</span>
+                            <span class="text-sm text-gray-600">${nominee.votes.toLocaleString()} votes</span>
+                        </div>
+                    </li>
+                `).join('');
             }
 
             updateChart() {
@@ -270,7 +368,7 @@
                             y: {
                                 title: {
                                     display: true,
-                                    text: 'Vote Count'
+                                    text: 'Tổng số vote'
                                 }
                             }
                         },
@@ -291,7 +389,7 @@
                     }
                 });
 
-                const yAxisLabel = this.displayMode === 'total' ? 'Vote Count' : 'Vote Difference';
+                const yAxisLabel = this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch';
                 this.voteChart.options.scales.y.title.text = yAxisLabel;
                 this.voteChart.update();
             }
