@@ -33,6 +33,15 @@
             <input type="date" id="endDate">
         </div>
         <div class="control-group">
+            <label for="timeRange">Time Range:</label>
+            <select id="timeRange">
+                <option value="15m">15 Minutes</option>
+                <option value="30m">30 Minutes</option>
+                <option value="1h">1 Hour</option>
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control-group">
             <button id="modeToggle">Switch to Total Vote Mode</button>
             <button id="nomineeToggle">Switch to All Nominees</button>
         </div>
@@ -58,6 +67,8 @@
                 this.voteChartCanvas = document.getElementById('voteChart');
                 this.startDateInput = document.getElementById('startDate');
                 this.endDateInput = document.getElementById('endDate');
+                this.timeRangeSelect = document.getElementById('timeRange');
+                this.timeRangeSelect.value = '15m';
             }
 
             setupEventListeners() {
@@ -82,6 +93,7 @@
 
                 this.startDateInput.addEventListener('change', () => this.updateChart());
                 this.endDateInput.addEventListener('change', () => this.updateChart());
+                this.timeRangeSelect.addEventListener('change', () => this.updateChart());
             }
 
             startDataFetching() {
@@ -169,6 +181,34 @@
                     ts >= startDateTime && ts <= endDateTime
                 );
 
+                const timeRange = this.timeRangeSelect.value;
+                let filteredTimestampsWithRange = [];
+                if (timeRange === 'all') {
+                    filteredTimestampsWithRange = filteredTimestamps;
+                } else {
+                    let timeRangeMillis = 0;
+                    if (timeRange === '15m') {
+                        timeRangeMillis = 15 * 60 * 1000;
+                    } else if (timeRange === '30m') {
+                        timeRangeMillis = 30 * 60 * 1000;
+                    } else if (timeRange === '1h') {
+                        timeRangeMillis = 60 * 60 * 1000;
+                    }
+
+                    let currentRangeStart = startDateTime;
+
+                    while (currentRangeStart <= endDateTime) {
+                        const currentRangeEnd = currentRangeStart + timeRangeMillis;
+                        const rangeTimestamps = filteredTimestamps.filter(ts => 
+                            ts >= currentRangeStart && ts < currentRangeEnd
+                        );
+                        if (rangeTimestamps.length > 0) {
+                            filteredTimestampsWithRange.push(rangeTimestamps[rangeTimestamps.length - 1]);
+                        }
+                        currentRangeStart = currentRangeEnd;
+                    }
+                }
+
                 const nomineeTotalVotes = Object.entries(nominees).map(([id, nominee]) => {
                     const totalVotes = nominee.vote_history.reduce((sum, item) => {
                         const timestamp = new Date(item.timestamp).getTime();
@@ -197,7 +237,7 @@
                         voteMap.set(timestamp, lastCount);
                     });
                     
-                    let votes = filteredTimestamps.map(timestamp => voteMap.get(timestamp));
+                    let votes = filteredTimestampsWithRange.map(timestamp => voteMap.get(timestamp));
 
                     if (this.displayMode === 'difference') {
                         votes = votes.map((count, i) => i === 0 ? 0 : count - votes[i - 1]);
@@ -216,7 +256,7 @@
                     };
                 });
 
-                const labels = filteredTimestamps.map(ts => new Date(ts).toLocaleString());
+                const labels = filteredTimestampsWithRange.map(ts => new Date(ts).toLocaleString());
 
                 if (this.voteChart) {
                     this.voteChart.destroy();
