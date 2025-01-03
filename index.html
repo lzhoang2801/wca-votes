@@ -183,17 +183,22 @@
                         allTimestamps.add(new Date(item.timestamp).getTime());
                     });
                 });
+
                 const sortedTimestamps = Array.from(allTimestamps).sort();
-                const minDate = new Date(sortedTimestamps[0]).toISOString().split('T')[0];
-                const maxDate = new Date(sortedTimestamps[sortedTimestamps.length - 1]).toISOString().split('T')[0];
+                this.minDate = new Date(sortedTimestamps[0]);
+                this.maxDate = new Date(sortedTimestamps[sortedTimestamps.length - 1]);
 
-                this.startDateInput.min = minDate;
-                this.startDateInput.max = maxDate;
-                this.endDateInput.min = minDate;
-                this.endDateInput.max = maxDate;
+                const tzOffset = new Date().getTimezoneOffset() * 60000;
+                const minLocalDate = new Date(this.minDate.getTime() - tzOffset);
+                const maxLocalDate = new Date(this.maxDate.getTime() - tzOffset);
 
-                this.startDateInput.value = maxDate;
-                this.endDateInput.value = maxDate;
+                this.startDateInput.min = minLocalDate.toISOString().split('T')[0];
+                this.startDateInput.max = maxLocalDate.toISOString().split('T')[0];
+                this.endDateInput.min = minLocalDate.toISOString().split('T')[0];
+                this.endDateInput.max = maxLocalDate.toISOString().split('T')[0];
+
+                this.startDateInput.value = maxLocalDate.toISOString().split('T')[0];
+                this.endDateInput.value = maxLocalDate.toISOString().split('T')[0];
             }
 
             getRandomColor() {
