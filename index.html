@@ -27,7 +27,13 @@
             <select id="awardSelect"></select>
         </div>
         <div class="control-group">
-            <button id="modeToggle">Switch to Vote Difference Mode</button>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+        </div>
+        <div class="control-group">
+            <button id="modeToggle">Switch to Total Vote Mode</button>
         </div>
     </div>
 
@@ -48,6 +54,8 @@
             initializeElements() {
                 this.awardSelect = document.getElementById('awardSelect');
                 this.voteChartCanvas = document.getElementById('voteChart');
+                this.startDateInput = document.getElementById('startDate');
+                this.endDateInput = document.getElementById('endDate');
             }
 
             setupEventListeners() {
@@ -62,6 +70,9 @@
                     modeToggleButton.textContent = this.displayMode === 'total' ? 'Switch to Vote Difference Mode' : 'Switch to Total Vote Mode';
                     this.updateChart();
                 });
+
+                this.startDateInput.addEventListener('change', () => this.updateChart());
+                this.endDateInput.addEventListener('change', () => this.updateChart());
             }
 
             startDataFetching() {
@@ -93,7 +104,29 @@
                     this.awardSelect.add(option);
                 }
                 this.currentAwardId = this.awardSelect.value;
+                this.setDateRange();
                 this.updateChart();
+            }
+
+            setDateRange() {
+                const nominees = this.data[this.currentAwardId].nominees;
+                const allTimestamps = new Set();
+                Object.values(nominees).forEach(nominee => {
+                    nominee.vote_history.forEach(item => {
+                        allTimestamps.add(new Date(item.timestamp).getTime());
+                    });
+                });
+                const sortedTimestamps = Array.from(allTimestamps).sort();
+                const minDate = new Date(sortedTimestamps[0]).toISOString().split('T')[0];
+                const maxDate = new Date(sortedTimestamps[sortedTimestamps.length - 1]).toISOString().split('T')[0];
+
+                this.startDateInput.min = minDate;
+                this.startDateInput.max = maxDate;
+                this.endDateInput.min = minDate;
+                this.endDateInput.max = maxDate;
+
+                this.startDateInput.value = maxDate;
+                this.endDateInput.value = maxDate;
             }
 
             getRandomColor() {
@@ -108,6 +141,11 @@
 
                 const nominees = this.data[this.currentAwardId].nominees;
                 
+                const startDate = new Date(this.startDateInput.value);
+                const endDate = new Date(this.endDateInput.value);
+                startDate.setHours(0, 0, 0, 0);
+                endDate.setHours(23, 59, 59, 999);
+
                 const allTimestamps = new Set();
                 Object.values(nominees).forEach(nominee => {
                     nominee.vote_history.forEach(item => {
@@ -115,7 +153,12 @@
                     });
                 });
                 const sortedTimestamps = Array.from(allTimestamps).sort();
-                
+
+                const startDateTime = startDate.getTime();
+                const endDateTime = endDate.getTime();
+                const filteredTimestamps = sortedTimestamps.filter(ts => 
+                    ts >= startDateTime && ts <= endDateTime
+                );
                 const datasets = Object.entries(nominees).map(([_, nominee]) => {
                     const voteMap = new Map();
                     let lastCount = 0;
@@ -129,7 +172,7 @@
                         voteMap.set(timestamp, lastCount);
                     });
                     
-                    let votes = sortedTimestamps.map(timestamp => voteMap.get(timestamp));
+                    let votes = filteredTimestamps.map(timestamp => voteMap.get(timestamp));
 
                     if (this.displayMode === 'difference') {
                         votes = votes.map((count, i) => i === 0 ? 0 : count - votes[i - 1]);
@@ -148,34 +191,11 @@
                     };
                 });
 
-                const labels = sortedTimestamps.map(ts => new Date(ts).toLocaleString());
+                const labels = filteredTimestamps.map(ts => new Date(ts).toLocaleString());
 
                 if (this.voteChart) {
                     this.voteChart.destroy();
                 }
-
-                const iconPlugin = {
-                    id: 'iconPlugin',
-                    afterDatasetsDraw: (chart) => {
-                        const ctx = chart.ctx;
-                        chart.data.datasets.forEach((dataset, datasetIndex) => {
-                            const meta = chart.getDatasetMeta(datasetIndex);
-                            const lastPoint = meta.data[meta.data.length - 1];
-                            const nomineeInfo = dataset.nomineeInfo;
-                            const img = new Image();
-                            img.src = nomineeInfo.ava_link;
-                            img.onload = () => {
-                                ctx.save();
-                                ctx.beginPath();
-                                ctx.arc(lastPoint.x, lastPoint.y, 15, 0, Math.PI * 2, true);
-                                ctx.closePath();
-                                ctx.clip();
-                                ctx.drawImage(img, lastPoint.x - 15, lastPoint.y - 15, 30, 30);
-                                ctx.restore();
-                            };
-                        });
-                    }
-                };
 
                 this.voteChart = new Chart(this.voteChartCanvas, {
                     type: 'line',
@@ -203,8 +223,7 @@
                                 }
                             }
                         }
-                    },
-                    plugins: [iconPlugin]
+                    }
                 });
 
                 const yAxisLabel = this.displayMode === 'total' ? 'Vote Count' : 'Vote Difference';
