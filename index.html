@@ -34,6 +34,7 @@
         </div>
         <div class="control-group">
             <button id="modeToggle">Switch to Total Vote Mode</button>
+            <button id="nomineeToggle">Switch to All Nominees</button>
         </div>
     </div>
 
@@ -46,6 +47,7 @@
                 this.currentAwardId = null;
                 this.voteChart = null;
                 this.displayMode = 'difference'; 
+                this.nomineeMode = 'top5';
                 this.initializeElements();
                 this.setupEventListeners();
                 this.startDataFetching();
@@ -68,6 +70,13 @@
                 modeToggleButton.addEventListener('click', () => {
                     this.displayMode = this.displayMode === 'total' ? 'difference' : 'total';
                     modeToggleButton.textContent = this.displayMode === 'total' ? 'Switch to Vote Difference Mode' : 'Switch to Total Vote Mode';
+                    this.updateChart();
+                });
+
+                const nomineeToggleButton = document.getElementById('nomineeToggle');
+                nomineeToggleButton.addEventListener('click', () => {
+                    this.nomineeMode = this.nomineeMode === 'top5' ? 'all' : 'top5';
+                    nomineeToggleButton.textContent = this.nomineeMode === 'top5' ? 'Switch to All Nominees' : 'Switch to Top 5 Nominees';
                     this.updateChart();
                 });
 
@@ -140,7 +149,7 @@
                 if (!this.currentAwardId || !this.data) return;
 
                 const nominees = this.data[this.currentAwardId].nominees;
-                
+
                 const startDate = new Date(this.startDateInput.value);
                 const endDate = new Date(this.endDateInput.value);
                 startDate.setHours(0, 0, 0, 0);
@@ -159,7 +168,23 @@
                 const filteredTimestamps = sortedTimestamps.filter(ts => 
                     ts >= startDateTime && ts <= endDateTime
                 );
-                const datasets = Object.entries(nominees).map(([_, nominee]) => {
+
+                const nomineeTotalVotes = Object.entries(nominees).map(([id, nominee]) => {
+                    const totalVotes = nominee.vote_history.reduce((sum, item) => {
+                        const timestamp = new Date(item.timestamp).getTime();
+                        if (timestamp >= startDateTime && timestamp <= endDateTime) {
+                            return sum + parseInt(item.count);
+                        }
+                        return sum;
+                    }, 0);
+                    return { id, nominee, totalVotes };
+                });
+
+                const sortedNominees = nomineeTotalVotes.sort((a, b) => b.totalVotes - a.totalVotes);
+
+                const selectedNominees = this.nomineeMode === 'top5' ? sortedNominees.slice(0, 5) : sortedNominees;
+
+                const datasets = selectedNominees.map(({ nominee }) => {
                     const voteMap = new Map();
                     let lastCount = 0;
                     sortedTimestamps.forEach(timestamp => {
