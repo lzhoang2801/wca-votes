@@ -429,53 +429,41 @@
                         }
                     },
                     tooltip: {
-                        trigger: 'axis',
-                        formatter: (params) => {
-                            const nomineeInfo = params[0].data.nomineeInfo;
-                            let value = params[0].value
-                            if(typeof value === 'object') {
-                                value = value.value;
-                                }
-                                return [
-                                    `Name: ${params[0].seriesName}`,
-                                    `Votes: ${value}`,
-                                    `Description: ${nomineeInfo.nominee_des}`,
-                                ].join('<br/>');
-                            }
-                        },
-                        legend: {
-                            type: 'scroll',
-                            orient: 'horizontal',
-                            bottom: 0,
-                            textStyle: {
-                                fontSize: 12
-                            }
-                        },
-                        grid: {
-                            left: '3%',
-                            right: '1%',
-                            bottom: '5%',
-                            containLabel: true
-                        },
-                        xAxis: {
-                            type: 'category',
-                            data: labels,
-                            axisLabel: {
-                                rotate: 45,
-                                fontSize: 10
-                            }
-                        },
-                        yAxis: {
-                            type: 'value',
-                            name: this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch',
-                            nameLocation: 'middle',
-                            nameGap: 55,
-                            nameTextStyle: {
-                                fontSize: 12
-                            }
-                        },
-                        series: datasets
-                    };
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        type: 'scroll',
+                        orient: 'horizontal',
+                        bottom: 0,
+                        textStyle: {
+                            fontSize: 12
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '1%',
+                        bottom: '5%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: labels,
+                        axisLabel: {
+                            rotate: 45,
+                            fontSize: 10
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch',
+                        nameLocation: 'middle',
+                        nameGap: 55,
+                        nameTextStyle: {
+                            fontSize: 12
+                        }
+                    },
+                    series: datasets
+                };
 
                 if (!this.voteChart) {
                     this.voteChart = echarts.init(document.getElementById('voteChart'));
