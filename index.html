@@ -256,12 +256,15 @@
                 const nominees = this.data[this.currentAwardId].nominees;
                 const currentVotes = Object.entries(nominees).map(([id, nominee]) => {
                     const lastVote = nominee.vote_history[nominee.vote_history.length - 1];
+                    const secondLastVote = nominee.vote_history[nominee.vote_history.length - 2] || lastVote;
+                    const voteDifference = parseInt(lastVote.count) - parseInt(secondLastVote.count);
                     return {
                         id,
                         name: nominee.nominee_name,
                         votes: parseInt(lastVote.count),
                         avatar: nominee.ava_link,
-                        timestamp: lastVote.timestamp
+                        timestamp: lastVote.timestamp,
+                        voteDifference
                     };
                 })
                 .sort((a, b) => b.votes - a.votes)
@@ -288,6 +291,10 @@
                     }
                 };
 
+                const getDifferenceColor = (difference) => {
+                    return difference > 0 ? 'text-blue-500' : 'text-red-500';
+                };
+
                 this.rankingList.innerHTML = currentVotes.map((nominee, index) => `
                     <li class="flex items-center p-2 bg-white rounded shadow mb-2">
                         <div class="rank-badge w-8 h-8 ${getRankColor(index)} rounded-full flex items-center justify-center ${getTextColor(index)} font-bold mr-2">
@@ -296,7 +303,10 @@
                         <img src="${nominee.avatar}" alt="${nominee.name}" class="w-8 h-8 rounded-full mr-2">
                         <div class="flex flex-col flex-grow">
                             <span class="font-medium text-gray-800">${nominee.name}</span>
-                            <span class="text-sm text-gray-600">${nominee.votes.toLocaleString()} votes</span>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">${nominee.votes.toLocaleString()} votes</span>
+                                <span class="text-sm ${getDifferenceColor(nominee.voteDifference)}">${nominee.voteDifference > 0 ? '+' : ''}${nominee.voteDifference.toLocaleString()} votes</span>
+                            </div>
                         </div>
                     </li>
                 `).join('');
