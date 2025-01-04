@@ -31,7 +31,7 @@
             </div>
 
             <div class="w-full md:w-1/2 p-2 relative md:h-full overflow-hidden rounded">
-                <div id="slideshow" class="relative w-full h-full flex items-center justify-center"></div>
+                <div id="slideshow" class="relative w-full h-48 md:h-full flex items-center justify-center"></div>
             </div>
         </div>
 
@@ -116,7 +116,7 @@
                     const img = document.createElement('img');
                     img.src = url;
                     img.alt = `Image ${index + 1}`;
-                    img.className = `absolute w-full h-full object-cover object-center rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out ${index !== 0 ? 'opacity-0' : 'opacity-100'}`;
+                    img.className = `absolute inset-0 w-full h-full object-cover object-center rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out ${index !== 0 ? 'opacity-0' : 'opacity-100'}`;
                     this.container.appendChild(img);
                     this.slides.push(img);
                 });
