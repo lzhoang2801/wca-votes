@@ -94,16 +94,18 @@ class CrawlNominees:
                     data_member = re.search(r'data-member="(\d+)"', nominee).group(1)
                     ava_link = re.search(r'<img src="([^"]+)"', nominee).group(1)
                     nominee_name = self.get_content_between(nominee, '<h3 class="nominee-name">', '</h3>').strip()
+                    nominee_vote_url = 'https://wechoice.vn' + self.get_content_between(nominee_name, '<a href="', '"').strip()
                     nominee_name = re.sub(r'<[^>]+>', '', nominee_name).strip()
                     nominee_des = self.get_content_between(nominee, '<div class="nominee-des">', '</div>').strip()
                     try:
-                        nominee_des = self.wca_votes[award_id]['nominees'][data_member][vote_history]
+                        vote_history = self.wca_votes[award_id]['nominees'][data_member]['vote_history']
                     except:
                         vote_history = []
                     
                     wca_votes[award_id]['nominees'][data_member] = {
                         'ava_link': ava_link,
                         'nominee_name': nominee_name,
+                        'nominee_vote_url': nominee_vote_url,
                         'nominee_des': nominee_des,
                         'vote_history': vote_history
                     }
