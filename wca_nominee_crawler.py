@@ -11,7 +11,8 @@ class CrawlNominees:
             'https://wechoice.vn/hang-muc-chinh/du-an-vi-viet-nam-toi-1951.htm',
             'https://wechoice.vn/hang-muc-chinh/don-vi-vung-manh-viet-nam-1952.htm',
             'https://wechoice.vn/hang-muc-chinh/giai-tri-38.htm',
-            'https://wechoice.vn/hang-muc-chinh/genz-area-45.htm'
+            'https://wechoice.vn/hang-muc-chinh/genz-area-45.htm',
+            'https://wechoice.vn/hang-muc-chinh/weyoung-1953.htm'
         ]
         self.wca_votes = {}
         self.load_wca_votes()
@@ -95,12 +96,16 @@ class CrawlNominees:
                     nominee_name = self.get_content_between(nominee, '<h3 class="nominee-name">', '</h3>').strip()
                     nominee_name = re.sub(r'<[^>]+>', '', nominee_name).strip()
                     nominee_des = self.get_content_between(nominee, '<div class="nominee-des">', '</div>').strip()
+                    try:
+                        nominee_des = self.wca_votes[award_id]['nominees'][data_member][vote_history]
+                    except:
+                        vote_history = []
                     
                     wca_votes[award_id]['nominees'][data_member] = {
                         'ava_link': ava_link,
                         'nominee_name': nominee_name,
                         'nominee_des': nominee_des,
-                        'vote_history': []
+                        'vote_history': vote_history
                     }
 
         return wca_votes
