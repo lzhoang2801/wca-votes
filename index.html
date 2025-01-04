@@ -50,19 +50,16 @@
         </div>
 
         <div class="flex flex-col md:flex-row">
-            <div class="ranking bg-gray-100 p-4 rounded-lg shadow-md md:w-1/5 md:mr-4 overflow-y-auto">
+            <div class="ranking bg-gray-100 p-4 rounded-lg shadow-md md:w-1/5 md:mr-4 overflow-y-auto mb-4 md:mb-0">
                 <h2 class="text-lg font-semibold mb-2 flex items-center justify-center">Bảng xếp hạng</h2>
-                <div class="shadow-md border-2 border-red-500 animate-pulse"></div>
-                <span id="lastUpdateTime" class="text-base font-bold text-red-600 block animate-pulse pb-3 flex items-center justify-center"></span>
+                <div class="shadow-md border-2 border-red-500 animate-pulse"></div> <span id="lastUpdateTime" class="text-base font-bold text-red-600 block animate-pulse pb-3 flex items-center justify-center"></span>
                 <ul id="rankingList"></ul>
             </div>
 
-            <div class="chart bg-gray-100 rounded-lg shadow-md md:w-4/5">
-                <canvas id="voteChart"></canvas>
+            <div class="chart bg-gray-100 p-4 rounded-lg shadow-md md:w-4/5" id="chartContainer">
+                <div id="voteChart" class="w-full h-full min-h-[500px]"></div>
             </div>
         </div>
-
-
     </main>
 
     <footer class="flex justify-between items-center p-4 bg-black text-white">
@@ -79,7 +76,7 @@
         </div>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
     <script>
         class VoteVisualizer {
             constructor() {
@@ -400,65 +397,92 @@
                     }
 
                     return {
-                        label: nominee.nominee_name,
-                        data: votes,
-                        borderColor: this.getRandomColor(),
-                        tension: 0.4,
-                        spanGaps: false,
-                        nomineeInfo: {
-                            ava_link: nominee.ava_link,
-                            nominee_des: nominee.nominee_des
+                        name: nominee.nominee_name,
+                        type: 'line',
+                        data: votes.map((value, index) => ({
+                            value,
+                            nomineeInfo: {
+                                ava_link: nominee.ava_link,
+                                nominee_des: nominee.nominee_des
+                            }
+                        })),
+                        smooth: true,
+                        showSymbol: false,
+                        areaStyle: {
+                            opacity: 0.3
+                        },
+                        emphasis: {
+                            focus: 'series'
                         }
                     };
                 });
 
                 const labels = filteredTimestampsWithRange.map(ts => new Date(ts).toLocaleString());
 
-                if (!this.voteChart) {
-                    this.voteChart = new Chart(this.voteChartCanvas, {
-                        type: 'line',
-                        data: { labels, datasets },
-                        options: {
-                            scales: {
-                                y: {
-                                    title: {
-                                        display: true,
-                                        text: 'Tổng số vote'
-                                    }
-                                }
-                            },
-                            plugins: {
-                                tooltip: {
-                                    callbacks: {
-                                        label: (context) => {
-                                            const nomineeInfo = context.dataset.nomineeInfo;
-                                            return [
-                                                `Name: ${context.dataset.label}`,
-                                                `Votes: ${context.raw}`,
-                                                `Description: ${nomineeInfo.nominee_des}`,
-                                            ];
-                                        }
-                                    }
-                                }
-                            },
-                            animation: {
-                                duration: 1000,
-                                easing: 'easeInOutQuad'
-                            }
+                const chartOptions = {
+                    title: {
+                        text: 'Biểu đồ thống kê',
+                        left: 'center',
+                        textStyle: {
+                            fontSize: 18,
+                            color: 'rgb(0, 0, 0)'
                         }
-                    });
-                } else {
-                    this.voteChart.data.labels = labels;
-                    this.voteChart.data.datasets.forEach((dataset, index) => {
-                        dataset.data = datasets[index].data;
-                        dataset.borderColor = datasets[index].borderColor;
-                        dataset.nomineeInfo = datasets[index].nomineeInfo;
-                    });
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: (params) => {
+                            const nomineeInfo = params[0].data.nomineeInfo;
+                            let value = params[0].value
+                            if(typeof value === 'object') {
+                                value = value.value;
+                                }
+                                return [
+                                    `Name: ${params[0].seriesName}`,
+                                    `Votes: ${value}`,
+                                    `Description: ${nomineeInfo.nominee_des}`,
+                                ].join('<br/>');
+                            }
+                        },
+                        legend: {
+                            type: 'scroll',
+                            orient: 'horizontal',
+                            bottom: 0,
+                            textStyle: {
+                                fontSize: 12
+                            }
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '1%',
+                            bottom: '5%',
+                            containLabel: true
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: labels,
+                            axisLabel: {
+                                rotate: 45,
+                                fontSize: 10
+                            }
+                        },
+                        yAxis: {
+                            type: 'value',
+                            name: this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch',
+                            nameLocation: 'middle',
+                            nameGap: 55,
+                            nameTextStyle: {
+                                fontSize: 12
+                            }
+                        },
+                        series: datasets
+                    };
+
+                if (!this.voteChart) {
+                    this.voteChart = echarts.init(document.getElementById('voteChart'));
                 }
 
-                const yAxisLabel = this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch';
-                this.voteChart.options.scales.y.title.text = yAxisLabel;
-                this.voteChart.update();
+                this.voteChart.setOption(chartOptions);
+                this.voteChart.resize();
             }
         }
 
