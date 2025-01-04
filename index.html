@@ -21,7 +21,21 @@
     </header>
 
     <main class="p-4 md:p-5">
-        <div class="controls bg-gray-100 p-4 md:p-5 rounded mb-5">
+        <div class="hero-banner bg-gray-100 relative h-96 overflow-hidden rounded-lg shadow-lg mb-5 flex flex-col md:flex-row border-l-8 border-red-600">
+            <div class="w-full md:w-1/2 p-2 flex flex-col items-center justify-center text-black text-center md:h-full space-y-4">
+                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
+                    <span class="block xl:inline">Bình chọn ngay cho</span>
+                    <span class="block text-red-600 xl:inline">Anh Trai Vượt Ngàn Chông Gai.</span>
+                </h1>
+                <div id="quote" class="text-lg md:text-xl max-w-2xl">Tới bến tới bờ, đỉnh nóc, kịch trần, bay phấp phới</div>
+            </div>
+
+            <div class="w-full md:w-1/2 p-2 relative md:h-full overflow-hidden rounded">
+                <div id="slideshow" class="relative w-full h-full flex items-center justify-center"></div>
+            </div>
+        </div>
+
+        <div class="controls bg-gray-100 p-4 md:p-5 rounded-lg mb-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
                 <div class="flex flex-grow">
                     <label for="award" class="block mb-2">Hạng mục:</label>
@@ -78,6 +92,59 @@
     
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
     <script>
+        class Slideshow {
+            constructor(imageUrls) {
+                this.imageUrls = [
+                    "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/464821995_122214405482199321_5035287954159534438_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGe2RohA4cRPheEYqeI6QBNfYYKIkpoAR19hgoiSmgBHbVne42OwLYfeSDy6Xdz0qkrmBrC8DZ28TPjW28mZR_a&_nc_ohc=HVrYPLiScgMQ7kNvgFH-n9l&_nc_oc=AdiPtge5vu22w5lkzFYTRH6dE8srHLHtwJ1QKdvotynJ9fAoW3HoIRwCLQK-Z4kHHU1LNgpYoUiXtoibLyVGRj44&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=ACDKDjIHVx6ln7BJhJSyUWS&oh=00_AYCh3tPwWVDRqq4KDHBPFcOAQuH2UTu-WevznDcFJJ-1kw&oe=677F361A",
+                    "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/464789816_122214405584199321_4080653294266465185_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGGa7kARpExxtgx061IX1BMQAIt0RMrS0xAAi3REytLTNDSRPX1dutlEjEsjEHhgST_1tnOq3Z3Z0LECknq6WRl&_nc_ohc=jx-LLm1vhg4Q7kNvgG0JymI&_nc_oc=AdgZYHpTPoEk2ykdBz0GtXAColQpTPGMPPDg_jeBHeRqOjFsdenog2ScRiLmk5CjLQDzyGICCELDNxEBFEotFodA&_nc_zt=23&_nc_ht=scontent.fhan2-3.fna&_nc_gid=AarUFQszZ1XqHA8A-vlVbYw&oh=00_AYDUIZQrkH29ofp36DbC0qE5ZxvozBPfYgH5l3FxQFwMXQ&oe=677F3170",
+                    "https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/464847471_122214465578199321_7499922520750855071_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHgmVqpRoxJRW6B-xB4aMa0yiB59hH_X1zKIHn2Ef9fXPaPvA0MzvNlZle9iF3GNy46kbwCGcknQXvoheBr_0x7&_nc_ohc=gb-kdys0NvgQ7kNvgHZGtFr&_nc_oc=AdiwMNKz9prBqjZ3Sbw16fj2e2xgVjjs9qGMNjoYI60q0aJ3HrIdW0k8VQxEB5HW9L2BR2dYFOy8DOzi7QXJ9aLv&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=AGiNK738DHXEUM9Xdvkf1nP&oh=00_AYCnetNAlGvTaOfnPRpn_ELiY5U33fKNz1cFWUbnPjLGKQ&oe=677F4293",
+                    "https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/464745694_122214761810199321_8872447672651494276_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHADWMXQzcxYGK3dAmWZJxAL0H6G-3-u3cvQfob7f67dwZfXcj-76KbeYukS9I2zZ3Nc6NIX8h1lwvxDftjTTY7&_nc_ohc=ZgHiIra68LoQ7kNvgE9ryXy&_nc_oc=AdgWvuUedU4BqDeSQ1s6a7dKLBKKNkUQmWjhAltU37Ln6A4-3sDX3Wk965m7Fxa6--bCKdwxK7lROTpbHCWx9Enc&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=AslktiOxugB8ZRZk8MX1J05&oh=00_AYBDfBbWqA1X1fU10eW9OIo9qxrMQJCnwXd4ZJPdglV2Zw&oe=677F3C7E",
+                    "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/471810392_122235706760199321_8810528366661536246_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFDgtUBZGkLhhrWiBzB1IldV20uj2aAN1FXbS6PZoA3URpw_hNucNhlhQZXTEbTs12dubn9gVoF8F30PjNbdydS&_nc_ohc=G4GXt-Wm4G8Q7kNvgE9YeCj&_nc_oc=AdjoJqf6gYgd13NZZxzJLJCMApnpmXhNTLDxbBhq8sbgb4-0Nfs39i2t7AIaJnwDfWYgc8UDNm6z7GhEsENlanBa&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=A9dkqD6lkhAMaE0Rt4B6Kve&oh=00_AYAvUtTGvO-sig_pFjGUfjJX78O3jjDbC0Oxaqb6-ikvhw&oe=677F2AD0",
+                    "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/471426945_122235330572199321_9195576646889412412_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG8HhJkAyE9GUujjP5gcnP_WvHMayFNNe9a8cxrIU0176Do5RdFm8O1Mb0jzvdOU8vsICSYe2w7aKAKXCFqLyba&_nc_ohc=s88YkoXCfuAQ7kNvgE_sM5F&_nc_oc=AdjfHzxWebFVeJzj-7S16wiRm4d_nDlx_oG7zxNtidaSyA2rV6W2j2Pc49za5JoNMIuex5ZwC7oPm0nG3NckCAx_&_nc_zt=23&_nc_ht=scontent.fhan2-3.fna&_nc_gid=AxVJy2isqhkvkRk5O58clns&oh=00_AYDV7wX7tCXwgDgihv0_D56gRj-3PcuqpfxpVHbtG8Z60g&oe=677F4623",
+                    "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/470811569_122234206616199321_3501973981902752474_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeElKe_Ceark5vy_Po4B3TCjNw-Qmvlqrog3D5Ca-WquiMqC5X_0eoE41lS-9Fo2ZannGdPn7C2P5x8do5VcsZ-Q&_nc_ohc=t_tImaCLWXEQ7kNvgGo_TY6&_nc_oc=AdhNZk1gtCqk7t8Jfb_5bQ-VcSoLMAPeAJSjop8I8A1OPGNnVSfjP-kv2UFhBQ1Xk361K0F1qYWWx8p-nebCzKjg&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=ADQ8t60c-nG9hbY1OTWppaz&oh=00_AYA6bnRSDuliKFkkj99KmaY8ppKZAPprwP7-nb5TeE496w&oe=677F35A2"
+                ];
+                this.container = document.getElementById('slideshow');
+                this.currentSlide = 0;
+                this.slides = [];
+                this.totalSlides = 0;
+                this.initializeSlideshow();
+                this.startSlideshow();
+            }
+
+            initializeSlideshow() {
+                this.imageUrls.forEach((url, index) => {
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.alt = `Image ${index + 1}`;
+                    img.className = `absolute w-full h-full object-cover object-center rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out ${index !== 0 ? 'opacity-0' : 'opacity-100'}`;
+                    this.container.appendChild(img);
+                    this.slides.push(img);
+                });
+                this.totalSlides = this.slides.length;
+            }
+
+            showSlide(index) {
+                this.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.style.opacity = '1';
+                    } else {
+                        slide.style.opacity = '0';
+                    }
+                });
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.showSlide(this.currentSlide);
+            }
+
+            startSlideshow() {
+                setInterval(() => this.nextSlide(), 5000);
+            }
+        }
+
+        new Slideshow();
+        
         class VoteVisualizer {
             constructor() {
                 this.data = null;
