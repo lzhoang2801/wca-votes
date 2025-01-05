@@ -154,7 +154,7 @@
                 this.nomineeMode = 'top5';
                 this.initializeElements();
                 this.setupEventListeners();
-                this.startDataFetching();
+                this.fetchDataAndUpdateChart();
                 this.startRealtimeUpdates();
             }
 
@@ -203,11 +203,6 @@
                     this.updateChart();
                     this.updateRankingList();
                 });
-            }
-
-            startDataFetching() {
-                this.fetchDataAndUpdateChart();
-                setInterval(() => this.fetchDataAndUpdateChart(), 5 * 60 * 1000);
             }
 
             async fetchDataAndUpdateChart() {
