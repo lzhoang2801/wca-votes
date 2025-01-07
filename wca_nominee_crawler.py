@@ -14,15 +14,6 @@ class CrawlNominees:
             'https://wechoice.vn/hang-muc-chinh/genz-area-45.htm',
             'https://wechoice.vn/hang-muc-chinh/weyoung-1953.htm'
         ]
-        self.wca_votes = {}
-        self.load_wca_votes()
-
-    def load_wca_votes(self):
-        try:
-            with open('wca_votes.json', 'r', encoding='utf-8') as f:
-                self.wca_votes = json.load(f)
-        except FileNotFoundError:
-            self.wca_votes = {}
 
     def get_content_between(self, text, start, end):
         pattern = f'{start}(.*?){end}'
@@ -68,7 +59,7 @@ class CrawlNominees:
         )
 
     def crawl_nominees(self):
-        wca_votes = {}
+        wca_nominees = {}
 
         for url in self.urls:
             print(f"Crawling nominees from {url}")
@@ -85,7 +76,7 @@ class CrawlNominees:
                 award_name = self.get_content_between(award_block, '<h3 class="category-name">', '</h3>').strip()
                 nominees = self.get_nominees(award_block)
                 
-                wca_votes[award_id] = {
+                wca_nominees[award_id] = {
                     'award_name': award_name,
                     'nominees': {}
                 }
@@ -97,31 +88,27 @@ class CrawlNominees:
                     nominee_vote_url = 'https://wechoice.vn' + self.get_content_between(nominee_name, '<a href="', '"').strip()
                     nominee_name = re.sub(r'<[^>]+>', '', nominee_name).strip()
                     nominee_des = self.get_content_between(nominee, '<div class="nominee-des">', '</div>').strip()
-                    try:
-                        vote_history = self.wca_votes[award_id]['nominees'][data_member]['vote_history']
-                    except:
-                        vote_history = []
                     
-                    wca_votes[award_id]['nominees'][data_member] = {
+                    wca_nominees[award_id]['nominees'][data_member] = {
                         'ava_link': ava_link,
                         'nominee_name': nominee_name,
                         'nominee_vote_url': nominee_vote_url,
                         'nominee_des': nominee_des,
-                        'vote_history': vote_history
+                        'vote_history': []
                     }
 
-        return wca_votes
+        return wca_nominees
 
     def crawl(self):
         try:
-            self.wca_votes = self.crawl_nominees()
+            self.wca_nominees = self.crawl_nominees()
         except Exception as e:
             print(f"Error during crawl: {e}")
 
     def save(self):
         try:
-            with open('wca_votes.json', 'w', encoding='utf-8') as f:
-                json.dump(self.wca_votes, f, ensure_ascii=False, indent=2)
+            with open('wca_nominees.json', 'w', encoding='utf-8') as f:
+                json.dump(self.wca_nominees, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"Error saving data: {e}")
 

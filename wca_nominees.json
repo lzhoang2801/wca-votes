@@ -1,0 +1,1755 @@
+{
+  "1": {
+    "award_name": "Nhân vật truyền cảm hứng",
+    "nominees": {
+      "687": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/ava-chinh-17351132981161613694142.jpg",
+        "nominee_name": "Nghệ sĩ SOOBIN",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nghe-si-soobin-687.htm",
+        "nominee_des": "Nghệ sĩ toàn năng của Showbiz Việt, nhân tố nổi trội của “Anh trai vượt ngàn chông gai”",
+        "vote_history": []
+      },
+      "678": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/cover-bai-1735121577883230498895.jpg",
+        "nominee_name": "Ca sĩ Quang Hùng MasterD",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/ca-si-quang-hung-masterd-678.htm",
+        "nominee_des": "Nỗ lực xóa mác “con ghẻ quốc dân”, vụt sáng và chinh phục hoàn toàn khán giả Việt",
+        "vote_history": []
+      },
+      "686": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/28/thumb-trang-wechoice-173536716078279412360.jpg",
+        "nominee_name": "Nghệ sĩ Nhân dân Tự Long",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nghe-si-nhan-dan-tu-long-686.htm",
+        "nominee_des": "Nghệ sĩ gạo cội của làng giải trí Việt vẫn tiếp tục truyền cảm hứng và tạo ra những ảnh hưởng tích cực tới cộng đồng ở mọi lứa tuổi",
+        "vote_history": []
+      },
+      "688": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/ava-chinh-1735050623734872094111.jpg",
+        "nominee_name": "Những chiến sĩ của Trung Đoàn 98 (Sư Đoàn 316)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nhung-chien-si-cua-trung-doan-98-su-doan-316-688.htm",
+        "nominee_des": "300 chiến sĩ tìm kiếm nạn nhân vụ sạt lở vùi lấp Làng Nủ: Đi dân nhớ, ở dân thương",
+        "vote_history": []
+      },
+      "691": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735038470256966042190.jpg",
+        "nominee_name": "Rapper HIEUTHUHAI",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/rapper-hieuthuhai-691.htm",
+        "nominee_des": "2024 là năm mà Hiếu không chỉ tiến lên phía trước một mình mà còn đồng hành với những người bạn thân thiết, truyền cảm hứng cho cả những người trẻ đang dõi theo mình chỉ bằng cách nỗ lực sống tốt hơn.",
+        "vote_history": []
+      },
+      "700": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735056415351694409663.jpg",
+        "nominee_name": "Nghệ sĩ RHYDER",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nghe-si-rhyder-700.htm",
+        "nominee_des": "10 năm lột xác từ Quán quân Giọng Hát Việt Nhí đến nghệ sĩ toàn năng, thần tượng thế hệ mới",
+        "vote_history": []
+      },
+      "558": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735060645109244788396.jpg",
+        "nominee_name": "Nhà giáo Nguyễn Xuân Khang",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nha-giao-nguyen-xuan-khang-558.htm",
+        "nominee_des": "Người thầy nhận nuôi 22 trẻ em sống sót ở Làng Nủ sau trận lũ quét",
+        "vote_history": []
+      },
+      "685": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735047500638716529840.jpg",
+        "nominee_name": "Trưởng thôn Ma Seo Chứ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/truong-thon-ma-seo-chu-685.htm",
+        "nominee_des": "Trưởng thôn Kho Vàng nhanh trí, quyết liệt với 8 giờ chạy đua đưa 115 người lên núi tránh sạt lở",
+        "vote_history": []
+      },
+      "680": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350431764931961827018.jpg",
+        "nominee_name": "“Biệt đội” Sài Gòn Xanh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/biet-doi-sai-gon-xanh-680.htm",
+        "nominee_des": "Nhóm bạn trẻ biến việc “Lội kênh đen làm sạch môi trường” thành những chiến dịch siêu cool ở Sài Gòn",
+        "vote_history": []
+      },
+      "733": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735059877477716367584.jpg",
+        "nominee_name": "Nhà nghiên cứu Nguyễn Đình Tư",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nha-nghien-cuu-nguyen-dinh-tu-733.htm",
+        "nominee_des": "Cụ ông 104 tuổi vẫn leo cầu thang và làm việc 10 giờ mỗi ngày, say mê nghiên cứu với nhiều tác phẩm đồ sộ",
+        "vote_history": []
+      },
+      "690": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-17350528505201187854812.png",
+        "nominee_name": "Bà Cấn Thị Ngần",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/ba-can-thi-ngan-690.htm",
+        "nominee_des": "Người mẹ ký giấy hiến tạng con trai, đem lại cuộc đời mới cho 5 người “con nuôi”",
+        "vote_history": []
+      },
+      "692": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-173505443059848673896.jpg",
+        "nominee_name": "Phở treo, bún treo: Treo những bữa thương",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/pho-treo-bun-treo-treo-nhung-bua-thuong-692.htm",
+        "nominee_des": "Mô hình “treo” đang lan tỏa khắp Việt Nam mang lại những bữa ăn ấm lòng cho người nghèo",
+        "vote_history": []
+      },
+      "732": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/thumb-trang-wechoice-mobi-1-1735121162677318430942.jpg",
+        "nominee_name": "Giám đốc âm nhạc JustaTee",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/giam-doc-am-nhac-justatee-732.htm",
+        "nominee_des": "Nghệ sĩ đa tài của showbiz Việt trong vai trò ca sĩ, rapper, nhạc sĩ và nhà sản xuất âm nhạc",
+        "vote_history": []
+      },
+      "689": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/ava-chinh-17350508564002061671838.jpg",
+        "nominee_name": "Nhà sáng tạo nội dung Giao Cùn",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nha-sang-tao-noi-dung-giao-cun-689.htm",
+        "nominee_des": "GenZ với hành trình yêu và sáng tạo nội dung về lịch sử cùng cơn sốt “Đào Phở Piano”",
+        "vote_history": []
+      },
+      "702": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350581783861387357261.jpg",
+        "nominee_name": "Nghệ sĩ Sơn Tùng M-TP",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/nghe-si-son-tung-mtp-702.htm",
+        "nominee_des": "Hơn một thập kỷ đi từ con số 0 đến ngôi sao hàng đầu Vpop khó ai có thể thay thế",
+        "vote_history": []
+      },
+      "730": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350586426131977167911.jpg",
+        "nominee_name": "SAIGONGIVE - Bạn cần tôi tặng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/saigongive-ban-can-toi-tang-730.htm",
+        "nominee_des": "Một Group Facebook với 370k thành viên “cái gì cũng cho, ai xin cũng tặng” ở Sài Gòn",
+        "vote_history": []
+      },
+      "681": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/doc-17350455872681401057449.jpg",
+        "nominee_name": "“Cô gái sa mạc” Thanh Vũ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/co-gai-sa-mac-thanh-vu-681.htm",
+        "nominee_des": "Người phụ nữ bền bỉ nhất Việt Nam lần lượt phá vỡ mọi giới hạn tại các giải đấu khắc nghiệt nhất thế giới",
+        "vote_history": []
+      },
+      "709": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/26/thumb-trang-wechoice-1735243560218938310951.png",
+        "nominee_name": "Dancer MTPop",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/dancer-mtpop-709.htm",
+        "nominee_des": "Quái kiệt Việt Nam gây sốc khi hạ gục 56 \"cỗ máy nhảy\" đến từ khắp nơi trên thế giới",
+        "vote_history": []
+      },
+      "694": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735059891759716969140.jpg",
+        "nominee_name": "Đạo diễn Lý Hải",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/dao-dien-ly-hai-694.htm",
+        "nominee_des": "Một thập kỷ với 8 phần phim, Lý Hải thành công chinh phục khán giả nội địa với tiếng vang lớn của thương hiệu Lật Mặt.",
+        "vote_history": []
+      },
+      "679": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/cover-bai-doc-17351157878602056130124.jpg",
+        "nominee_name": "“Thần đồng Pickleball” Quang Dương",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-1/than-dong-pickleball-quang-duong-679.htm",
+        "nominee_des": "18 tuổi đã làm nên lịch sử trên bản đồ Pickleball thế giới",
+        "vote_history": []
+      }
+    }
+  },
+  "18": {
+    "award_name": "BFF - Best Fandom Forever",
+    "nominees": {
+      "698": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/5827/202501061518388933.jpeg",
+        "nominee_name": "MUZIK (FC Quang Hùng MasterD)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/muzik-fc-quang-hung-masterd-698.htm",
+        "nominee_des": "FC chính thức của Quang Hùng MasterD",
+        "vote_history": []
+      },
+      "695": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-17350580503591911282257.png",
+        "nominee_name": "KINGDOM (FC SOOBIN)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/kingdom-fc-soobin-695.htm",
+        "nominee_des": "KINGDOM chịu chi cổ vũ SooBin tại các event",
+        "vote_history": []
+      },
+      "720": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-17350603129851535409507.jpg",
+        "nominee_name": "PIFAM (FC Tăng Phúc)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/pifam-fc-tang-phuc-720.htm",
+        "nominee_des": "Cộng đồng fan luôn sáng tạo, mang đến những bất ngờ thú vị cho Tăng Phúc.",
+        "vote_history": []
+      },
+      "708": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350605184361385634788.jpg",
+        "nominee_name": "DOPAMINE (FC Dương Domic)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/dopamine-fc-duong-domic-708.htm",
+        "nominee_des": "Những hạt nhân nhỏ bé mang lại niềm vui và năng lượng tích cực cho Dương Domic",
+        "vote_history": []
+      },
+      "706": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/7/z6203491365898da940f84b8f63d8d8eed52ad3262ee98-17362204387741423455923.jpg",
+        "nominee_name": "FC CẨM CHƯỚNG (FC Neko Lê)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/fc-cam-chuong-fc-neko-le-706.htm",
+        "nominee_des": "Một cộng đồng fan luôn đồng hành và ủng hộ Neko Lê từ những ngày đầu sự nghiệp.",
+        "vote_history": []
+      },
+      "696": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735057849888841141781.png",
+        "nominee_name": "SUNDAYs (FC HIEUTHUHAI)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/sundays-fc-hieuthuhai-696.htm",
+        "nominee_des": "Fanclub chính thức của HIEUTHUHAI",
+        "vote_history": []
+      },
+      "697": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/7/z6203714197752765d77e688c16488ecbe81d3f9c707d7-1736220014029901653285.jpg",
+        "nominee_name": "FLASH (FC RHYDER)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/flash-fc-rhyder-697.htm",
+        "nominee_des": "FC chính thức của Rhyder",
+        "vote_history": []
+      },
+      "712": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-1735060395456920079179.jpg",
+        "nominee_name": "CỪU CÓ CÁNH (FC Captain Boy)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/cuu-co-canh-fc-captain-boy-712.htm",
+        "nominee_des": "Cộng đồng fan trẻ trung, năng động, luôn ủng hộ Captain Boy.",
+        "vote_history": []
+      },
+      "707": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/157575/202501042112592028.jpg",
+        "nominee_name": "FC HURRYKNG",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/fc-hurrykng-707.htm",
+        "nominee_des": "Cộng đồng fan luôn đồng hành, cháy hết mình vì HURRYKNG, cùng anh viết nên những câu chuyện đẹp.",
+        "vote_history": []
+      },
+      "713": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/692344/202501021427003488.png",
+        "nominee_name": "XA XA (FC Pháp Kiều)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/xa-xa-fc-phap-kieu-713.htm",
+        "nominee_des": "Cộng đồng fan gắn kết, lan tỏa yêu thương luôn đồng hành cùng Pháp Kiều.",
+        "vote_history": []
+      },
+      "717": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350602803321989295293.jpg",
+        "nominee_name": "HIP (FC Quân A.P)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/hip-fc-quan-ap-717.htm",
+        "nominee_des": "Với tình yêu chân thành, HIP là hậu phương vững chắc, luôn sẵn sàng chia sẻ và đồng hành cùng Quân A.P",
+        "vote_history": []
+      },
+      "715": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-1735060440065453155480.jpg",
+        "nominee_name": "LION KINGDOM (FC Isaac)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/lion-kingdom-fc-isaac-715.htm",
+        "nominee_des": "Fandom của Isaac luôn nổi tiếng là một fandom văn minh và có các chiến dịch chỉn chu ủng hộ thần tượng.",
+        "vote_history": []
+      },
+      "699": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735057586086350447102.png",
+        "nominee_name": "SKY (FC Sơn Tùng M-TP)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/sky-fc-son-tung-mtp-699.htm",
+        "nominee_des": "Một trong những fandom lớn và có nhiều hoạt động tích cực nhất tại Việt Nam",
+        "vote_history": []
+      },
+      "721": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350598986281359202740.jpg",
+        "nominee_name": "BẮP FARM FAMILY (FC Ngô Kiến Huy)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/bap-farm-family-fc-ngo-kien-huy-721.htm",
+        "nominee_des": "Gia đình Bắp, nơi tình bạn bền vững, luôn sát cánh cùng Ngô Kiến Huy.",
+        "vote_history": []
+      },
+      "718": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/61643/202501031315093505.jpg",
+        "nominee_name": "KANDEE (FC Trang Pháp)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/kandee-fc-trang-phap-718.htm",
+        "nominee_des": "Với lịch sử hình thành lâu đời, KANDEE là một gia đình lớn, luôn sát cánh bên thần tượng.",
+        "vote_history": []
+      },
+      "701": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-17350574462791441247798.png",
+        "nominee_name": "SUNNY & ZHIFUBAO (FC Chi Pu)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/sunny-zhifubao-fc-chi-pu-701.htm",
+        "nominee_des": "Với hơn một thập kỷ đồng hành cùng Chi Pu, SUNNY đã trở thành một cộng đồng toàn cầu mạnh mẽ.",
+        "vote_history": []
+      },
+      "716": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/team-noo-1735058906554308756629.jpg",
+        "nominee_name": "TEAM NOO (FC Noo Phước Thịnh)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/team-noo-fc-noo-phuoc-thinh-716.htm",
+        "nominee_des": "Sự đa dạng về độ tuổi và sở thích tạo nên sức mạnh và sự đặc biệt của cộng đồng này.",
+        "vote_history": []
+      },
+      "714": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-17350606710191216241673.jpg",
+        "nominee_name": "FM (FC Vũ Cát Tường)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/fm-fc-vu-cat-tuong-714.htm",
+        "nominee_des": "Với FM Mèo, Vũ Cát Tường không chỉ là thần tượng mà còn là người thân.",
+        "vote_history": []
+      },
+      "704": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-3-17350583269091038050073.png",
+        "nominee_name": "PHANS (FC Wren Evans)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/phans-fc-wren-evans-704.htm",
+        "nominee_des": "FC chính thức của Wren Evans",
+        "vote_history": []
+      },
+      "703": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-2-1735058102991261716417.png",
+        "nominee_name": "TRI ÂM (FC Mỹ Tâm)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/tri-am-fc-my-tam-703.htm",
+        "nominee_des": "Cộng đồng fan đa thế hệ, cùng Mỹ Tâm xây dựng hình ảnh nghệ sĩ trong sạch, tài năng.",
+        "vote_history": []
+      },
+      "711": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/a-1735061073753465400867.jpg",
+        "nominee_name": "FERCON (FC Hoa hậu Hương Giang)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-18/fercon-fc-hoa-hau-huong-giang-711.htm",
+        "nominee_des": "Nơi hội tụ của những trái tim yêu thương, không phân biệt giới tính, và cùng nhau xây dựng một môi trường văn minh, tích cực.",
+        "vote_history": []
+      }
+    }
+  },
+  "14": {
+    "award_name": "Dự án vì Việt Nam tôi",
+    "nominees": {
+      "784": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/nhu-chua-he-co-cuoc-chia-ly-1735619789285568432754.jpg",
+        "nominee_name": "Như chưa hề có cuộc chia ly",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-14/nhu-chua-he-co-cuoc-chia-ly-784.htm",
+        "nominee_des": "17 năm của Như chưa hề có cuộc chia ly là hành trình bền bỉ đầy tinh thần nhân văn, mang lại hy vọng cho những số phận lạc mất nhau.",
+        "vote_history": []
+      },
+      "782": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/5/anhbiathamkhao1-17361070933801630259228.png",
+        "nominee_name": "Gieo mầm Thiện tâm",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-14/gieo-mam-thien-tam-782.htm",
+        "nominee_des": "Chuỗi sự kiện “Gieo mầm Thiện tâm” được Vingroup triển khai trong tháng 9/2024 là hành động thiết thực, kêu gọi sự chung tay góp sức của cộng đồng để ủng hộ đồng bào bị ảnh hưởng bởi bão Yagi.",
+        "vote_history": []
+      },
+      "781": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/com-co-thit-17356197892931813635524.jpg",
+        "nominee_name": "CHIN-SU Một triệu bữa cơm có thịt",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-14/chinsu-mot-trieu-bua-com-co-thit-781.htm",
+        "nominee_des": "Với các em nhỏ vùng cao những bữa cơm ấm áp yêu thương, đầy đủ dưỡng chất từ dự án “CHIN-SU Một triệu bữa ăn có thịt “ chính là động lực đến trường đều đặn hơn.",
+        "vote_history": []
+      },
+      "786": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/du-an-con-nuoi-don-bien-phong-1735619789257192549520.jpg",
+        "nominee_name": "Con nuôi đồn biên phòng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-14/con-nuoi-don-bien-phong-786.htm",
+        "nominee_des": "Những chiến sĩ mang quân hàm xanh vừa làm bố, vừa làm thầy cho những em nhỏ khó khăn ở vùng biên",
+        "vote_history": []
+      },
+      "780": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/chi-tiet-de-cu-14-internet-an-toan-hoc-duong-1000x1334-1735804692173845749682.jpg",
+        "nominee_name": "Internet an toàn cho học đường",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-14/internet-an-toan-cho-hoc-duong-780.htm",
+        "nominee_des": "Dự án Internet an toàn học đường",
+        "vote_history": []
+      }
+    }
+  },
+  "15": {
+    "award_name": "Đơn vị vững mạnh Việt Nam",
+    "nominees": {
+      "776": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/28/viettel-1735369625831480000261.jpg",
+        "nominee_name": "Viettel Group",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-15/viettel-group-776.htm",
+        "nominee_des": "Năm 2024, Viettel đạt được nhiều thành tựu quan trọng, đóng góp tích cực vào sự phát triển của nền kinh tế.",
+        "vote_history": []
+      },
+      "766": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/thumb-trang-wechoice-1735786630480507965951.jpg",
+        "nominee_name": "TECHCOMBANK",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-15/techcombank-766.htm",
+        "nominee_des": "Techcombank thành công tạo dấu ấn về một doanh nghiệp năng động, sáng tạo trong ngành tài chính.",
+        "vote_history": []
+      },
+      "773": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/28/thumb-trang-wechoice-4-17353728683951994013794.png",
+        "nominee_name": "VINAMILK",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-15/vinamilk-773.htm",
+        "nominee_des": "Kiên định theo đuổi sứ mệnh “chăm sóc” Vinamilk đã khẳng định chắc chắn vị thế hàng đầu trong ngành sữa Việt Nam.",
+        "vote_history": []
+      },
+      "765": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/28/thumb-trang-wechoice2x-1-17353722213511380666572.png",
+        "nominee_name": "VINFAST",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-15/vinfast-765.htm",
+        "nominee_des": "Sau hơn 6 năm ra mắt thị trường, VinFast đã chinh phục người dùng bằng các dòng ô tô điện tiên phong, minh chứng cho tầm vóc một thương hiệu Việt dẫn đầu với cam kết kiến tạo tương lai xanh bền vững.",
+        "vote_history": []
+      },
+      "775": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/28/ttgroupdinhhuongdoanhnghiepdanganhdalinhvuc-1735369281097356884037.jpg",
+        "nominee_name": "T&T Group",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-15/tt-group-775.htm",
+        "nominee_des": "T&T Group kiên định chiến lược doanh nghiệp đa ngành tiên phong năng lượng xanh, chung tay nâng bước cộng đồng.",
+        "vote_history": []
+      }
+    }
+  },
+  "2": {
+    "award_name": "MV của năm",
+    "nominees": {
+      "601": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-10-173495058543298466998.jpg",
+        "nominee_name": "Duyên Kiếp Cầm Ca - Binz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/duyen-kiep-cam-ca-binz-601.htm",
+        "nominee_des": "Binz cho thấy “đời ca sĩ đáng thương và đáng được yêu” khi hóa thân thành ăn mày trong MV Duyên Kiếp Cầm Ca",
+        "vote_history": []
+      },
+      "548": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734932817459296035767.png",
+        "nominee_name": "Không Ra Gì - Trúc Nhân",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/khong-ra-gi-truc-nhan-548.htm",
+        "nominee_des": "Hơn 10 năm hoạt động nghệ thuật, Trúc Nhân luôn mang đến những điều khó lường trong từng sản phẩm, và MV Không Ra Gì là một ví dụ điển hình.",
+        "vote_history": []
+      },
+      "518": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349265461101922103407.jpg",
+        "nominee_name": "Đừng Làm Trái Tim Anh Đau - Sơn Tùng M-TP",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/dung-lam-trai-tim-anh-dau-son-tung-mtp-518.htm",
+        "nominee_des": "Sơn Tùng M-TP chứng minh sức hút không thể bàn cãi với màn comeback cùng MV \"Đừng Làm Trái Tim Anh Đau\".",
+        "vote_history": []
+      },
+      "529": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349305437111056202641.jpg",
+        "nominee_name": "HOP ON DA SHOW - Low G & tlinh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/hop-on-da-show-low-g-tlinh-529.htm",
+        "nominee_des": "“Nó hiphop, nó gen Z mà nó Hà Nội”, đó là những gì có thể nói về MV HOP ON DA SHOW.",
+        "vote_history": []
+      },
+      "520": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349269669701792579615.jpg",
+        "nominee_name": "Nhất Bái Thiên Địa - The Flob",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/nhat-bai-thien-dia-the-flob-520.htm",
+        "nominee_des": "Sẽ là một thiếu sót lớn nếu Music Video Của Năm không xướng tên Nhất Bái Thiên Địa.",
+        "vote_history": []
+      },
+      "554": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734938137297599407789.png",
+        "nominee_name": "Mộng Yu - AMEE x MCK",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/mong-yu-amee-x-mck-554.htm",
+        "nominee_des": "AMEE hoá nữ thần giấc mơ làm giàu thêm vũ trụ “mộng mị” trong MV Mộng Yu.",
+        "vote_history": []
+      },
+      "594": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734948490185158809924.jpg",
+        "nominee_name": "Bờ Như Ào - BigDaddy",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/bo-nhu-ao-bigdaddy-594.htm",
+        "nominee_des": "Có một Hà Nội thật dung dị trong nhịp sống hiện đại qua MV Bờ Như Ào của BigDaddy",
+        "vote_history": []
+      },
+      "555": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734938374402989494.png",
+        "nominee_name": "Nâng Chén Tiêu Sầu - Bích Phương",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/nang-chen-tieu-sau-bich-phuong-555.htm",
+        "nominee_des": "MV Nâng Chén Tiêu Sầu đem đến một Bích Phương nữ tính, quyến rũ nhưng cũng không kém phần mạnh mẽ.",
+        "vote_history": []
+      },
+      "557": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349390696001927541234.png",
+        "nominee_name": "Dâu Thiên Hạ - Suboi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/dau-thien-ha-suboi-557.htm",
+        "nominee_des": "Dâu Thiên Hạ là 1 trong những MV ấn tượng của Vpop ra mắt vào đầu năm 2024, đây cũng có thể coi là MV xuất sắc nhất từ trước đến nay của Suboi.",
+        "vote_history": []
+      },
+      "598": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349495111391057708641.jpg",
+        "nominee_name": "Chuỗi MV debut “ả” - marzuz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-2/chuoi-mv-debut-a-marzuz-598.htm",
+        "nominee_des": "marzuz đánh dấu màn debut ấn tượng với chuỗi 9 MV như 1 bộ phim.",
+        "vote_history": []
+      }
+    }
+  },
+  "3": {
+    "award_name": "EP/Album",
+    "nominees": {
+      "551": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734937342064433173303.jpg",
+        "nominee_name": "Bật Nó Lên - SOOBIN",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/bat-no-len-soobin-551.htm",
+        "nominee_des": "SOOBIN tung album Bật Nó Lên đánh dấu chặng đường hơn một thập kỉ làm nhạc, đạt thành tích tốt với 10 tracks tự sáng tác nhiều tính thử nghiệm.",
+        "vote_history": []
+      },
+      "537": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349308957512044197250.jpg",
+        "nominee_name": "Keep Cầm Ca - Binz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/keep-cam-ca-binz-537.htm",
+        "nominee_des": "Ở E.P Keep Cầm Ca, người hâm mộ có thể nhìn thấy những cá tính sắc nét hơn trong con người Binz khi ở đó anh vừa có sự dữ dội mà cũng đầy chất trữ tình.",
+        "vote_history": []
+      },
+      "549": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734932989827297611541.jpg",
+        "nominee_name": "FLVR - Low G & tlinh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/flvr-low-g-tlinh-549.htm",
+        "nominee_des": "tlinh và Low G chứng minh mình là những rapper hàng đầu Gen Z thông qua dự án làm EP chung mang tên FLVR.",
+        "vote_history": []
+      },
+      "617": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-14-1734952996936441304047.jpg",
+        "nominee_name": "Nhân Trần - BigDaddy",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/nhan-tran-bigdaddy-617.htm",
+        "nominee_des": "Qua album Nhân Trần, Hà Nội hiện lên chân thực qua cách kể rất riêng BigDaddy.",
+        "vote_history": []
+      },
+      "754": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/cover-bai-17351262505441714435130.jpg",
+        "nominee_name": "Bảo Tàng Của Nuối Tiếc - Vũ.",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/bao-tang-cua-nuoi-tiec-vu-754.htm",
+        "nominee_des": "Album Bảo Tàng Của Nuối Tiếc của Vũ. là 1 trong những album nhận được nhiều sự chú ý trong năm 2024.",
+        "vote_history": []
+      },
+      "550": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349365872841478952952.jpg",
+        "nominee_name": "THE WXRDIES - Wxrdie",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/the-wxrdies-wxrdie-550.htm",
+        "nominee_des": "Rapper gen Z hàng đầu làng hiphop thể hiện sự khác biệt với album dài nhất Việt Nam.",
+        "vote_history": []
+      },
+      "489": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348552398401798280919.jpg",
+        "nominee_name": "421 - Karik",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/421-karik-489.htm",
+        "nominee_des": "Album 421 chứng minh vì sao Karik vẫn luôn là một tên tuổi đáng chú ý trong 15 năm gắn bó với nhạc Rap.",
+        "vote_history": []
+      },
+      "577": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349440987121195887040.png",
+        "nominee_name": "MỘNGMEE - AMEE",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/mongmee-amee-577.htm",
+        "nominee_des": "AMEE đánh dấu sự trưởng thành qua câu chuyện âm nhạc.",
+        "vote_history": []
+      },
+      "491": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734855775682984588955.jpg",
+        "nominee_name": "ả - marzuz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/a-marzuz-491.htm",
+        "nominee_des": "marzuz kể câu chuyện cá nhân trong album đầu tay chỉn chu với 9 tracks tự sáng tác.",
+        "vote_history": []
+      },
+      "492": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348563115122580236.jpg",
+        "nominee_name": "An - Lil Wuyn",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-3/an-lil-wuyn-492.htm",
+        "nominee_des": "An - album mang đầy tính chữa lành của Lil Wuyn",
+        "vote_history": []
+      }
+    }
+  },
+  "4": {
+    "award_name": "Producer của năm",
+    "nominees": {
+      "532": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-173492995633594245404.jpg",
+        "nominee_name": "Kriss Ngô",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/kriss-ngo-532.htm",
+        "nominee_des": "Với bệ đỡ SpaceSpeakers Label, Kriss Ngô đã có 1 năm bùng nổ khi góp sức vào nhiều nhạc phẩm đình đám 2024, hứa hẹn sẽ trở thành 1 producer sáng giá của làng nhạc Việt.",
+        "vote_history": []
+      },
+      "487": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348528205081591470439.jpg",
+        "nominee_name": "Kewtiie",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/kewtiie-487.htm",
+        "nominee_des": "2024 là bước chuyển mình trên chặng đường làm nhạc của Kewtiie, giúp tên tuổi anh đến gần hơn với khán giả đại chúng với tư cách là 1 producer xu hướng của làng nhạc Việt.",
+        "vote_history": []
+      },
+      "569": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349435731121354808567.png",
+        "nominee_name": "WOKEUP",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/wokeup-569.htm",
+        "nominee_des": "WOKEUP tiếp tục bùng nổ qua loạt dự án “khủng”, xứng danh hit-maker thế hệ mới trong năm 2024.",
+        "vote_history": []
+      },
+      "488": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734854538526746370843.jpg",
+        "nominee_name": "KADO",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/kado-488.htm",
+        "nominee_des": "Người làm nên loạt hit của Negav, đứng sau câu hát viral \"thích cách anh yêu ôm eo\" của Saabirose.",
+        "vote_history": []
+      },
+      "573": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349437268371658496460.png",
+        "nominee_name": "2pillz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/2pillz-573.htm",
+        "nominee_des": "Tiếp nối thành công ấn tượng của năm 2023, 2pillz có một năm 2024 thực sự bùng nổ với đa dạng sản phẩm, hợp tác cùng nhiều nghệ sĩ.",
+        "vote_history": []
+      },
+      "583": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai2x-17349463029931291126589.jpg",
+        "nominee_name": "RIO",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/rio-583.htm",
+        "nominee_des": "Dù đứng sau 52Hz hay hoạt động solo, những bản nhạc của RIO luôn mang đến những âm thanh đầy tình tứ.",
+        "vote_history": []
+      },
+      "544": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/29676350817127365257713876244480043990602942n-17349322928811547503871.jpg",
+        "nominee_name": "Machiot",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/machiot-544.htm",
+        "nominee_des": "Đây là người đứng sau hàng loạt set diễn gây sốt và loạt trend \"phóng zìn zìn\", \"cô chủ tiệm bánh kem\"... của tlinh.",
+        "vote_history": []
+      },
+      "585": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734946858082774193429.jpg",
+        "nominee_name": "Pixel Neko",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/pixel-neko-585.htm",
+        "nominee_des": "Pixel Neko ghi dấu trên thị trường nhờ sự kết hợp các chất liệu âm nhạc thịnh hành trên khắp thế giới",
+        "vote_history": []
+      },
+      "531": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349294695161417222745.jpg",
+        "nominee_name": "Drum7",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/drum7-531.htm",
+        "nominee_des": "Qua mỗi sản phẩm, Drum7 lại chứng minh được khả năng sáng tạo không giới hạn và luôn bứt phá, tìm kiếm những điều mới mẻ trong âm nhạc",
+        "vote_history": []
+      },
+      "615": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-3-17349528946151266317050.jpg",
+        "nominee_name": "Maiki",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-4/maiki-615.htm",
+        "nominee_des": "Lướt từng con beat cực nghệ, Maiki từng bước dẫn đầu xu hướng nhạc trẻ thông qua hàng loạt sản phẩm đình đám của năm 2024.",
+        "vote_history": []
+      }
+    }
+  },
+  "5": {
+    "award_name": "Màn trình diễn bùng nổ",
+    "nominees": {
+      "540": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349317441522097365585.jpg",
+        "nominee_name": "Trống Cơm - Tự Long, SOOBIN, Cường SEVEN - Anh Trai Vượt Ngàn Chông Gai",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/trong-com-tu-long-soobin-cuong-seven-anh-trai-vuot-ngan-chong-gai-540.htm",
+        "nominee_des": "Sự sáng tạo trong quá trình “thay máu” bản nhạc Trống Cơm đã làm nên điều không tưởng - một màn trình diễn bùng nổ cả phần nghe lẫn phần nhìn.",
+        "vote_history": []
+      },
+      "486": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/doc-17351130042921290751843.jpg",
+        "nominee_name": "I'm Thinking About You - Hùng Huỳnh, tlinh, WEAN, Đức Phúc, RHYDER - Anh Trai Say Hi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/im-thinking-about-you-hung-huynh-tlinh-wean-duc-phuc-rhyder-anh-trai-say-hi-486.htm",
+        "nominee_des": "RHYDER, WEAN, Gemini Hùng Huỳnh và Đức Phúc cùng rủ tlinh quậy banh nóc với I’m Thinking About You - màn trình diễn bùng nổ nhất show Anh Trai Say Hi.",
+        "vote_history": []
+      },
+      "564": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734942385655650161124.png",
+        "nominee_name": "Set diễn GERDNANG - GENFEST",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/set-dien-gerdnang-genfest-564.htm",
+        "nominee_des": "HIEUTHUHAI, Hurrykng, MANBO mang đến màn trình diễn đầy cung bậc cảm xúc ở GENfest 2024.",
+        "vote_history": []
+      },
+      "743": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-1735063001676244716949.jpg",
+        "nominee_name": "Mashup Mùa Đông x Chuyện Của Mùa Đông - Tóc Tiên, Minh Hằng, Minh Tuyết, Tuimi, Ngọc Phước - Chị Đẹp Đạp Gió 2024",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/mashup-mua-dong-x-chuyen-cua-mua-dong-toc-tien-minh-hang-minh-tuyet-tuimi-ngoc-phuoc-chi-dep-dap-gio-2024-743.htm",
+        "nominee_des": "Khai thác khía cạnh mang tính thời sự đầy mới mẻ, team Mùa Đông của Chị Đẹp Đạp Gió 2024 đã chạm đến trái tim của khán giả, “chắc suất” sân khấu đỉnh cao nhất từ đầu show tới giờ.",
+        "vote_history": []
+      },
+      "613": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-9-17349524626281595039050.jpg",
+        "nominee_name": "Anh Đã Làm Gì Đâu - Nhật Hoàng, Thùy Chi - Rap Việt",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/anh-da-lam-gi-dau-nhat-hoang-thuy-chi-rap-viet-613.htm",
+        "nominee_des": "Với chủ đề “những câu nói trending”, tiết mục Anh Đã Làm Gì Đâu lại trở thành hot trend khắp mạng xã hội.",
+        "vote_history": []
+      },
+      "530": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349291123061717885951.jpg",
+        "nominee_name": "Qua từng khung hình - Robber, NGẮN - Rap Việt",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/qua-tung-khung-hinh-robber-ngan-rap-viet-530.htm",
+        "nominee_des": "NGẮN và Robber đã làm nên tiết mục đối đầu hay bậc nhất 4 mùa Rap Việt",
+        "vote_history": []
+      },
+      "565": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/anh-trong-bai-2-1734942790769292347589.png",
+        "nominee_name": "Set diễn tlinh - GENFEST",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/set-dien-tlinh-genfest-565.htm",
+        "nominee_des": "tlinh chứng minh thực lực và khả năng làm chủ sân khấu quá đỗi ấn tượng với quy mô sân khấu như mini concert tại GENfest 2024.",
+        "vote_history": []
+      },
+      "567": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349431079641490911873.png",
+        "nominee_name": "Set diễn MCK - Những Thành Phố Mơ Màng Summer Tour Hà Nội",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-5/set-dien-mck-nhung-thanh-pho-mo-mang-summer-tour-ha-noi-567.htm",
+        "nominee_des": "MCK gây bão cõi mạng với sân khấu tại Những Thành Phố Mơ Màng tháng 7/2024.",
+        "vote_history": []
+      }
+    }
+  },
+  "6": {
+    "award_name": "Ca sĩ/ Rapper có hoạt động đột phá",
+    "nominees": {
+      "501": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734930042123122851648.jpg",
+        "nominee_name": "SOOBIN",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/soobin-501.htm",
+        "nominee_des": "Từng chặng hành trình mà SOOBIN làm được trong năm 2024, đó chính là câu trả lời cho lý do vì sao anh vẫn là ngôi sao “đỉnh lưu” ở thời điểm hiện tại.",
+        "vote_history": []
+      },
+      "512": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349247331001005485282.jpg",
+        "nominee_name": "Quang Hùng MasterD",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/quang-hung-masterd-512.htm",
+        "nominee_des": "Sau nhiều năm nỗ lực, cuối cùng Quang Hùng MasterD cũng được ghi nhận tại Việt Nam, trở thành cái tên hiện tượng sau chương trình thực tế.",
+        "vote_history": []
+      },
+      "516": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734925874167334533110.jpg",
+        "nominee_name": "Binz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/binz-516.htm",
+        "nominee_des": "Khi Xuân Đan xuất hiện cũng là lúc Binz bước vào một era mới",
+        "vote_history": []
+      },
+      "543": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349319075991619362158.png",
+        "nominee_name": "HIEUTHUHAI",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/hieuthuhai-543.htm",
+        "nominee_des": "HIEUTHUHAI vươn lên thành ngôi sao hot nhất thế hệ sau thành công rực rỡ của show thực tế và loạt hit đình đám.",
+        "vote_history": []
+      },
+      "499": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348869902421389396550.jpg",
+        "nominee_name": "RHYDER",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/rhyder-499.htm",
+        "nominee_des": "Với những bước đi đúng đắn, RHYDER đã biết cách tỏa ra ánh hào quang của riêng mình và trở thành một trong những nghệ sĩ Gen Z hot nhất ở thời điểm hiện tại.",
+        "vote_history": []
+      },
+      "517": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349252139001899808736.jpg",
+        "nominee_name": "tlinh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/tlinh-517.htm",
+        "nominee_des": "tlinh trở thành “bảo chứng lượt nghe” cho mỗi màn kết hợp, khi mỗi lần cô góp giọng đều mang đến điểm nhấn cho bài hát.",
+        "vote_history": []
+      },
+      "546": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734932369602802918455.png",
+        "nominee_name": "Sơn Tùng M-TP",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/son-tung-mtp-546.htm",
+        "nominee_des": "Dù làng nhạc Việt xuất hiện rất nhiều nhân tài nhưng Sơn Tùng M-TP vẫn khẳng định được vị thế cao nhất.",
+        "vote_history": []
+      },
+      "479": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/cover-bai-17348443873331189190703.jpg",
+        "nominee_name": "Vũ.",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/vu-479.htm",
+        "nominee_des": "Sau 2 năm làm “thợ lặn”, Vũ. tái xuất làng nhạc Việt và được đón nhận nồng nhiệt, chứng minh danh xưng “hoàng tử indie” vẫn không thay đổi.",
+        "vote_history": []
+      },
+      "523": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1-17349276296531132860985.jpg",
+        "nominee_name": "Pháo",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/phao-523.htm",
+        "nominee_des": "Bản lĩnh và đổi mới ở tuổi 21, Pháo lột xác với hình tượng mới mẻ và trưởng thành, khẳng định sự trưởng thành và chất riêng táo bạo của nữ rapper Gen Z trong làng rap Việt.",
+        "vote_history": []
+      },
+      "500": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349281449451150774111.jpg",
+        "nominee_name": "Wxrdie",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-6/wxrdie-500.htm",
+        "nominee_des": "Wxrdie chứng minh vị thế của mình qua album đầu tay với 24 tracks, dài kỉ lục trong làng hiphop.",
+        "vote_history": []
+      }
+    }
+  },
+  "7": {
+    "award_name": "Nghệ sĩ có hoạt động nổi bật",
+    "nominees": {
+      "522": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734927266456258913419.jpg",
+        "nominee_name": "Bùi Công Nam",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/bui-cong-nam-522.htm",
+        "nominee_des": "Bùi Công Nam ngày càng khẳng định bản thân là một nghệ trẻ đa năng, xây dựng sự nghiệp bằng tài năng và sự nghiêm túc.",
+        "vote_history": []
+      },
+      "756": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/thumb-trang-wechoice-1735135781863924933134.png",
+        "nominee_name": "SlimV",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/slimv-756.htm",
+        "nominee_des": "Phù thuỷ làng nhạc đứng sau phần âm nhạc bùng nổ của các đại dự án năm 2024",
+        "vote_history": []
+      },
+      "742": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-1735063072317387947345.jpg",
+        "nominee_name": "NSND Tự Long",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/nsnd-tu-long-742.htm",
+        "nominee_des": "Năm 2024 đánh dấu cú liều lĩnh đổi mới trong sự nghiệp của nghệ sĩ Tự Long.",
+        "vote_history": []
+      },
+      "755": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/thumb-trang-wechoice-1735134855600692613699.png",
+        "nominee_name": "Đinh Hà Uyên Thư",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/dinh-ha-uyen-thu-755.htm",
+        "nominee_des": "Nghệ sĩ có hoạt động nổi bật 2024 với show thực tế Anh Trai Vượt Ngàn Chông Gai và loạt dự án tầm cỡ của làng nhạc Việt.",
+        "vote_history": []
+      },
+      "560": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349403267621827851730.png",
+        "nominee_name": "Anh Tú Atus",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/anh-tu-atus-560.htm",
+        "nominee_des": "Anh Tú Atus đã có nhiều hoạt động nổi bật, ngày càng chứng minh vị thế bản thân trong làng giải trí Việt.",
+        "vote_history": []
+      },
+      "480": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734845693165309927242.jpg",
+        "nominee_name": "JustaTee",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/justatee-480.htm",
+        "nominee_des": "Năm 2024 đánh dấu nhiều bước chuyển mình, bứt phá vươn lên những tầm vóc mới của JustaTee, anh là người có công không nhỏ để tạo nên một mùa hè rực rỡ của khán giả Việt.",
+        "vote_history": []
+      },
+      "562": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349410491861384224446.png",
+        "nominee_name": "Hoa hậu Nguyễn Thúc Thùy Tiên",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/hoa-hau-nguyen-thuc-thuy-tien-562.htm",
+        "nominee_des": "Năm 2024, cái tên Nguyễn Thúc Thùy Tiên không chỉ gắn với danh xưng Hoa hậu, cô lấn sân sang vai trò diễn viên, nhà hoạt động xã hội… và đều đạt được những ấn tượng nhất định.",
+        "vote_history": []
+      },
+      "482": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348503237661550922733.jpg",
+        "nominee_name": "Doãn Quốc Đam",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/doan-quoc-dam-482.htm",
+        "nominee_des": "Doãn Quốc Đam đã có một năm 2024 đầy những thành tựu đáng ngưỡng mộ.",
+        "vote_history": []
+      },
+      "563": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-17349408733472059324576.png",
+        "nominee_name": "Phương Anh Đào",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/phuong-anh-dao-563.htm",
+        "nominee_des": "Năm 2024 đánh dấu cột mốc ấn tượng trong sự nghiệp của Phương Anh Đào.",
+        "vote_history": []
+      },
+      "536": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734931237004350618880.jpg",
+        "nominee_name": "Phương Vũ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/phuong-vu-536.htm",
+        "nominee_des": "Bằng sự sáng tạo không ngừng nghỉ, Phương Vũ không chỉ chinh phục khán giả trẻ mà còn lan tỏa bản sắc văn hóa Việt ra thế giới qua các dự án đột phá và hợp tác đình đám.",
+        "vote_history": []
+      },
+      "603": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-12-1734950983177856823544.jpg",
+        "nominee_name": "Trung Bảo",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-7/trung-bao-603.htm",
+        "nominee_des": "Nghệ sĩ trẻ đa tài, kết nối âm nhạc, nghệ thuật và văn hóa, mang bản sắc Việt hòa nhịp dòng chảy sáng tạo toàn cầu.",
+        "vote_history": []
+      }
+    }
+  },
+  "8": {
+    "award_name": "Show giải trí của năm",
+    "nominees": {
+      "739": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-trang-wechoice-1735061941077764045956.jpg",
+        "nominee_name": "Anh Trai Vượt Ngàn Chông Gai",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/anh-trai-vuot-ngan-chong-gai-739.htm",
+        "nominee_des": "Anh Trai Vượt Ngàn Chông Gai là hiện tượng truyền hình thực tế gây sốt trong năm 2024",
+        "vote_history": []
+      },
+      "524": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/27/thumb-trang-wechoice-1735288076519959847407.jpg",
+        "nominee_name": "Anh Trai Say Hi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/anh-trai-say-hi-524.htm",
+        "nominee_des": "Anh Trai Say Hi trở thành hiện tượng gameshow bùng nổ của năm 2024, tạo nên những cột mốc chưa từng có cho thị trường giải trí Việt.",
+        "vote_history": []
+      },
+      "611": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-2-1734951935976586209758.jpg",
+        "nominee_name": "2 Ngày 1 Đêm",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/2-ngay-1-dem-611.htm",
+        "nominee_des": "2 Ngày 1 Đêm là hành trình khám phá vẻ đẹp thiên nhiên, văn hóa, và con người Việt Nam một cách gần gũi, chân thật nhất.",
+        "vote_history": []
+      },
+      "483": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734850733680328267213.jpg",
+        "nominee_name": "Sao Nhập Ngũ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/sao-nhap-ngu-483.htm",
+        "nominee_des": "Sao Nhập Ngũ 2024: Gót Hồng Trên Lửa Đạn đã khắc họa sống động cuộc sống quân ngũ, tôn vinh tình đồng đội, ý chí kiên cường của người phụ nữ và khơi dậy niềm tự hào dân tộc.",
+        "vote_history": []
+      },
+      "605": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1-1734951126669116229826.jpg",
+        "nominee_name": "Nữ Hoàng Vũ Đạo Đường Phố",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/nu-hoang-vu-dao-duong-pho-605.htm",
+        "nominee_des": "Nữ Hoàng Vũ Đạo Đường Phố là sân chơi bùng nổ dành cho các nữ vũ công tài năng, tôn vinh đam mê và sự sáng tạo của văn hóa vũ đạo đường phố Việt Nam.",
+        "vote_history": []
+      },
+      "741": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-17350621667121735712190.jpg",
+        "nominee_name": "Đảo Thiên Đường",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-8/dao-thien-duong-741.htm",
+        "nominee_des": "Đảo Thiên Đường mang đến làn gió mới với format độc đáo.",
+        "vote_history": []
+      }
+    }
+  },
+  "9": {
+    "award_name": "Phim điện ảnh của năm",
+    "nominees": {
+      "528": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734928792090685960928.jpg",
+        "nominee_name": "Đào, Phở Và Piano",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/dao-pho-va-piano-528.htm",
+        "nominee_des": "Bộ phim Đào, Phở Và Piano gây ra cơn sốt ngoài phòng vé và trên khắp các nền tảng MXH Việt đầu năm nay.",
+        "vote_history": []
+      },
+      "498": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/cover-bai-1734866932530738778764.jpg",
+        "nominee_name": "Lật Mặt 7: Một Điều Ước",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/lat-mat-7-mot-dieu-uoc-498.htm",
+        "nominee_des": "Bộ phim Lật Mặt 7 giúp Lý Hải cùng cố thương hiệu phim của mình ở thể loại hoàn toàn mới.",
+        "vote_history": []
+      },
+      "484": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348513359012091048329.jpg",
+        "nominee_name": "Mai",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/mai-484.htm",
+        "nominee_des": "Bộ phim Mai chinh phục khán giả bởi câu chuyện cảm xúc, mang đến màu sắc mới của Trấn Thành.",
+        "vote_history": []
+      },
+      "587": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734947583966635010666.jpg",
+        "nominee_name": "Ngày Xưa Có Một Chuyện Tình",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/ngay-xua-co-mot-chuyen-tinh-587.htm",
+        "nominee_des": "Ngày Xưa Có Một Chuyện Tình thành công chinh phục khán giả bởi câu chuyện đầy cảm xúc",
+        "vote_history": []
+      },
+      "485": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-17348515735611052936052.jpg",
+        "nominee_name": "Culi Không Bao Giờ Khóc",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/culi-khong-bao-gio-khoc-485.htm",
+        "nominee_des": "Culi Không Bao Giờ Khóc khiến khán giả day dứt bởi mang đến câu chuyện mộc mạc, đầy cảm xúc.",
+        "vote_history": []
+      },
+      "640": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734966677686886303259.jpg",
+        "nominee_name": "CÁM",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-9/cam-640.htm",
+        "nominee_des": "Bộ phim Cám được đánh giá cao bởi sự đầu tư vô cùng chỉn chu của ekip.",
+        "vote_history": []
+      }
+    }
+  },
+  "10": {
+    "award_name": "Dám Mở Lối Riêng",
+    "nominees": {
+      "618": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-13-1734953626759571038654.jpg",
+        "nominee_name": "Ninh Dương Story",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/ninh-duong-story-618.htm",
+        "nominee_des": "Năng lượng tích cực đến từ câu chuyện tình yêu và cuộc sống đơn thuần của Ninh Dương Story.",
+        "vote_history": []
+      },
+      "589": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734947969635697354069.jpg",
+        "nominee_name": "Vĩ Khang",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/vi-khang-589.htm",
+        "nominee_des": "Sáng tạo từ giá trị cốt lõi, Vĩ Khang truyền cảm hứng qua nghệ thuật và văn hóa trong “Anh Trai Vượt Ngàn Chông Gai”.",
+        "vote_history": []
+      },
+      "552": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734937544721293522025.jpg",
+        "nominee_name": "Tina Thảo Thi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/tina-thao-thi-552.htm",
+        "nominee_des": "Đằng sau hành trình vươn lên của Tina Thảo Thi, có nhiều điều từ TikToker Gen Z này khiến netizen phải khâm phục.",
+        "vote_history": []
+      },
+      "541": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734931490832678973587.jpg",
+        "nominee_name": "Lê Tuấn Khang",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/le-tuan-khang-541.htm",
+        "nominee_des": "Chất phác và bình dị, Lê Tuấn Khang là hiện tượng hiếm có trên MXH Việt Nam năm 2024.",
+        "vote_history": []
+      },
+      "538": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/25/xpro4637-17350950428461178483666.jpg",
+        "nominee_name": "Long Vũ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/long-vu-538.htm",
+        "nominee_des": "Long Vũ có màn thể hiện xuất sắc vai diễn Chải, trở thành cái tên được dân mạng săn đón.",
+        "vote_history": []
+      },
+      "591": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349482847891959360218.jpg",
+        "nominee_name": "VĐV bắn súng Trịnh Thu Vinh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/vdv-ban-sung-trinh-thu-vinh-591.htm",
+        "nominee_des": "Vận động viên Trịnh Thu Vinh 2 lần giành quyền vào chung kết, tạo ra cú hích lớn cho thể thao Việt Nam ở đấu trường Olympic.",
+        "vote_history": []
+      },
+      "494": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734857303354970402096.jpg",
+        "nominee_name": "Sùng Bầu",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/sung-bau-494.htm",
+        "nominee_des": "Sự vươn lên của cô gái nhỏ Sùng Bầu khiến cho nhiều người phải nể phục, không những vậy còn truyền động lực cho nhiều bạn trẻ vùng cao.",
+        "vote_history": []
+      },
+      "493": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734856841429645029128.jpg",
+        "nominee_name": "Lọ Lem - Hạt Dẻ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/lo-lem-hat-de-493.htm",
+        "nominee_des": "Cặp chị em Lọ Lem và Hạt Dẻ nhất định là cái tên có sức ảnh hưởng bậc nhất với Gen Z trong năm 2024.",
+        "vote_history": []
+      },
+      "639": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349664459081229749962.jpg",
+        "nominee_name": "NTK Phan Đăng Hoàng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/ntk-phan-dang-hoang-639.htm",
+        "nominee_des": "NTK Phan Đăng Hoàng gây được ấn tượng lớn khi ra mắt BST “Ceramics” tại Milan Fashion Week.",
+        "vote_history": []
+      },
+      "608": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349515292522012974928.jpg",
+        "nominee_name": "VĐV Pickleball Trương Vinh Hiển",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-10/vdv-pickleball-truong-vinh-hien-608.htm",
+        "nominee_des": "Tay vợt Trương Vinh Hiển đã có một năm 2024 rực rỡ, thống trị sân chơi pickleball trong nước và đặt dấu ấn đậm nét ở sân chơi châu lục",
+        "vote_history": []
+      }
+    }
+  },
+  "11": {
+    "award_name": "Z-Project - Dự án trẻ vì cộng đồng",
+    "nominees": {
+      "495": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734857632484890260195.jpg",
+        "nominee_name": "Trạm cứu hộ chó mèo Hà Nội (CPAPS)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-11/tram-cuu-ho-cho-meo-ha-noi-cpaps-495.htm",
+        "nominee_des": "Trạm cứu hộ chó mèo Hà Nội (CPAPS) là nơi mang đến cuộc sống mới cho những chú thú cưng bị bạo hành.",
+        "vote_history": []
+      },
+      "592": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349486092161638487439.jpg",
+        "nominee_name": "Trạm đọc cho em",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-11/tram-doc-cho-em-592.htm",
+        "nominee_des": "Trạm đọc cho em đã “cõng chữ” từ vùng xuôi đến với các em nhỏ nơi làng bản xa xôi.",
+        "vote_history": []
+      },
+      "542": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734932038092492224122.jpg",
+        "nominee_name": "Green Life - Nỗ lực “sống xanh”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-11/green-life-no-luc-song-xanh-542.htm",
+        "nominee_des": "Green Life là dự án tạo nên trào lưu “đổi rác lấy cây”, cải thiện môi trường, thói quen sống của Hà Nội.",
+        "vote_history": []
+      },
+      "545": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/cover-bai-1735637183685935312465.jpg",
+        "nominee_name": "Sân Chơi Cầu Vồng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-11/san-choi-cau-vong-545.htm",
+        "nominee_des": "Một dự án tạo không gian chơi an toàn, sáng tạo giúp trẻ em phát triển thể chất, tinh thần.",
+        "vote_history": []
+      },
+      "593": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349488122301059776678.jpg",
+        "nominee_name": "Dự án “Gương mặt Việt Nam”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-11/du-an-guong-mat-viet-nam-593.htm",
+        "nominee_des": "Dự án truyền hình đa nền tảng lấy lòng yêu nước làm hạt nhân lan tỏa.",
+        "vote_history": []
+      }
+    }
+  },
+  "12": {
+    "award_name": "Z-Team - Nhóm Genz tài năng",
+    "nominees": {
+      "624": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734955312623620309357.jpg",
+        "nominee_name": "F.E.D Crew",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/fed-crew-624.htm",
+        "nominee_des": "Hội tụ những tài năng trẻ đầy nhiệt huyết, F.E.D Crew chinh phục khán giả bằng sự sáng tạo và năng lượng bùng nổ.",
+        "vote_history": []
+      },
+      "622": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-7-17349545464041560213725.jpg",
+        "nominee_name": "Bách Hoa Bộ Hành",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/bach-hoa-bo-hanh-622.htm",
+        "nominee_des": "Bách Hoa Bộ Hành là sự kiện đặc biệt nhằm tôn vinh cổ phục Việt. Sự kiện này nằm trong khuôn khổ của Lễ hội Thiết kế Sáng tạo Hà Nội 2024 vừa qua, thu hút sự quan tâm của rất nhiều người.",
+        "vote_history": []
+      },
+      "497": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-173486006437893344739.jpg",
+        "nominee_name": "Đội tuyển Futsal nữ Việt Nam",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/doi-tuyen-futsal-nu-viet-nam-497.htm",
+        "nominee_des": "ĐT futsal nữ Việt Nam đã xuất sắc vô địch giải futsal nữ Đông Nam Á ngay trong lần đầu tiên được tổ chức, sau khi đánh bại ĐT Thái Lan - đội xếp hạng 6 thế giới với tỉ số 2-1 trong trận chung kết.",
+        "vote_history": []
+      },
+      "556": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349384461501521645001.jpg",
+        "nominee_name": "Last Fire Crew",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/last-fire-crew-556.htm",
+        "nominee_des": "Last Fire Crew quy tụ dàn trai xinh gái đẹp “đốt cháy” sàn đấu từ âm nhạc đến vũ đạo.",
+        "vote_history": []
+      },
+      "596": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734949476033441099559.jpg",
+        "nominee_name": "Đội Tuyển An Ninh Mạng Viettel Cyber Security (VCS)",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/doi-tuyen-an-ninh-mang-viettel-cyber-security-vcs-596.htm",
+        "nominee_des": "Hai lần liên tiếp chiến thắng tại cuộc thi tấn công mạng Pwn2Own danh giá, đội ngũ hacker mũ trắng Việt Nam đã khẳng định tài năng và khát vọng vươn tầm thế giới.",
+        "vote_history": []
+      },
+      "631": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-8-17349553055211393148518.jpg",
+        "nominee_name": "GAM Esports",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/gam-esports-631.htm",
+        "nominee_des": "GAM Esports chính là đội tuyển giàu thành tích nhất của Liên Minh Huyền Thoại Việt Nam với 11 cúp vô địch VCS. Họ là “người được chọn” để mang niềm tự hào của thể thao điện tử nước nhà đến với những sân khấu lớn nhất của Thể thao Điện tử.",
+        "vote_history": []
+      },
+      "621": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-5-17349543252381528741789.jpg",
+        "nominee_name": "Zám",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/zam-621.htm",
+        "nominee_des": "Zám là nhóm Gen Z làm nên “cơn sốt” bộ nhận diện Bảo tàng Lịch sử TP.HCM vào cuối tháng 8/2024.",
+        "vote_history": []
+      },
+      "553": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734937820007404172348.jpg",
+        "nominee_name": "HYPERFOCUS",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/hyperfocus-553.htm",
+        "nominee_des": "Là đội ngũ năng động, sáng tạo, đứng sau những tài năng trẻ như Wxrdie, Gillian, Lucin3x.",
+        "vote_history": []
+      },
+      "496": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/22/thumb-trang-wechoice-1734859326831956198668.jpg",
+        "nominee_name": "Trần Tuấn Hiệp và Phạm Duy Phúc",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/tran-tuan-hiep-va-pham-duy-phuc-496.htm",
+        "nominee_des": "Trần Tuấn Hiệp và Phạm Duy Phúc là hai trong những gương mặt trẻ tài năng thuộc lĩnh vực lập trình game.",
+        "vote_history": []
+      },
+      "595": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349490253871403834029.jpg",
+        "nominee_name": "Mounter",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-12/mounter-595.htm",
+        "nominee_des": "Mounter - nhóm làm phim trẻ đầy sáng tạo, kể chuyện bằng trái tim, mang đến làn gió mới cho điện ảnh Việt.",
+        "vote_history": []
+      }
+    }
+  },
+  "13": {
+    "award_name": "Rising Artist",
+    "nominees": {
+      "580": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-1734945156875431479272.png",
+        "nominee_name": "Dương Domic",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/duong-domic-580.htm",
+        "nominee_des": "Không sai khi nói Dương Domic là thần tượng thế hệ mới thành công nhất trong năm 2024!",
+        "vote_history": []
+      },
+      "582": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/thumb-17350557988251777567310.jpg",
+        "nominee_name": "HURRYKNG",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/hurrykng-582.htm",
+        "nominee_des": "Đúng như rapname của mình, HURRYKNG bứt tốc như một “cơn lốc”, ngày càng vụt sáng và thành công với đam mê âm nhạc.",
+        "vote_history": []
+      },
+      "606": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-17349513108031994683820.jpg",
+        "nominee_name": "14 Casper",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/14-casper-606.htm",
+        "nominee_des": "Các sáng tác của 14 Casper có khả năng xoa dịu, phủ sáng lên những “góc tối” trong tâm hồn mỗi người nghe.",
+        "vote_history": []
+      },
+      "628": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-1734956082847997044052.jpg",
+        "nominee_name": "WEAN LE",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/wean-le-628.htm",
+        "nominee_des": "“WEAN nghĩ cần làm điều gì đó đánh dấu cho tuổi trẻ của mình thôi, và wow… nó đã đánh dấu quá mạnh mẽ”.",
+        "vote_history": []
+      },
+      "599": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734949800328592919234.jpg",
+        "nominee_name": "Đăng Quân",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/dang-quan-599.htm",
+        "nominee_des": "Đăng Quân chính là nhân vật đứng đằng sau vũ đạo của loạt tiết mục gây sốt showbiz trong năm 2024.",
+        "vote_history": []
+      },
+      "602": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-173495087322260484228.jpg",
+        "nominee_name": "Gill",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/gill-602.htm",
+        "nominee_des": "Từ một gương mặt mới đầy triển vọng, Gill đã nhanh chóng khẳng định vị thế của mình trở thành rapper được nhiều bạn trẻ yêu thích.",
+        "vote_history": []
+      },
+      "626": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/thumb-trang-wechoice-17349554796551269592426.jpg",
+        "nominee_name": "52Hz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/52hz-626.htm",
+        "nominee_des": "Nữ ca sĩ Gen Z triển vọng trong dòng nhạc R&B với chất giọng ma mị độc bản.",
+        "vote_history": []
+      },
+      "604": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/23/cover-bai-1734951034633861686493.jpg",
+        "nominee_name": "marzuz",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-13/marzuz-604.htm",
+        "nominee_des": "Một “ả” marzuz có giọng hát folk độc đáo, kể chuyện đời bằng âm nhạc, khẳng định dấu ấn riêng.",
+        "vote_history": []
+      }
+    }
+  },
+  "24": {
+    "award_name": "Z-Slang",
+    "nominees": {
+      "745": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-17350685545381763112659.jpg",
+        "nominee_name": "Đỉnh nóc, kịch trần, bay phấp phới",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/dinh-noc-kich-tran-bay-phap-phoi-745.htm",
+        "nominee_des": "Cụm từ đưa NSND Tự Long lên hàng “bậc thầy ngôn từ”. Năm 2024, từ trên mạng đến đời thường ai ai cũng dùng “đỉnh nóc, kịch trần, bay phấp phới” để diễn tả cảm giác vui sướng dâng trào, hạnh phúc tột đỉnh.",
+        "vote_history": []
+      },
+      "747": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-3-17350690475571730867002.jpg",
+        "nominee_name": "Đã ai làm gì đâu, đã ai chạm vào đâu",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/da-ai-lam-gi-dau-da-ai-cham-vao-dau-747.htm",
+        "nominee_des": "Nếu bị ai đó vô tình ngờ vực, câu đầu tiên phải nói sẽ là: “Đã ai làm gì đâu, đã ai chạm vào đâu”!",
+        "vote_history": []
+      },
+      "751": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-9-17350696878561781874262.jpg",
+        "nominee_name": "Vượt mức pickleball",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/vuot-muc-pickleball-751.htm",
+        "nominee_des": "“Vượt mức pickleball” trở thành cụm từ tiếng lóng được dùng phổ biến năm 2024 vì sự khôi hài đến từ chính nguồn gốc của nó.",
+        "vote_history": []
+      },
+      "746": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-1735068816239900323265.jpg",
+        "nominee_name": "Khó chịu vô cùng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/kho-chiu-vo-cung-746.htm",
+        "nominee_des": "Từ lóng nổi lên qua những clip hài tình huống trên mạng, được đưa vào giao tiếp, trở thành câu nói cửa miệng được đông đảo giới trẻ yêu thích, sử dụng.",
+        "vote_history": []
+      },
+      "744": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-1-17350666892301689890086.jpg",
+        "nominee_name": "Bảnh",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/banh-744.htm",
+        "nominee_des": "Tháng 2/2024, các “cư dân” của “Threads city” bỗng liên tục tự xưng mình là “bảnh”. Đây là từ lóng chỉ cách xưng hô theo ngôi thứ nhất thay cho tôi, mình, tớ.... khiến câu chuyện gần gũi, thoải mái, không sợ bị đánh giá.",
+        "vote_history": []
+      },
+      "750": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-5-17350695382051468819037.jpg",
+        "nominee_name": "8386",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/8386-750.htm",
+        "nominee_des": "Câu chúc vui vẻ, cầu mong phát tài, phát lộc được sử dụng nhiều nhất trên mạng nửa cuối năm 2024.",
+        "vote_history": []
+      },
+      "749": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-3-1735069395669794808317.jpg",
+        "nominee_name": "Chill guy",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/chill-guy-749.htm",
+        "nominee_des": "Từ khóa #chill guy có mặt trong hơn nửa triệu bài đăng trên MXH trong năm 2024, đặc biệt là TikTok. Gen Z xếp hạng đây là từ chữa lành nhất năm.",
+        "vote_history": []
+      },
+      "752": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-6-17350698384781469818374.jpg",
+        "nominee_name": "Đám giỗ bên cồn",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/dam-gio-ben-con-752.htm",
+        "nominee_des": "“Đám giỗ bên cồn” khiến dân chơi cả nước rủ nhau đến miền Tây trải nghiệm 1 lần cho biết.",
+        "vote_history": []
+      },
+      "748": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-4-17350692914181249478589.jpg",
+        "nominee_name": "Ai sợ thì đi về",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/ai-so-thi-di-ve-748.htm",
+        "nominee_des": "“Ai sợ thì đi về! Phong cách! Phong cách” - cụm từ phát ra âm thanh trong năm 2024 đây rồi.",
+        "vote_history": []
+      },
+      "753": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/24/cover-bai-8-17350699937971049010933.jpg",
+        "nominee_name": "Hồng Hài Nhi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-24/hong-hai-nhi-753.htm",
+        "nominee_des": "Hồng Hài Nhi là một trong những từ lóng viral nhất nửa cuối năm 2024, đặc biệt ở lĩnh vực yêu đương.",
+        "vote_history": []
+      }
+    }
+  },
+  "16": {
+    "award_name": "Z-Eatery & Coffee",
+    "nominees": {
+      "816": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/img1188-17358967305181545336960.jpg",
+        "nominee_name": "Phê La",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/phe-la-816.htm",
+        "nominee_des": "Nốt hương đặc sản của Phê La đang tạo ra một xu hướng thưởng thức trà mới lạ trong thế hệ trẻ.",
+        "vote_history": []
+      },
+      "837": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/img5570-copy-17359350877111293888732.jpg",
+        "nominee_name": "The 350F",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/the-350f-837.htm",
+        "nominee_des": "Tiệm bánh chinh phục thực khách bởi những dòng bánh độc đáo vào không gian sống ảo sang trọng.",
+        "vote_history": []
+      },
+      "760": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/115836/202501031115147263.jpg",
+        "nominee_name": "zumwhere",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/zumwhere-760.htm",
+        "nominee_des": "Thương thức ẩm thực một cách thư giãn ngay trong lòng Sài Gòn hối hả",
+        "vote_history": []
+      },
+      "807": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/prime-1735640712667579702204.jpg",
+        "nominee_name": "Prime Steak Boutique & Chill",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/prime-steak-boutique-chill-807.htm",
+        "nominee_des": "Prime Steak Boutique & Chill là nhà hàng bít tết boutique đầu tiên tại Tp.HCM, do đầu bếp Khai Vũ điều hành.",
+        "vote_history": []
+      },
+      "840": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/5/copy-of-lay-tira-copy-2crop2-1736073540400928855582.png",
+        "nominee_name": "SOKO CAKE BAKE BRUNCH",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/soko-cake-bake-brunch-840.htm",
+        "nominee_des": "Những chiếc bánh hay món “brunch” độc đáo từ SOKO vô cùng viral trên nền tảng TikTok bởi sự chỉn chu trong thiết kế, cũng như hương vị thơm ngon mà thương hiệu này mang lại.",
+        "vote_history": []
+      },
+      "842": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/839851/202501031927064473.jpg",
+        "nominee_name": "nhẹ cafe",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/nhe-cafe-842.htm",
+        "nominee_des": "Thương hiệu cafe lan toả văn hoá trăm nghề vùng Kinh Bắc qua Không Gian - Thức Nước - Con Người một cách gần gũi và nhẹ nhàng!",
+        "vote_history": []
+      },
+      "810": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/artboard1-1735644722649436694171.jpg",
+        "nominee_name": "Mặn Mòi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/man-moi-810.htm",
+        "nominee_des": "Mặn Mòi - Homey Authentic Vietnamese Cuisine là điểm đến của ẩm thực Việt Nam thuần tuý",
+        "vote_history": []
+      },
+      "830": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/frame-53-1735904090703160507415.png",
+        "nominee_name": "Yuzu Omakase",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/yuzu-omakase-830.htm",
+        "nominee_des": "Yuzu Omakase gây sốt với trải nghiệm ẩm thực độc đáo, kết hợp nghệ thuật Omakase tinh tế và nguyên liệu thượng hạng, tạo dấu ấn mạnh mẽ trên bản đồ ẩm thực cao cấp Việt Nam.",
+        "vote_history": []
+      },
+      "839": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/2-1735935704394659227220.jpg",
+        "nominee_name": "THREE O’CLOCK",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/three-oclock-839.htm",
+        "nominee_des": "Chuỗi cà phê không ngủ dành cho hội cú đêm Sài Thành.",
+        "vote_history": []
+      },
+      "809": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/4346733001221657461900639244270946205012290274n-17356441869742110065872.jpg",
+        "nominee_name": "iSteaks",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/isteaks-809.htm",
+        "nominee_des": "iSteaks là chuỗi steakhouse đến từ Singapore với bề dày lịch sử phát triển hơn 13 năm.",
+        "vote_history": []
+      },
+      "838": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-5-1735935436777180299536.png",
+        "nominee_name": "Every Half",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/every-half-838.htm",
+        "nominee_des": "Một điểm đến lý tưởng dành cho giới trẻ yêu thích cà phê và phong cách sống tối giản.",
+        "vote_history": []
+      },
+      "811": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/40465625110744869872701953161882554039639323n-1735645274543529244465.jpg",
+        "nominee_name": "Nous",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/nous-811.htm",
+        "nominee_des": "Nous là nhà hàng Capsule đầu tiên của Việt Nam với các món ăn được chế biến độc đáo.",
+        "vote_history": []
+      },
+      "847": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/ngoam02-1736158052138850511080.jpg",
+        "nominee_name": "Ngoặm",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/ngoam-847.htm",
+        "nominee_des": "Nhà hàng burger – bistro với tinh thần chế biến những món ăn thuần túy Việt Nam qua lăng kính Âu - Á",
+        "vote_history": []
+      },
+      "844": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/ihatemonday07-17361524802191135245479.jpg",
+        "nominee_name": "I Hate Monday",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/i-hate-monday-844.htm",
+        "nominee_des": "I Hate Monday - Nơi nghệ thuật, ẩm thực và con người được giao thoa từ sự sáng tạo của những điều thường nhật.",
+        "vote_history": []
+      },
+      "845": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/the-little-bean-01-17361572817471861558417.jpg",
+        "nominee_name": "The Little Bean",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/the-little-bean-845.htm",
+        "nominee_des": "Một chốn thư thái sau những ngày bận rộn trong không gian xanh giữa lòng phố thị",
+        "vote_history": []
+      },
+      "846": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/chi-ik01-17361577422121428292249.png",
+        "nominee_name": "Chi-ik Steak & Pasta",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/chiik-steak-pasta-846.htm",
+        "nominee_des": "Chuyến tàu trải nghiệm ẩm thực Á-Âu đầy màu sắc cho mọi bữa ăn thêm ấm cúng và trọn vị",
+        "vote_history": []
+      },
+      "856": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/7/4591774783765629555068033720669769392573349n-17362234822371017675358.jpg",
+        "nominee_name": "Nam Mê Kitchen & Bar",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/nam-me-kitchen-bar-856.htm",
+        "nominee_des": "Lan toả sứ mệnh của Nam Mê là kết nối tinh hoa ẩm thực Mekong qua góc nhìn hiện đại, truyền cảm hứng từ sản vật tự nhiên và văn hoá địa phương.",
+        "vote_history": []
+      },
+      "854": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/np-bistro01-1736164382060734948775.jpg",
+        "nominee_name": "NP Bistro",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/np-bistro-854.htm",
+        "nominee_des": "Nơi ẩm thực Ý-Việt gặp gỡ trong không gian Đông Dương ấm cúng với những biến tấu đầy sáng tạo",
+        "vote_history": []
+      },
+      "855": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/doc-788-x-940-px-17361647729811399388694.png",
+        "nominee_name": "OM Nướng",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-16/om-nuong-855.htm",
+        "nominee_des": "Quán nướng có không gian thoáng đãng, mang đậm dấu ấn ẩm thực thuần Việt.",
+        "vote_history": []
+      }
+    }
+  },
+  "17": {
+    "award_name": "Z First Rate",
+    "nominees": {
+      "792": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/cover-bai-1734966677686886303259-17356350511001981063258.jpg",
+        "nominee_name": "MoMo",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/momo-792.htm",
+        "nominee_des": "Dù chiếm lĩnh tới 68% thị phần nội địa, MoMo vẫn không ngừng đổi mới để chinh phục Gen Z.",
+        "vote_history": []
+      },
+      "812": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/myvibdocx-1672089097289-17356460207231770244366.jpg",
+        "nominee_name": "My VIB",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/my-vib-812.htm",
+        "nominee_des": "Tính cá nhân hóa và sức nóng của “Anh trai say hi” đã đưa My VIB đến gần Gen Z.",
+        "vote_history": []
+      },
+      "813": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/cover-1735646613998649014479.jpg",
+        "nominee_name": "Zalopay",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/zalopay-813.htm",
+        "nominee_des": "Chiến lược kinh doanh táo bạo của Zalopay không còn bó hẹp ở mô hình ví điện tử truyền thống.",
+        "vote_history": []
+      },
+      "799": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/tpbank-1735637638042900793509.jpg",
+        "nominee_name": "TPBank",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/tpbank-799.htm",
+        "nominee_des": "TPBank đã gắn liền các sản phẩm và trải nghiệm ngân hàng với tính cá nhân của Gen Z.",
+        "vote_history": []
+      },
+      "803": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/tomi-pfm-17361721793721702491332.jpg",
+        "nominee_name": "Timo",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/timo-803.htm",
+        "nominee_des": "Ngân hàng số Timo đồng hành với Gen Z trong cả lĩnh vực tài chính và phi tài chính.",
+        "vote_history": []
+      },
+      "814": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/47168816511514062636518598400205108424347893n-17356468869331442362983.jpg",
+        "nominee_name": "Cake by VPBank",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-17/cake-by-vpbank-814.htm",
+        "nominee_des": "Ứng dụng AI trong mọi hoạt động, ngân hàng số Cake khẳng định ưu thế nhờ làm chủ công nghệ.",
+        "vote_history": []
+      }
+    }
+  },
+  "20": {
+    "award_name": "Z-Events",
+    "nominees": {
+      "822": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/8-1735805792397998253636.jpg",
+        "nominee_name": "Triển lãm “Tết Vỗ Về”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/trien-lam-tet-vo-ve-822.htm",
+        "nominee_des": "Điểm chạm đa giác quan “vỗ về” người trẻ với những biến động trong cuộc sống.",
+        "vote_history": []
+      },
+      "808": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/img7238-17359299874661507519414.jpg",
+        "nominee_name": "8WONDER Winter 2024",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/8wonder-winter-2024-808.htm",
+        "nominee_des": "Với dàn lineup đỉnh cao và chuỗi hoạt động lễ hội ấn tượng, 8WONDER đã trở thành tâm điểm giải trí - văn hóa mới của người Việt.",
+        "vote_history": []
+      },
+      "761": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/gf-on-wca-1-17358913198392100788334.jpg",
+        "nominee_name": "GENfest",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/genfest-761.htm",
+        "nominee_des": "GENfest 2024: Khi người trẻ Việt kết nối và vươn tầm âm nhạc cùng bản sắc",
+        "vote_history": []
+      },
+      "826": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/2-2-17358071312461436845165.jpeg",
+        "nominee_name": "Triển lãm “30 năm đi cùng ký ức - Thám tử lừng danh Conan”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/trien-lam-30-nam-di-cung-ky-uc-tham-tu-lung-danh-conan-826.htm",
+        "nominee_des": "Sự kiện triển lãm kỷ niệm 30 năm của bộ truyện Conan lần đầu tiên được tổ chức tại Việt Nam.",
+        "vote_history": []
+      },
+      "825": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/doc-1735808350623687144521.png",
+        "nominee_name": "Triển lãm Van Gogh & Monet Art Lighting Experience",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/trien-lam-van-gogh-monet-art-lighting-experience-825.htm",
+        "nominee_des": "Triển lãm tái hiện lại tác phẩm của hai đại danh hoạ với công nghệ hàng đầu thế giới.",
+        "vote_history": []
+      },
+      "828": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/wechoice-vertical-1735875727100776112248.jpg",
+        "nominee_name": "Ravolution Music Festival",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/ravolution-music-festival-828.htm",
+        "nominee_des": "Ravolution Music Festival là lễ hội âm nhạc điện tử tiêu chuẩn quốc tế của người Việt Nam, là thương hiệu lâu năm nhất với bề dày lịch sử 8 năm cùng 11 phiên bản, là tiếng nói của nền công nghiệp giải trí lễ hội của Việt Nam trên bản đồ thế giới.",
+        "vote_history": []
+      },
+      "824": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/449746625494830449630119831894867583672696n-17358064438411642114559.jpg",
+        "nominee_name": "Triển lãm “Dân Gian Trong Gen Z”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/trien-lam-dan-gian-trong-gen-z-824.htm",
+        "nominee_des": "Triển lãm khơi nguồn sức sống mãnh liệt của văn hóa dân gian Việt Nam trong tâm hồn thế hệ trẻ.",
+        "vote_history": []
+      },
+      "787": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/event/wca/2024/userimages/28113/202412272259343487.jpg",
+        "nominee_name": "Lễ hội Âm nhạc HỘI - Thuần - HỘI 2024",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/le-hoi-am-nhac-hoi-thuan-hoi-2024-787.htm",
+        "nominee_des": "Lễ hội Âm nhạc HỘI - Thuần: HỘI 2024 muốn lan tỏa những giá trị văn hóa nghệ thuật thuần túy thông qua một lăng kính hiện đại, mới lạ.",
+        "vote_history": []
+      },
+      "823": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/1-1735806125314190819373.jpg",
+        "nominee_name": "Triển lãm “I love Yêu”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/trien-lam-i-love-yeu-823.htm",
+        "nominee_des": "Một nỗ lực nhằm mang đến ánh sáng cho mảnh đời khó khăn của những trẻ em có hoàn cảnh đặc biệt.",
+        "vote_history": []
+      },
+      "857": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/7/4702273751221587357543026223250833035125981099n-1736227956080927389556.jpg",
+        "nominee_name": "TRẺ Concert",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/tre-concert-857.htm",
+        "nominee_des": "Việc tổ chức chuỗi đêm nhạc mời toàn các ngôi sao hạng A - Diva của showbiz Việt nhưng lại hoàn toàn miễn phí, chắc chỉ có Dược sĩ Tiến mới làm điều này!",
+        "vote_history": []
+      },
+      "858": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/7/kv-smdcl-1736228234792178365546.jpg",
+        "nominee_name": "Đại nhạc hội “Sống một đời có lãi”",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/dai-nhac-hoi-song-mot-doi-co-lai-858.htm",
+        "nominee_des": "Thông điệp “Sống Lãi” được truyền tải  sâu sắc qua hành trình âm nhạc đầy cảm xúc.",
+        "vote_history": []
+      },
+      "853": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/6/watera-1736161667440688045675.jpg",
+        "nominee_name": "Watera Festival",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-20/watera-festival-853.htm",
+        "nominee_des": "Watera Festival nhanh chóng trở thành một trong những sự kiện âm nhạc lấy cảm hứng trải nghiệm với nước được mong chờ nhất trong năm, thu hút hàng ngàn bạn trẻ đến tham dự.",
+        "vote_history": []
+      }
+    }
+  },
+  "21": {
+    "award_name": "Z-Nightlife Spots",
+    "nominees": {
+      "834": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-3-17359323814571458647942.png",
+        "nominee_name": "Mizuwari",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/mizuwari-834.htm",
+        "nominee_des": "Mizuwari - Nơi thăng hoa cùng vẻ đẹp của nghệ thuật cocktail thủ công đẳng cấp Nhật bản ngay tại Sài Gòn",
+        "vote_history": []
+      },
+      "841": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/4/z6195827059670bbf4773cabaa9cd3a515fdd90f332215-17359832135751246726392.jpg",
+        "nominee_name": "Hair Of The Dog Club Saigon",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/hair-of-the-dog-club-saigon-841.htm",
+        "nominee_des": "Hair Of The Dog Saigon luôn đem đến một trải nghiệm hoàn toàn khác - là một trong những điểm đến giải trí lý tưởng tại Phố đi bộ Bùi Viện.",
+        "vote_history": []
+      },
+      "820": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/2-17358963214552108561518.jpg",
+        "nominee_name": "Barrigón",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/barrigon-820.htm",
+        "nominee_des": "Barrigón là một nơi tụ tập lý tưởng cho giới trẻ tại trung tâm thành phố.",
+        "vote_history": []
+      },
+      "819": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/doc-2-1735895965040639537509.png",
+        "nominee_name": "Papaya Papa",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/papaya-papa-819.htm",
+        "nominee_des": "Quán bar rooftop kết hợp nhà hàng, điểm hẹn lý tưởng cho thực khách thích ngắm nhìn thành phố đêm.",
+        "vote_history": []
+      },
+      "818": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/2-2-1735896617576664819811.jpg",
+        "nominee_name": "Off-dry Cocktail & Wine Bar",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/offdry-cocktail-wine-bar-818.htm",
+        "nominee_des": "Off-dry Cocktail & Wine Bar - một nơi để trốn và chữa lành cho những tâm hồn lạc lối.",
+        "vote_history": []
+      },
+      "833": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-2-17359314251371116714919.png",
+        "nominee_name": "Layla - Eatery & Bar",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/layla-eatery-bar-833.htm",
+        "nominee_des": "Layla - Eatery & Bar: Nơi giao hòa giữa không gian đương đại, cocktail sáng tạo và trải nghiệm ẩm thực đậm chất phương Tây.",
+        "vote_history": []
+      },
+      "821": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/4532569413262453239012995794586408333895619n-17358104465651286376552.jpg",
+        "nominee_name": "Mámi Cocktails - Kitchen & Bar",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/mami-cocktails-kitchen-bar-821.htm",
+        "nominee_des": "Nhà hàng tapas kết hợp ẩm thực Tây Ban Nha - Địa Trung Hải và quầy bar cocktail hiện đại.",
+        "vote_history": []
+      },
+      "817": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/2/dinh-dang-doc-2-17357922423411188550976.png",
+        "nominee_name": "Madam Kew",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/madam-kew-817.htm",
+        "nominee_des": "Mang phong cách Á Đông hoài cổ, Madam Kew là cái tên nổi bật cho cuộc sống về đêm ở Sài Thành.",
+        "vote_history": []
+      },
+      "832": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/hmm-03-17359307459511755523597.jpg",
+        "nominee_name": "Hmm_",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/hmm-832.htm",
+        "nominee_des": "Tối giản nhưng không đơn điệu, Hmm_ sẽ là nơi khách được gửi gắm tâm tư qua từng ly rượu.",
+        "vote_history": []
+      },
+      "835": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/45431684410600443527968862443760263932996131n-1735932562130356420598.jpg",
+        "nominee_name": "CLIMB Cocktails Bar",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/climb-cocktails-bar-835.htm",
+        "nominee_des": "Ẩn mình sau kệ sách bí mật, CLIMB Cocktails Bar sẽ là nơi mang đến những trải nghiệm bất ngờ đầy chất riêng.",
+        "vote_history": []
+      },
+      "836": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-4-1735934087631671880692.png",
+        "nominee_name": "Hybrid Saigon",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-21/hybrid-saigon-836.htm",
+        "nominee_des": "Hybird - Cocktail bar hội tụ những sắc thái đa dạng và độc đáo mang đậm dấu ấn khác biệt.",
+        "vote_history": []
+      }
+    }
+  },
+  "22": {
+    "award_name": "Z-Local Brands",
+    "nominees": {
+      "797": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/dirtycoinsvn173391494535206561819147175781807202178-17356365733811121147399.jpg",
+        "nominee_name": "Dirty Coins",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/dirty-coins-797.htm",
+        "nominee_des": "Dirty Coins đã, đang và sẽ luôn là một trong những brand streetwear top đầu ở Việt Nam.",
+        "vote_history": []
+      },
+      "757": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-1735888598435527331179.jpg",
+        "nominee_name": "Leninn Skate Shop",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/leninn-skate-shop-757.htm",
+        "nominee_des": "Leninn là điểm giao hoàn hảo của suy nghĩ táo bạo và vùng an toàn trong thế giới nội tâm của mỗi người.",
+        "vote_history": []
+      },
+      "795": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/leventsofficial173314120735141656093348511064221448416-1735636056898997228886.jpg",
+        "nominee_name": "LEVENTS",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/levents-795.htm",
+        "nominee_des": "Go Global thành công, LEVENTS đã góp phần đưa thời trang Việt vươn tầm quốc tế.",
+        "vote_history": []
+      },
+      "788": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/xeoxo173478590435279623247173776591098092291-17356333564431872174926.jpg",
+        "nominee_name": "Xéo Xọ",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/xeo-xo-788.htm",
+        "nominee_des": "Nhắc đến áo dài là người ta sẽ nghĩ ngay tới Xéo Xọ",
+        "vote_history": []
+      },
+      "789": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/jpg-2-17356339954611588794531.jpeg",
+        "nominee_name": "Whenever Atelier",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/whenever-atelier-789.htm",
+        "nominee_des": "Whenever Atelier nổi lên như một hiện tượng năm 2024 khi đồng hành cùng các ngôi sao trẻ đình đám",
+        "vote_history": []
+      },
+      "796": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/img9392-2-17356363092751077280891.jpg",
+        "nominee_name": "La Lune",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/la-lune-796.htm",
+        "nominee_des": "La Lune là một trong những local brand Việt vươn tầm thế giới.",
+        "vote_history": []
+      },
+      "790": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/img9394-3-17356344378411487355981.jpg",
+        "nominee_name": "STRESSMAMA",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/stressmama-790.htm",
+        "nominee_des": "STRESSMAMA là một trong những thương hiệu Streetwear hàng đầu hiện nay",
+        "vote_history": []
+      },
+      "791": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/photo-by-street-bag-on-april-23-2024-1735634940071256718708.jpg",
+        "nominee_name": "SPOILED",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/spoiled-791.htm",
+        "nominee_des": "SPOILED với khẩu hiệu “Colorful Living” nổi bật với các item thời trang đầy màu sắc, đặc biệt là túi xách",
+        "vote_history": []
+      },
+      "793": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/snapinstaapp4715467349570074464924376925136620331617980n1080-1735635340130667445040.jpg",
+        "nominee_name": "She By Shj",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/she-by-shj-793.htm",
+        "nominee_des": "Các tín đồ thời trang không quá xa lạ với brand ruột của Chi Pu.",
+        "vote_history": []
+      },
+      "758": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/untitled-design-1-1735894339035109399366.png",
+        "nominee_name": "THER GAB",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/ther-gab-758.htm",
+        "nominee_des": "We live locally, we build gobally",
+        "vote_history": []
+      },
+      "794": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/4589216469428111211940196405125207754229349n-1735635827730153517519.jpg",
+        "nominee_name": "OHQUAO",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-22/ohquao-794.htm",
+        "nominee_des": "Thương hiệu văn phòng phẩm, thời trang lấy chất liệu từ những biểu tượng của Việt Nam - Sài Gòn",
+        "vote_history": []
+      }
+    }
+  },
+  "23": {
+    "award_name": "Super Brands: Thương hiệu nằm lòng giới trẻ",
+    "nominees": {
+      "802": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/4633087505326365761388003134039403799103177n-17356391712741078423818.jpg",
+        "nominee_name": "Bitis Hunter",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/bitis-hunter-802.htm",
+        "nominee_des": "Bộ nhận diện mới của thương hiệu không chỉ đơn giản hơn mà còn mang đậm tinh thần phá cách, năng động và trẻ trung – những giá trị đã gắn liền với giới trẻ Việt Nam.",
+        "vote_history": []
+      },
+      "805": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/47126437212946991518739223898505227334460795n-17356398644091326935080.jpg",
+        "nominee_name": "Omachi",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/omachi-805.htm",
+        "nominee_des": "Omachi được biết đến là sản phẩm mì ăn liền đầu tiên tại Việt Nam được làm từ sợi khoai tây nguyên chất, có tác dụng làm đẹp da và cải thiện sức khỏe.",
+        "vote_history": []
+      },
+      "804": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/4593836159273323227609324159414468625466049n-2-1735895014764333343029.jpg",
+        "nominee_name": "Lay’s",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/lays-804.htm",
+        "nominee_des": "Hiểu rõ xu hướng Gen Z giúp Lay’s cải thiện vị thế, gắn kết giới trẻ, và mở ra các cơ hội phát triển bền vững trong ngành FMCG",
+        "vote_history": []
+      },
+      "798": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/470152549877424144538435822737244800811777n-1735637309558432033271.jpg",
+        "nominee_name": "Lemonade",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/lemonade-798.htm",
+        "nominee_des": "Thương hiệu mỹ phẩm thấu hiểu người trẻ Việt với các dòng sản phẩm đón đầu xu hướng quốc tế",
+        "vote_history": []
+      },
+      "831": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/doc-34-1735930332677514164659.jpg",
+        "nominee_name": "CHIN-SU",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/chinsu-831.htm",
+        "nominee_des": "Chin-su liên tục ghi dấu ấn làm nức lòng giới trẻ với chiến dịch Marketing đầy sức trẻ",
+        "vote_history": []
+      },
+      "800": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/photo-3-1705399303884369852314-1735637751965994051223.jpeg",
+        "nominee_name": "OFÉLIA",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/ofelia-800.htm",
+        "nominee_des": "Đã 8 năm trôi qua kể từ ngày mới ra mắt, OFÉLIA vẫn mê hoặc các tín đồ làm đẹp với các sản phẩm chất lượng được tích hợp công nghệ làm đẹp từ Hàn tới Âu Mỹ ngay tại thị trường nội địa.",
+        "vote_history": []
+      },
+      "801": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/466579902180769224346058095302844390530191206n-1735638877143543485921.jpg",
+        "nominee_name": "Oatside",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/oatside-801.htm",
+        "nominee_des": "Dù mới gia nhập thị trường Việt Nam, Oatside nhanh chóng trở thành “best seller” trong giới sữa hạt.",
+        "vote_history": []
+      },
+      "827": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/banner-san-pham-binh-chon-copy-17358822882631929763395.jpg",
+        "nominee_name": "Bánh Bảo Ngọc",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/banh-bao-ngoc-827.htm",
+        "nominee_des": "Với những nỗ lực thay đổi, bánh Bảo Ngọc đã trở thành lựa chọn quen thuộc với bữa sáng của nhiều bạn học sinh, sinh viên.",
+        "vote_history": []
+      },
+      "815": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2024/12/31/anh-dang-11-1735649270384670418218.jpg",
+        "nominee_name": "YooLife",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/yoolife-815.htm",
+        "nominee_des": "Những mốc son lịch sử trên nền tảng số: Càng xem nhiều, càng tự hào về dân tộc",
+        "vote_history": []
+      },
+      "806": {
+        "ava_link": "https://event.mediacdn.vn/thumb_w/600/257767050295742464/image/wca/2025/1/3/342215dibao-31720683994-2-1735898634288697477458.jpg",
+        "nominee_name": "Dibao",
+        "nominee_vote_url": "https://wechoice.vn/chi-tiet-de-cu-23/dibao-806.htm",
+        "nominee_des": "Thương hiệu xe điện với những chiến dịch quảng cáo sáng tạo kết hợp với các nghệ sĩ genZ",
+        "vote_history": []
+      }
+    }
+  }
+}
