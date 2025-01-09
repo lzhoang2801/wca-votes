@@ -378,54 +378,48 @@
                 const allTimestamps = new Set();
                 Object.values(nominees).forEach(nominee => {
                     nominee.vote_history.forEach(item => {
-                        allTimestamps.add(new Date(item.timestamp).getTime());
+                        const timestamp = new Date(item.timestamp).getTime();
+                        if (timestamp >= startDate.getTime() && timestamp <= endDate.getTime()) {
+                            allTimestamps.add(timestamp);
+                        }
                     });
                 });
                 const sortedTimestamps = Array.from(allTimestamps).sort();
 
                 const startDateTime = startDate.getTime();
                 const endDateTime = endDate.getTime();
-                const filteredTimestamps = sortedTimestamps.filter(ts => 
-                    ts >= startDateTime && ts <= endDateTime
-                );
 
                 const timeRange = this.timeRangeSelect.value;
+                let timeRangeMillis = 1;
+                if (timeRange === '15m') {
+                    timeRangeMillis = 15 * 60 * 1000;
+                } else if (timeRange === '30m') {
+                    timeRangeMillis = 30 * 60 * 1000;
+                } else if (timeRange === '1h') {
+                    timeRangeMillis = 60 * 60 * 1000;
+                }
+
                 let filteredTimestampsWithRange = [];
-                if (timeRange === 'all') {
-                    filteredTimestampsWithRange = filteredTimestamps;
-                } else {
-                    let timeRangeMillis = 0;
-                    if (timeRange === '15m') {
-                        timeRangeMillis = 15 * 60 * 1000;
-                    } else if (timeRange === '30m') {
-                        timeRangeMillis = 30 * 60 * 1000;
-                    } else if (timeRange === '1h') {
-                        timeRangeMillis = 60 * 60 * 1000;
-                    }
+                let currentRangeEnd = startDateTime + timeRangeMillis;
+                let lastAddedTimestamp = null;
 
-                    let currentRangeStart = startDateTime;
-
-                    while (currentRangeStart <= endDateTime) {
-                        const currentRangeEnd = currentRangeStart + timeRangeMillis;
-                        const rangeTimestamps = filteredTimestamps.filter(ts => 
-                            ts >= currentRangeStart && ts < currentRangeEnd
-                        );
-                        if (rangeTimestamps.length > 0) {
-                            filteredTimestampsWithRange.push(rangeTimestamps[rangeTimestamps.length - 1]);
+                sortedTimestamps.forEach(timestamp => {
+                    if (timestamp >= currentRangeEnd) {
+                        if (lastAddedTimestamp !== null) {
+                            filteredTimestampsWithRange.push(lastAddedTimestamp);
                         }
-                        currentRangeStart = currentRangeEnd;
+                        while (currentRangeEnd < timestamp) {
+                            currentRangeEnd += timeRangeMillis;
+                        }
                     }
+                    lastAddedTimestamp = timestamp;
+                });
+                if (lastAddedTimestamp !== null) {
+                    filteredTimestampsWithRange.push(lastAddedTimestamp);
                 }
 
                 const nomineeTotalVotes = Object.entries(nominees).map(([id, nominee]) => {
-                    const totalVotes = nominee.vote_history.reduce((sum, item) => {
-                        const timestamp = new Date(item.timestamp).getTime();
-                        if (timestamp >= startDateTime && timestamp <= endDateTime) {
-                            return sum + parseInt(item.count);
-                        }
-                        return sum;
-                    }, 0);
-                    return { id, nominee, totalVotes };
+                    return { id, nominee, totalVotes: nominee.vote_history[nominee.vote_history.length - 1].count || 0 };
                 });
 
                 const sortedNominees = nomineeTotalVotes.sort((a, b) => b.totalVotes - a.totalVotes);
@@ -435,16 +429,16 @@
                 const datasets = selectedNominees.map(({ nominee }) => {
                     const voteMap = new Map();
                     let lastCount = 0;
-                    sortedTimestamps.forEach(timestamp => {
-                        const voteData = nominee.vote_history.find(item => 
+                    filteredTimestampsWithRange.forEach(timestamp => {
+                        const voteEntry = nominee.vote_history.find(item => 
                             new Date(item.timestamp).getTime() === timestamp
                         );
-                        if (voteData) {
-                            lastCount = parseInt(voteData.count);
+                        if (voteEntry) {
+                            lastCount = parseInt(voteEntry.count);
                         }
                         voteMap.set(timestamp, lastCount);
                     });
-                    
+
                     let votes = filteredTimestampsWithRange.map(timestamp => voteMap.get(timestamp));
 
                     if (this.displayMode === 'difference') {
