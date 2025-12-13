@@ -962,17 +962,19 @@
 
                 rankingData.forEach((item, index) => {
                     const isTop1 = index === 0;
-                    const diffText = isTop1 ? `<span class="text-[#C7F442] font-bold"><i class="fas fa-crown"></i> Dẫn đầu</span>` :
-                        item.voteDifference > 0 ? `<span class="text-sm text-green-300 font-bold">+${item.voteDifference.toLocaleString()}</span>` :
-                            item.voteDifference < 0 ? `<span class="text-sm text-red-500 font-bold">-${item.voteDifference.toLocaleString()}</span>` :
-                                ``;
+                    const diffText = item.voteDifference > 0 ? `<span class="text-sm text-green-300 font-bold">+${item.voteDifference.toLocaleString()}</span>` :
+                        item.voteDifference < 0 ? `<span class="text-sm text-red-500 font-bold">-${item.voteDifference.toLocaleString()}</span>` :
+                            ``;
 
                     const div = document.createElement('div');
                     div.className = `ranking-item ${isTop1 ? 'bg-[rgba(199,244,66,0.1)] border border-[#C7F442]' : ''}`;
                     div.innerHTML = `
                         <div class="w-6 sm:w-8 text-center font-bold text-base sm:text-lg text-[#C7F442]">${index + 1}</div>
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 ${isTop1 ? 'border-[#C7F442]' : 'border-[#d3ad49]/50'} mx-2 sm:mx-3 shrink-0">
-                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                        <div class="relative mx-2 sm:mx-3 shrink-0">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 ${isTop1 ? 'border-[#C7F442]' : 'border-[#d3ad49]/50'}">
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                            </div>
+                            ${isTop1 ? '<div class="absolute -top-2 -left-2 text-[#C7F442] -rotate-45 text-lg drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"><i class="fas fa-crown"></i></div>' : ''}
                         </div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-medium text-white truncate text-sm sm:text-base leading-tight">${item.name}</h4>
