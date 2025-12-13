@@ -234,24 +234,28 @@
         </div>
 
         <div class="card mb-6 sm:mb-8 flex flex-col sm:flex-row gap-4">
-            <div class="flex-1 relative">
+            <div class="flex-1">
                 <label for="groupSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Nhóm hạng mục</label>
-                <select id="groupSelect"
-                    class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg">
-                    <option value="" disabled selected>Chọn nhóm...</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                    <i class="fas fa-chevron-down"></i>
+                <div class="relative">
+                    <select id="groupSelect"
+                        class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg">
+                        <option value="" disabled selected>Chọn nhóm...</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
             </div>
-            <div class="flex-1 relative">
+            <div class="flex-1">
                 <label for="awardSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Giải thưởng</label>
-                <select id="awardSelect" disabled
-                    class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg">
-                    <option value="" disabled selected>Chọn giải thưởng...</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                    <i class="fas fa-chevron-down"></i>
+                <div class="relative">
+                    <select id="awardSelect" disabled
+                        class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg">
+                        <option value="" disabled selected>Chọn giải thưởng...</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,7 +266,7 @@
                 <div class="ranking-card p-4 sm:p-6 h-full flex flex-col">
                     <div class="text-center mb-4 sm:mb-6 relative z-10">
                         <h2 id="rankingTitle" class="text-xl sm:text-2xl font-black uppercase tracking-wider mt-4 sm:mt-10 text-white">Bảng Xếp Hạng</h2>
-                        <p class="text-white/60 text-xs sm:text-sm mt-2 font-mono">Real-time Update</p>
+                        <p class="text-white/60 text-xs sm:text-sm mt-2 font-mono">Cập nhật mỗi 10 giây</p>
                     </div>
 
                     <div id="rankingList" class="flex-1 overflow-y-auto relative z-10 space-y-3">
