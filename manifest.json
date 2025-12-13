@@ -3,8 +3,8 @@
   "short_name": "WeYoung 2025",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#e8e2d6",
-  "theme_color": "#8b6037",
+  "background_color": "#1A1A1A",
+  "theme_color": "#404FC2",
   "icons": [
     {
       "src": "https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg",

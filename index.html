@@ -216,13 +216,15 @@
 
     <header class="header">
         <a href="#" class="logo">
-            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung Logo" style="width: 127px;">
+            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung Logo"
+                style="width: 127px;">
         </a>
         <div class="ml-auto flex items-center gap-4">
             <button id="notifyBtn" class="text-black hover:text-[#404FC2] transition-colors" title="Bật thông báo">
                 <i class="fas fa-bell-slash"></i>
             </button>
-            <span class="text-black text-xs font-bold uppercase hidden sm:block tracking-widest">WeYoung 2025 Vote Visualizer</span>
+            <span class="text-black text-xs font-bold uppercase hidden sm:block tracking-widest">WeYoung 2025 Vote
+                Visualizer</span>
         </div>
     </header>
 
@@ -234,7 +236,8 @@
 
         <div class="card mb-6 sm:mb-8 flex flex-col sm:flex-row gap-4">
             <div class="flex-1">
-                <label for="groupSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Nhóm hạng mục</label>
+                <label for="groupSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Nhóm hạng
+                    mục</label>
                 <div class="relative">
                     <select id="groupSelect"
                         class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg">
@@ -246,7 +249,8 @@
                 </div>
             </div>
             <div class="flex-1">
-                <label for="awardSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Giải thưởng</label>
+                <label for="awardSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Giải
+                    thưởng</label>
                 <div class="relative">
                     <select id="awardSelect" disabled
                         class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg">
@@ -264,7 +268,9 @@
             <div class="lg:col-span-5">
                 <div class="ranking-card p-4 sm:p-6 h-full flex flex-col">
                     <div class="text-center mb-4 sm:mb-6 relative z-10">
-                        <h2 id="rankingTitle" class="text-xl sm:text-2xl font-black uppercase tracking-wider mt-4 sm:mt-10 text-white">Bảng Xếp Hạng</h2>
+                        <h2 id="rankingTitle"
+                            class="text-xl sm:text-2xl font-black uppercase tracking-wider mt-4 sm:mt-10 text-white">
+                            Bảng Xếp Hạng</h2>
                         <p class="text-white/60 text-xs sm:text-sm mt-2 font-mono">Cập nhật mỗi 10 giây</p>
                     </div>
 
@@ -313,7 +319,8 @@
 
     <footer class="mt-10 py-10 bg-white border-t border-[#ccc]">
         <div class="container mx-auto px-4 text-center">
-            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung" class="h-12 mx-auto mb-6 grayscale opacity-80 hover:grayscale-0 transition-all">
+            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung"
+                class="h-12 mx-auto mb-6 grayscale opacity-80 hover:grayscale-0 transition-all">
             <p class="text-sm text-gray-500">© 2025 lzhoang2801. Dữ liệu được tổng hợp từ 2025-12-13 16:58:21.</p>
             <p class="text-sm font-bold text-black mt-2">#camonvidaden</p>
         </div>
@@ -370,7 +377,7 @@
                 if (this.notifyBtn) {
                     this.notifyBtn.addEventListener('click', () => this.toggleNotification());
                 }
-                
+
                 if (this.popupNotifyBtn) {
                     this.popupNotifyBtn.addEventListener('click', () => {
                         this.toggleNotification();
@@ -378,16 +385,16 @@
                 }
 
                 if ('serviceWorker' in navigator && 'PushManager' in window) {
-                     navigator.serviceWorker.getRegistration().then(reg => {
-                         if (reg) {
-                             reg.pushManager.getSubscription().then(sub => {
-                                 if (sub) {
-                                     this.notificationsEnabled = true;
-                                     this.updateNotifyButton();
-                                 }
-                             });
-                         }
-                     });
+                    navigator.serviceWorker.getRegistration().then(reg => {
+                        if (reg) {
+                            reg.pushManager.getSubscription().then(sub => {
+                                if (sub) {
+                                    this.notificationsEnabled = true;
+                                    this.updateNotifyButton();
+                                }
+                            });
+                        }
+                    });
                 }
 
                 this.modeBtns = document.querySelectorAll('[data-mode]');
@@ -404,7 +411,7 @@
                 });
 
                 this.voteChart = echarts.init(this.chartContainer);
-                
+
                 window.addEventListener('resize', () => {
                     this.voteChart.resize();
                     this.updateChart();
@@ -514,9 +521,9 @@
                 }
 
                 if (!('PushManager' in window)) {
-                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-                    
+                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
                     if (isIOS) {
                         alert('Trên thiết bị iOS, bạn cần:\n1. Nhấn nút "Chia sẻ" (Share)\n2. Chọn "Thêm vào Màn hình chính" (Add to Home Screen)\n3. Mở ứng dụng từ màn hình chính để bật thông báo.');
                     } else {
@@ -546,7 +553,7 @@
                         alert('Lỗi đăng ký: ' + e.message);
                     }
                 } else {
-                     alert('Bạn đã chặn thông báo.');
+                    alert('Bạn đã chặn thông báo.');
                 }
             }
 
@@ -561,9 +568,9 @@
                             body: JSON.stringify({ endpoint: subscription.endpoint }),
                             headers: { 'Content-Type': 'application/json' }
                         });
-                        
+
                         await subscription.unsubscribe();
-                        
+
                         this.notificationsEnabled = false;
                         this.updateNotifyButton();
                         alert('Đã huỷ nhận thông báo thành công.');
@@ -573,10 +580,10 @@
 
             async subscribeToPush() {
                 const baseUrl = this.apiUrl.replace('/get_votes', '');
-                
+
                 const keyRes = await fetch(`${baseUrl}/vapid_public_key`);
                 if (!keyRes.ok) throw new Error('Cannot fetch VAPID key');
-                
+
                 const keyData = await keyRes.json();
                 const publicVapidKey = keyData.publicKey;
 
@@ -652,7 +659,7 @@
                 try {
                     let url = this.apiUrl;
                     url += `?award_id=${encodeURIComponent(this.currentAwardId)}`;
-                    
+
                     if (this.rawData.timestamps.length > 0 && this.lastUpdateTime) {
                         url += `&last_updated=${encodeURIComponent(this.lastUpdateTime)}`;
                     } else {
@@ -772,19 +779,19 @@
             analyzeEvents() {
                 const timestamps = this.rawData.timestamps;
                 const nomineeIds = Object.keys(this.nomineeData);
-                
+
                 let startIndex = Math.max(1, this.lastProcessedEventIndex);
-                
+
                 for (let i = startIndex; i < timestamps.length; i++) {
                     const currentTime = timestamps[i];
-                    
+
                     const currentVotes = {};
                     const prevVotes = {};
                     let maxVoteCurrent = 0;
-                    
+
                     nomineeIds.forEach(id => {
                         currentVotes[id] = this.rawData.series[id][i];
-                        prevVotes[id] = this.rawData.series[id][i-1];
+                        prevVotes[id] = this.rawData.series[id][i - 1];
                         if (currentVotes[id] > maxVoteCurrent) maxVoteCurrent = currentVotes[id];
                     });
 
@@ -811,8 +818,8 @@
                         const currV = currentVotes[id];
                         const prevV = prevVotes[id];
                         if (Math.floor(currV / 1000) > Math.floor(prevV / 1000)) {
-                             const gap = id === currentRanking[0] ? 0 : maxVoteCurrent - currV;
-                             this.events.unshift({
+                            const gap = id === currentRanking[0] ? 0 : maxVoteCurrent - currV;
+                            this.events.unshift({
                                 type: 'milestone',
                                 timestamp: currentTime,
                                 nomineeId: id,
@@ -822,7 +829,7 @@
                         }
                     });
                 }
-                
+
                 this.lastProcessedEventIndex = timestamps.length;
                 if (this.events.length > 100) {
                     this.events = this.events.slice(0, 100);
@@ -837,7 +844,7 @@
                     this.events.forEach(e => {
                         const nominee = this.nomineeData[e.nomineeId];
                         const [datePart, timePart] = e.timestamp.split(' ');
-                        
+
                         let icon, isTop1 = false;
                         if (e.detail.includes('vị trí #1')) {
                             icon = '<i class="fas fa-crown text-yellow-500"></i>';
@@ -845,7 +852,7 @@
                         } else {
                             icon = e.type === 'rank_change' ? '<i class="fas fa-arrow-up text-green-600"></i>' : '<i class="fas fa-flag text-red-600"></i>';
                         }
-                        
+
                         const itemBg = isTop1 ? 'background: rgba(255, 215, 0, 0.1);' : '';
 
                         html += `
@@ -963,16 +970,16 @@
                         data = deltaData;
                     } else if (this.chartMode === 'gap') {
                         const gapData = new Array(data.length);
-                        
+
                         for (let i = 0; i < data.length; i++) {
                             let maxVoteAtTime = 0;
                             nomineeIds.forEach(nId => {
                                 const val = displaySeries[nId][i] || 0;
                                 if (val > maxVoteAtTime) maxVoteAtTime = val;
                             });
-                            
+
                             const currentVote = data[i] || 0;
-                            gapData[i] = currentVote - maxVoteAtTime; 
+                            gapData[i] = currentVote - maxVoteAtTime;
                         }
                         data = gapData;
                     }
@@ -1008,8 +1015,8 @@
                     tooltip: {
                         trigger: 'axis',
                         backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                        borderColor: '#d3ad49',
-                        textStyle: { color: '#392109' },
+                        borderColor: '#404FC2',
+                        textStyle: { color: '#1A1A1A' },
                         order: 'valueDesc'
                     },
                     legend: {
@@ -1018,7 +1025,7 @@
                         icon: 'circle',
                         itemGap: 15,
                         textStyle: {
-                            color: '#392109',
+                            color: '#1A1A1A',
                             fontSize: isMobile ? 10 : 12
                         },
                         type: 'scroll'
@@ -1037,8 +1044,8 @@
                             bottom: 65,
                             style: {
                                 text: '#GaiCon kéo thanh dưới để xem thời gian cụ thể nhé',
-                                fill: 'rgba(91, 54, 18, 1)',
-                                fontSize: 12 ,
+                                fill: '#1A1A1A',
+                                fontSize: 12,
                                 fontFamily: 'SVN-Apparat'
                             }
                         }
@@ -1053,30 +1060,30 @@
                             left: '8%',
                             right: '8%',
                             handleSize: '110%',
-                            borderColor: 'rgba(91, 54, 18, 0.15)',
-                            backgroundColor: 'rgba(249, 248, 244, 1)',
-                            fillerColor: 'rgba(211, 173, 73, 0.15)',
+                            borderColor: 'rgba(0, 0, 0, 0.15)',
+                            backgroundColor: 'rgba(255, 255, 255, 1)',
+                            fillerColor: 'rgba(199, 244, 66, 0.25)',
                             borderRadius: 14,
                             showDataShadow: false,
                             handleIcon: 'path://M512 512m-208 0a208 208 0 1 0 416 0 208 208 0 1 0-416 0Z M512 192C335.264 192 192 335.264 192 512c0 176.736 143.264 320 320 320s320-143.264 320-320C832 335.264 688.736 192 512 192z M512 800c-159.072 0-288-128.928-288-288 0-159.072 128.928-288 288-288s288 128.928 288 288C800 671.072 671.072 800 512 800z',
                             handleStyle: {
                                 color: '#fff',
-                                borderColor: '#d3ad49',
+                                borderColor: '#404FC2',
                                 borderWidth: 2,
                                 shadowBlur: 3,
                                 shadowColor: 'rgba(0, 0, 0, 0.15)',
                                 shadowOffsetX: 1,
                                 shadowOffsetY: 1
                             },
-                            textStyle: { color: '#5b3612', fontSize: 11 },
+                            textStyle: { color: '#1A1A1A', fontSize: 11 },
                             brushSelect: false,
                             dataBackground: {
-                                lineStyle: { color: '#d3ad49', width: 1, opacity: 0.4 },
-                                areaStyle: { color: '#d3ad49', opacity: 0.1 }
+                                lineStyle: { color: '#404FC2', width: 1, opacity: 0.4 },
+                                areaStyle: { color: '#404FC2', opacity: 0.1 }
                             },
                             selectedDataBackground: {
-                                lineStyle: { color: '#5b3612', width: 1.5 },
-                                areaStyle: { color: '#5b3612', opacity: 0.1 }
+                                lineStyle: { color: '#1A1A1A', width: 1.5 },
+                                areaStyle: { color: '#1A1A1A', opacity: 0.1 }
                             }
                         },
                         {
@@ -1091,9 +1098,9 @@
                         type: 'category',
                         boundaryGap: false,
                         data: displayTimes,
-                        axisLine: { lineStyle: { color: '#5b3612' } },
+                        axisLine: { lineStyle: { color: '#1A1A1A' } },
                         axisLabel: {
-                            color: '#5b3612',
+                            color: '#1A1A1A',
                             fontSize: isMobile ? 10 : 12,
                             rotate: isMobile ? 45 : 0
                         }
@@ -1103,10 +1110,10 @@
                         axisLine: { show: false },
                         axisTick: { show: false },
                         splitLine: {
-                            lineStyle: { color: 'rgba(91, 54, 18, 0.1)' }
+                            lineStyle: { color: 'rgba(0, 0, 0, 0.1)' }
                         },
                         axisLabel: {
-                            color: '#5b3612',
+                            color: '#1A1A1A',
                             fontSize: isMobile ? 10 : 12
                         }
                     },
