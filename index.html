@@ -796,6 +796,45 @@
                 });
             }
 
+            getMilestoneStep(voteCount) {
+                if (voteCount <= 10000) {
+                    return 1000;
+                } else if (voteCount <= 50000) {
+                    return 5000;
+                } else if (voteCount <= 200000) {
+                    return 10000;
+                } else if (voteCount <= 1000000) {
+                    return 50000;
+                } else {
+                    return 100000;
+                }
+            }
+
+            checkMilestoneCrossed(oldVote, newVote) {
+                if (oldVote >= newVote) return null;
+
+                const step = this.getMilestoneStep(newVote);
+
+                const oldMilestone = Math.floor(oldVote / step) * step;
+                const newMilestone = Math.floor(newVote / step) * step;
+
+                if (newMilestone > oldMilestone) {
+                    return newMilestone;
+                }
+
+                return null;
+            }
+
+            formatMilestone(milestone) {
+                if (milestone >= 1000000) {
+                    return (milestone / 1000000).toFixed(1) + 'M';
+                } else if (milestone >= 1000) {
+                    return (milestone / 1000) + 'K';
+                } else {
+                    return milestone.toString();
+                }
+            }
+
             analyzeEvents() {
                 const timestamps = this.rawData.timestamps;
                 const nomineeIds = Object.keys(this.nomineeData);
@@ -837,13 +876,14 @@
                     nomineeIds.forEach(id => {
                         const currV = currentVotes[id];
                         const prevV = prevVotes[id];
-                        if (Math.floor(currV / 1000) > Math.floor(prevV / 1000)) {
+                        const milestone = this.checkMilestoneCrossed(prevV, currV);
+                        if (milestone !== null) {
                             const gap = id === currentRanking[0] ? 0 : maxVoteCurrent - currV;
                             this.events.unshift({
                                 type: 'milestone',
                                 timestamp: currentTime,
                                 nomineeId: id,
-                                detail: `Cán mốc ${Math.floor(currV / 1000)}K vote`,
+                                detail: `Cán mốc ${this.formatMilestone(milestone)} vote`,
                                 gap: gap
                             });
                         }
