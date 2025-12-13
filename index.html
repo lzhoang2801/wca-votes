@@ -43,12 +43,14 @@
         }
 
         :root {
-            --bg-color: #EBEBEB;
-            --text-color: #1A1A1A;
-            --card-bg: #FFFFFF;
+            --bg-color: #0F0F0F;
+            --text-color: #FFFFFF;
+            --text-muted: #999999;
+            --card-bg: #1A1A1A;
             --accent-neon: #C7F442;
             --accent-blue: #404FC2;
-            --border-color: #D1D1D1;
+            --border-color: #333333;
+            --hover-bg: #222222;
         }
 
         body {
@@ -66,14 +68,13 @@
         h4,
         h5 {
             font-family: 'Suisse Intl', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            color: var(--text-color);
         }
 
         h1 {
-            font-family: 'Suisse Intl', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: -0.02em;
         }
 
         .header {
@@ -82,15 +83,21 @@
             padding: 0 40px;
             display: flex;
             align-items: center;
-            background: #fff;
+            background: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 56px;
             line-height: 1.1;
             margin-bottom: 30px;
             color: var(--text-color);
+            font-weight: 900;
+            letter-spacing: -0.03em;
         }
 
         .card {
@@ -98,7 +105,7 @@
             border-radius: 20px;
             padding: 24px;
             border: 1px solid var(--border-color);
-            box-shadow: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .ranking-card {
@@ -107,52 +114,51 @@
             border-radius: 20px;
             position: relative;
             overflow: hidden;
-            border: 1px solid #333;
-        }
-
-        .ranking-card::before {
-            display: none;
+            border: 1px solid var(--border-color);
         }
 
         .ranking-item {
-            background: #1A1A1A;
+            background: #111;
             border-radius: 12px;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
             padding: 12px 16px;
-            transition: transform 0.2s, background 0.2s;
-            border: 1px solid #333;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #222;
         }
 
         .ranking-item:hover {
             transform: translateY(-2px);
             border-color: var(--accent-neon);
+            box-shadow: 0 0 15px rgba(199, 244, 66, 0.1);
         }
 
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
 
         ::-webkit-scrollbar-track {
-            background: transparent;
+            background: #111;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #ccc;
+            background: #444;
             border-radius: 3px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #999;
+            background: var(--accent-neon);
         }
 
         .mode-switcher {
             display: flex;
-            background: #F2F2F2;
+            background: #252525;
             border-radius: 8px;
             padding: 4px;
+            border: 1px solid var(--border-color);
         }
 
         .mode-btn {
@@ -160,7 +166,7 @@
             border-radius: 6px;
             font-size: 13px;
             font-weight: 600;
-            color: #666;
+            color: #888;
             background: transparent;
             border: none;
             cursor: pointer;
@@ -169,45 +175,53 @@
         }
 
         .mode-btn:hover {
-            color: #000;
+            color: #fff;
         }
 
         .mode-btn.active {
-            background: #fff;
+            background: var(--accent-neon);
             color: #000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .event-item {
             padding: 16px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #222;
             display: flex;
             align-items: flex-start;
             gap: 16px;
             transition: background 0.2s;
         }
 
-        .event-item:hover {
-            background: transparent;
+        .event-item:last-child {
+            border-bottom: none;
         }
 
         .event-time {
             font-family: 'Suisse Intl Mono', monospace;
-            color: #999;
+            color: var(--accent-neon);
             font-weight: 500;
             font-size: 12px;
             min-width: 80px;
             text-align: right;
         }
 
-        .event-detail {
-            flex: 1;
-        }
-
         .event-desc {
-            color: #000;
+            color: #ccc;
             font-size: 14px;
             line-height: 1.5;
+        }
+
+        /* Select and Inputs Override */
+        select.premium-select {
+            background-color: #252525 !important;
+            color: white !important;
+            border-color: #333 !important;
+        }
+
+        select.premium-select:focus {
+            border-color: var(--accent-neon) !important;
+            outline: 2px solid var(--accent-neon) !important;
         }
     </style>
 </head>
@@ -217,13 +231,13 @@
     <header class="header">
         <a href="#" class="logo">
             <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung Logo"
-                style="width: 127px;">
+                style="width: 127px; filter: brightness(0) invert(1);">
         </a>
         <div class="ml-auto flex items-center gap-4">
-            <button id="notifyBtn" class="text-black hover:text-[#404FC2] transition-colors" title="Bật thông báo">
+            <button id="notifyBtn" class="text-white hover:text-[#C7F442] transition-colors" title="Bật thông báo">
                 <i class="fas fa-bell-slash"></i>
             </button>
-            <span class="text-black text-xs font-bold uppercase hidden sm:block tracking-widest">WeYoung 2025 Vote
+            <span class="text-white text-xs font-bold uppercase hidden sm:block tracking-widest">WeYoung 2025 Vote
                 Visualizer</span>
         </div>
     </header>
@@ -231,16 +245,21 @@
     <main class="container mx-auto px-4 pb-12 pt-8">
 
         <div class="text-center mb-6 sm:mb-10">
-            <h1 class="hero-title mb-4 px-2">Theo dõi trực quan diễn biến bình chọn WeYoung 2025.</h1>
+            <h1 class="hero-title mb-4 px-2">
+                Theo dõi trực quan diễn biến bình chọn
+                <br class="sm:hidden">
+                <span class="text-[#C7F442] inline-block mt-2 sm:mt-0"
+                    style="text-shadow: 0 0 20px rgba(199, 244, 66, 0.4);">WeYoung 2025</span>.
+            </h1>
         </div>
 
         <div class="card mb-6 sm:mb-8 flex flex-col sm:flex-row gap-4">
             <div class="flex-1">
-                <label for="groupSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Nhóm hạng
+                <label for="groupSelect" class="block text-xs font-bold uppercase text-[#999] mb-1">Nhóm hạng
                     mục</label>
                 <div class="relative">
                     <select id="groupSelect"
-                        class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg">
+                        class="premium-select block w-full px-4 py-3 pr-8 focus:outline-none sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg border border-[#333]">
                         <option value="" disabled selected>Chọn nhóm...</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
@@ -249,11 +268,11 @@
                 </div>
             </div>
             <div class="flex-1">
-                <label for="awardSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Giải
+                <label for="awardSelect" class="block text-xs font-bold uppercase text-[#999] mb-1">Giải
                     thưởng</label>
                 <div class="relative">
                     <select id="awardSelect" disabled
-                        class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg">
+                        class="premium-select block w-full px-4 py-3 pr-8 focus:outline-none sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg border border-[#333]">
                         <option value="" disabled selected>Chọn giải thưởng...</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
@@ -282,9 +301,9 @@
 
             <div class="lg:col-span-7">
                 <div class="card flex flex-col h-[625px]">
-                    <div class="flex justify-between items-center mb-4 border-b border-[#eee] pb-3">
-                        <h3 class="text-lg sm:text-xl font-bold uppercase flex items-center">
-                            <i class="fas fa-bolt mr-2 text-[#404FC2]"></i>Dòng sự kiện nổi bật
+                    <div class="flex justify-between items-center mb-4 border-b border-[#333] pb-3">
+                        <h3 class="text-lg sm:text-xl font-bold uppercase flex items-center text-white">
+                            <i class="fas fa-bolt mr-2 text-[#C7F442]"></i>Dòng sự kiện nổi bật
                         </h3>
                     </div>
                     <div id="eventVisualizerWrapper" class="flex-1 relative w-full h-full overflow-hidden">
@@ -297,9 +316,9 @@
 
         <div class="card h-full flex flex-col min-h-[500px] mb-8">
             <div
-                class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 sm:mb-6 border-b border-[#eee] pb-3 sm:pb-4">
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 sm:mb-6 border-b border-[#333] pb-3 sm:pb-4">
                 <div class="flex flex-wrap items-center gap-3">
-                    <h3 class="text-lg sm:text-xl font-bold uppercase">Biểu đồ diễn biến</h3>
+                    <h3 class="text-lg sm:text-xl font-bold uppercase text-white">Biểu đồ diễn biến</h3>
                     <div class="flex items-center gap-2 flex-wrap">
                         <div class="mode-switcher">
                             <button class="mode-btn" data-mode="total">Tổng vote</button>
@@ -308,7 +327,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-xs sm:text-sm text-gray-500 font-mono">
+                <div class="text-xs sm:text-sm text-[#999] font-mono">
                     <span id="lastUpdate"></span>
                 </div>
             </div>
@@ -317,12 +336,13 @@
         </div>
     </main>
 
-    <footer class="mt-10 py-10 bg-white border-t border-[#ccc]">
+    <footer class="mt-10 py-10 bg-[#111] border-t border-[#333]">
         <div class="container mx-auto px-4 text-center">
             <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung"
-                class="h-12 mx-auto mb-6 grayscale opacity-80 hover:grayscale-0 transition-all">
+                class="h-12 mx-auto mb-6 grayscale opacity-80 hover:grayscale-0 transition-all"
+                style="filter: brightness(0) invert(1);">
             <p class="text-sm text-gray-500">© 2025 lzhoang2801. Dữ liệu được tổng hợp từ 2025-12-13 16:58:21.</p>
-            <p class="text-sm font-bold text-black mt-2">#camonvidaden</p>
+            <p class="text-sm font-bold text-white mt-2">#camonvidaden</p>
         </div>
     </footer>
 
@@ -902,16 +922,16 @@
 
                 rankingData.forEach((item, index) => {
                     const isTop1 = index === 0;
-                    const diffText = isTop1 ? `<span class="text-yellow-300 font-bold"><i class="fas fa-crown"></i> Dẫn đầu</span>` :
+                    const diffText = isTop1 ? `<span class="text-[#C7F442] font-bold"><i class="fas fa-crown"></i> Dẫn đầu</span>` :
                         item.voteDifference > 0 ? `<span class="text-sm text-green-300 font-bold">+${item.voteDifference.toLocaleString()}</span>` :
                             item.voteDifference < 0 ? `<span class="text-sm text-red-500 font-bold">-${item.voteDifference.toLocaleString()}</span>` :
                                 ``;
 
                     const div = document.createElement('div');
-                    div.className = `ranking-item ${isTop1 ? 'bg-[#5b3612]/80 border border-[#d3ad49]' : ''}`;
+                    div.className = `ranking-item ${isTop1 ? 'bg-[rgba(199,244,66,0.1)] border border-[#C7F442]' : ''}`;
                     div.innerHTML = `
-                        <div class="w-6 sm:w-8 text-center font-bold text-base sm:text-lg text-[#d3ad49]">${index + 1}</div>
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#d3ad49]/50 mx-2 sm:mx-3 shrink-0">
+                        <div class="w-6 sm:w-8 text-center font-bold text-base sm:text-lg text-[#C7F442]">${index + 1}</div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 ${isTop1 ? 'border-[#C7F442]' : 'border-[#d3ad49]/50'} mx-2 sm:mx-3 shrink-0">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 min-w-0">
@@ -922,7 +942,7 @@
                         </div>
                         <div class="text-right pl-2 shrink-0">
                             <div class="font-bold text-lg sm:text-xl text-white">${item.votes.toLocaleString()}</div>
-                            <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#d3ad49]">Lượt bình chọn</div>
+                            <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#C7F442]">Lượt bình chọn</div>
                         </div>
                     `;
                     this.rankingList.appendChild(div);
@@ -1025,7 +1045,7 @@
                         icon: 'circle',
                         itemGap: 15,
                         textStyle: {
-                            color: '#1A1A1A',
+                            color: '#FFFFFF',
                             fontSize: isMobile ? 10 : 12
                         },
                         type: 'scroll'
@@ -1044,7 +1064,7 @@
                             bottom: 65,
                             style: {
                                 text: '#GaiCon kéo thanh dưới để xem thời gian cụ thể nhé',
-                                fill: '#1A1A1A',
+                                fill: 'rgba(255, 255, 255, 0.5)',
                                 fontSize: 12,
                                 fontFamily: 'SVN-Apparat'
                             }
@@ -1060,8 +1080,8 @@
                             left: '8%',
                             right: '8%',
                             handleSize: '110%',
-                            borderColor: 'rgba(0, 0, 0, 0.15)',
-                            backgroundColor: 'rgba(255, 255, 255, 1)',
+                            borderColor: 'rgba(255, 255, 255, 0.15)',
+                            backgroundColor: 'rgba(30, 30, 30, 1)',
                             fillerColor: 'rgba(199, 244, 66, 0.25)',
                             borderRadius: 14,
                             showDataShadow: false,
@@ -1071,19 +1091,19 @@
                                 borderColor: '#404FC2',
                                 borderWidth: 2,
                                 shadowBlur: 3,
-                                shadowColor: 'rgba(0, 0, 0, 0.15)',
+                                shadowColor: 'rgba(0, 0, 0, 0.4)',
                                 shadowOffsetX: 1,
                                 shadowOffsetY: 1
                             },
-                            textStyle: { color: '#1A1A1A', fontSize: 11 },
+                            textStyle: { color: '#FFFFFF', fontSize: 11 },
                             brushSelect: false,
                             dataBackground: {
                                 lineStyle: { color: '#404FC2', width: 1, opacity: 0.4 },
                                 areaStyle: { color: '#404FC2', opacity: 0.1 }
                             },
                             selectedDataBackground: {
-                                lineStyle: { color: '#1A1A1A', width: 1.5 },
-                                areaStyle: { color: '#1A1A1A', opacity: 0.1 }
+                                lineStyle: { color: '#FFFFFF', width: 1.5 },
+                                areaStyle: { color: '#FFFFFF', opacity: 0.1 }
                             }
                         },
                         {
@@ -1098,9 +1118,9 @@
                         type: 'category',
                         boundaryGap: false,
                         data: displayTimes,
-                        axisLine: { lineStyle: { color: '#1A1A1A' } },
+                        axisLine: { lineStyle: { color: '#666' } },
                         axisLabel: {
-                            color: '#1A1A1A',
+                            color: '#BBB',
                             fontSize: isMobile ? 10 : 12,
                             rotate: isMobile ? 45 : 0
                         }
@@ -1110,10 +1130,10 @@
                         axisLine: { show: false },
                         axisTick: { show: false },
                         splitLine: {
-                            lineStyle: { color: 'rgba(0, 0, 0, 0.1)' }
+                            lineStyle: { color: 'rgba(255, 255, 255, 0.1)' }
                         },
                         axisLabel: {
-                            color: '#1A1A1A',
+                            color: '#666',
                             fontSize: isMobile ? 10 : 12
                         }
                     },
@@ -1131,7 +1151,7 @@
 
     <div id="promoPopup"
         class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="relative bg-white w-[95%] max-w-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transform scale-95 transition-transform duration-300 translate-y-4"
+        <div class="relative bg-[#1A1A1A] w-[95%] max-w-[400px] rounded-2xl overflow-hidden shadow-2xl border border-[#333] transform scale-95 transition-transform duration-300 translate-y-4"
             id="popupContent">
 
             <button id="closePopup"
@@ -1148,11 +1168,11 @@
 
                 <div class="p-6 text-center space-y-4">
                     <h3
-                        class="text-xl sm:text-2xl font-black text-black uppercase leading-tight font-['Suisse_Intl'] tracking-tight">
+                        class="text-xl sm:text-2xl font-black text-white uppercase leading-tight font-['Suisse_Intl'] tracking-tight">
                         Top 1 đã đến tay cho kim chủ Tech cùng ATVNCG
                     </h3>
 
-                    <p class="text-sm leading-relaxed text-gray-700">
+                    <p class="text-sm leading-relaxed text-gray-300">
                         Gai con hãy tiếp tục vote tại <span class="font-bold text-[#404FC2]">FChoice</span> ở hai hạng
                         mục
                         <br>
@@ -1168,11 +1188,11 @@
 
                     <div class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
                         <a href="https://fchoice.vn" target="_blank"
-                            class="inline-block bg-black hover:bg-[#C7F442] text-white hover:text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider text-center w-full sm:w-auto border border-black">
+                            class="inline-block bg-[#C7F442] hover:bg-white text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider text-center w-full sm:w-auto border border-[#C7F442]">
                             Vote Ngay
                         </a>
                         <button id="popupNotifyBtn"
-                            class="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider w-full sm:w-auto border border-black">
+                            class="inline-flex items-center justify-center bg-transparent hover:bg-[#333] text-white font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider w-full sm:w-auto border border-[#555]">
                             <i class="fas fa-bell mr-2"></i> Bật thông báo
                         </button>
                     </div>
