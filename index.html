@@ -1,544 +1,1222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WCA 2024 Vote Count</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>WeYoung 2025 Vote Visualizer - lzhoang2801</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        @font-face {
+            font-family: 'Suisse Intl';
+            src: url("https://event.mediacdn.vn/web_fonts/iCielSuisseIntl-Regular.otf") format("opentype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Suisse Intl';
+            src: url("https://event.mediacdn.vn/web_fonts/iCielSuisseIntl-Medium.otf") format("opentype");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Suisse Intl';
+            src: url("https://event.mediacdn.vn/web_fonts/iCielSuisseIntl-Bold.otf") format("opentype");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Suisse Intl';
+            src: url("https://event.mediacdn.vn/web_fonts/iCielSuisseIntl-Black.otf") format("opentype");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-color: #EBEBEB;
+            --text-color: #1A1A1A;
+            --card-bg: #FFFFFF;
+            --accent-neon: #C7F442;
+            --accent-blue: #404FC2;
+            --border-color: #D1D1D1;
+        }
+
+        body {
+            font-family: 'Suisse Intl', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Suisse Intl', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-family: 'Suisse Intl', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .header {
+            width: 100%;
+            height: 80px;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: none;
+        }
+
+        .ranking-card {
+            background: #000;
+            color: white;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .ranking-card::before {
+            display: none;
+        }
+
+        .ranking-item {
+            background: #1A1A1A;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            transition: transform 0.2s, background 0.2s;
+            border: 1px solid #333;
+        }
+
+        .ranking-item:hover {
+            transform: translateX(4px);
+            background: #252525;
+            border-color: var(--accent-neon);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+
+        .mode-switcher {
+            display: flex;
+            background: #F2F2F2;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .mode-btn {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Suisse Intl', sans-serif;
+        }
+
+        .mode-btn:hover {
+            color: #000;
+        }
+
+        .mode-btn.active {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .event-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: background 0.2s;
+        }
+
+        .event-item:hover {
+            background: transparent;
+        }
+
+        .event-time {
+            font-family: 'Suisse Intl Mono', monospace;
+            color: #999;
+            font-weight: 500;
+            font-size: 12px;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .event-detail {
+            flex: 1;
+        }
+
+        .event-desc {
+            color: #000;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
-<body class="text-black font-sans">
-    <header class="bg-red-600 text-white p-4 md:p-5 flex justify-between items-center">
-        <div class="logo flex items-center">
-            <img src="https://event.mediacdn.vn/web_images/wca_2024/wca24-logo-minimal-red.svg" alt="WeChoice Logo" class="h-8 md:h-12">
-            <h1 class="ml-2 md:ml-4 text-lg md:text-xl font-bold">WeChoice Awards 2024 Vote Count</h1>
-        </div>
-        <div class="links">
-            <button id="homeButton" class="bg-black text-white py-1 px-2 md:py-2 md:px-4 rounded-full hover:bg-gray-800 transition text-sm md:text-base">Đi đến WeChoice</button>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung Logo" style="width: 127px;">
+        </a>
+        <div class="ml-auto flex items-center gap-4">
+            <button id="notifyBtn" class="text-black hover:text-[#404FC2] transition-colors" title="Bật thông báo">
+                <i class="fas fa-bell-slash"></i>
+            </button>
+            <span class="text-black text-xs font-bold uppercase hidden sm:block tracking-widest">WeYoung 2025 Vote Visualizer</span>
         </div>
     </header>
 
-    <main class="p-4 md:p-5">
-        <div class="hero-banner bg-gray-100 relative h-96 overflow-hidden rounded-lg shadow-lg mb-5 flex flex-col md:flex-row border-l-8 border-red-600">
-            <div class="w-full md:w-1/2 p-2 flex flex-col items-center justify-center text-black text-center md:h-full space-y-4">
-                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                    <span class="block xl:inline">Bình chọn ngay cho</span>
-                    <span class="block text-red-600 xl:inline">Anh Trai Vượt Ngàn Chông Gai.</span>
-                </h1>
-                <div id="quote" class="text-lg md:text-xl max-w-2xl">Tới bến tới bờ, đỉnh nóc, kịch trần, bay phấp phới</div>
-            </div>
+    <main class="container mx-auto px-4 pb-12 pt-8">
 
-            <div class="w-full md:w-1/2 p-2 relative md:h-full overflow-hidden rounded">
-                <div id="slideshow" class="relative w-full h-48 md:h-full flex items-center justify-center"></div>
+        <div class="text-center mb-6 sm:mb-10">
+            <h1 class="hero-title mb-4 px-2">Theo dõi trực quan diễn biến bình chọn WeYoung 2025.</h1>
+        </div>
+
+        <div class="card mb-6 sm:mb-8 flex flex-col sm:flex-row gap-4">
+            <div class="flex-1 relative">
+                <label for="groupSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Nhóm hạng mục</label>
+                <select id="groupSelect"
+                    class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] rounded-lg">
+                    <option value="" disabled selected>Chọn nhóm...</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <label for="awardSelect" class="block text-xs font-bold uppercase text-gray-500 mb-1">Giải thưởng</label>
+                <select id="awardSelect" disabled
+                    class="block w-full bg-[#f2f2f2] text-black border border-[#ddd] px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#404FC2] focus:border-[#404FC2] sm:text-sm font-bold uppercase tracking-wider appearance-none h-[50px] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg">
+                    <option value="" disabled selected>Chọn giải thưởng...</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </div>
 
-        <div class="controls bg-gray-100 p-4 md:p-5 rounded-lg mb-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
-                <div class="flex flex-grow">
-                    <label for="award" class="block mb-2">Hạng mục:</label>
-                    <select id="awardSelect" class="w-full p-2 border rounded"></select>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-8">
+
+            <div class="lg:col-span-5">
+                <div class="ranking-card p-4 sm:p-6 h-full flex flex-col">
+                    <div class="text-center mb-4 sm:mb-6 relative z-10">
+                        <h2 id="rankingTitle" class="text-xl sm:text-2xl font-black uppercase tracking-wider mt-4 sm:mt-10 text-white">Bảng Xếp Hạng</h2>
+                        <p class="text-white/60 text-xs sm:text-sm mt-2 font-mono">Real-time Update</p>
+                    </div>
+
+                    <div id="rankingList" class="flex-1 overflow-y-auto relative z-10 space-y-3">
+                        <div class="text-center text-white/60 py-10">Đang tải dữ liệu...</div>
+                    </div>
                 </div>
-                <div class="flex flex-grow">
-                    <label for="startDate" class="block mb-2">Thời gian bắt đầu:</label>
-                    <input type="date" id="startDate" class="w-full p-2 border rounded">
-                </div>
-                <div class="flex flex-grow">
-                    <label for="endDate" class="block mb-2">Thời gian kết thúc:</label>
-                    <input type="date" id="endDate" class="w-full p-2 border rounded">
-                </div>
-                <div class="flex flex-grow">
-                    <label for="timeRange" class="block mb-2">Khoảng thời gian:</label>
-                    <select id="timeRange" class="w-full p-2 border rounded">
-                        <option value="15m">15 Phút</option>
-                        <option value="30m">30 Phút</option>
-                        <option value="1h">1 Giờ</option>
-                        <option value="all">Tất cả</option>
-                    </select>
-                </div>
-                <button id="modeToggle" class="w-full bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 transition mb-2">Xem tổng số vote</button>
-                <button id="nomineeToggle" class="w-full bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700 transition mb-2">Xem tất cả các đề cử</button>
             </div>
+
+            <div class="lg:col-span-7">
+                <div class="card flex flex-col h-[625px]">
+                    <div class="flex justify-between items-center mb-4 border-b border-[#eee] pb-3">
+                        <h3 class="text-lg sm:text-xl font-bold uppercase flex items-center">
+                            <i class="fas fa-bolt mr-2 text-[#404FC2]"></i>Dòng sự kiện nổi bật
+                        </h3>
+                    </div>
+                    <div id="eventVisualizerWrapper" class="flex-1 relative w-full h-full overflow-hidden">
+                        <div id="eventLogContainer" class="w-full h-full overflow-y-auto pr-1 custom-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="flex flex-col md:flex-row">
-            <div class="ranking bg-gray-100 p-4 rounded-lg shadow-md md:w-1/5 md:mr-4 overflow-y-auto mb-4 md:mb-0">
-                <h2 class="text-lg font-semibold mb-2 flex items-center justify-center">Bảng xếp hạng</h2>
-                <div class="shadow-md border-2 border-red-500 animate-pulse"></div> <span id="lastUpdateTime" class="text-base font-bold text-red-600 block animate-pulse pb-3 flex items-center justify-center"></span>
-                <ul id="rankingList"></ul>
+        <div class="card h-full flex flex-col min-h-[500px] mb-8">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 sm:mb-6 border-b border-[#eee] pb-3 sm:pb-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <h3 class="text-lg sm:text-xl font-bold uppercase">Biểu đồ diễn biến</h3>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <div class="mode-switcher">
+                            <button class="mode-btn" data-mode="total">Tổng vote</button>
+                            <button class="mode-btn" data-mode="delta">Tăng thêm</button>
+                            <button class="mode-btn active" data-mode="gap">Khoảng cách</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-xs sm:text-sm text-gray-500 font-mono">
+                    <span id="lastUpdate"></span>
+                </div>
             </div>
 
-            <div class="chart bg-gray-100 p-4 rounded-lg shadow-md md:w-4/5" id="chartContainer">
-                <div id="voteChart" class="w-full h-full" style="min-height: 500px;"></div>
-            </div>
+            <div id="chartContainer" class="flex-1 w-full min-h-[500px]"></div>
         </div>
     </main>
 
-    <footer class="flex justify-between items-center p-4 bg-black text-white">
-        <div class="text-left">
-            <p>Được tạo bởi @lzhoang2801. Dữ liệu được tổng hợp từ 02/01/2025 16:39:45</p>
-        </div>
-        <div class="flex space-x-4">
-            <a href="https://facebook.com/lzhoang2601" target="_blank" class="hover:text-gray-400 transition">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://github.com/lzhoang2801" target="_blank" class="hover:text-gray-400 transition">
-                <i class="fab fa-github"></i>
-            </a>
+    <footer class="mt-10 py-10 bg-white border-t border-[#ccc]">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg" alt="WeYoung" class="h-12 mx-auto mb-6 grayscale opacity-80 hover:grayscale-0 transition-all">
+            <p class="text-sm text-gray-500">© 2025 lzhoang2801. Dữ liệu được tổng hợp từ 2025-12-13 16:58:21.</p>
+            <p class="text-sm font-bold text-black mt-2">#camonvidaden</p>
         </div>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+
     <script>
-        class Slideshow {
-            constructor(imageUrls) {
-                this.imageUrls = [
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464821995_122214405482199321_5035287954159534438_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGe2RohA4cRPheEYqeI6QBNfYYKIkpoAR19hgoiSmgBHbVne42OwLYfeSDy6Xdz0qkrmBrC8DZ28TPjW28mZR_a&_nc_ohc=4VxZ-FqEBHQQ7kNvgHCyV-Z&_nc_oc=AdhOKJTYzig0Jl1ERcQDTX5HutiK-pzIluDMLMvahH8AWRooLgSm7B1CS9phx8IhbCc&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=Agbgy6aYCWHrqKCJ5t5zl6K&oh=00_AYCt9CuoO95hKTP8CAyCbdRLMKpF96BBcY-57-vkUhNrWw&oe=6785955A",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464789816_122214405584199321_4080653294266465185_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGGa7kARpExxtgx061IX1BMQAIt0RMrS0xAAi3REytLTNDSRPX1dutlEjEsjEHhgST_1tnOq3Z3Z0LECknq6WRl&_nc_ohc=TsQbxLjUxRYQ7kNvgEO5bZr&_nc_oc=AdgKJ2Se0o8F6XFm-DFm1c9Q6Jneu5Wr9UZUj5fkmWZfqbbXg1vQXeW5NUZeezEUjiw&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AuqK5lvwrY0TQeXoMY1qnQf&oh=00_AYBsMuUJFW4zLLptPH2GapLrmMZ3ucmTuWUrznKdbmVTow&oe=678590B0",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464847471_122214465578199321_7499922520750855071_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHgmVqpRoxJRW6B-xB4aMa0yiB59hH_X1zKIHn2Ef9fXPaPvA0MzvNlZle9iF3GNy46kbwCGcknQXvoheBr_0x7&_nc_ohc=Iv7Gx-DTfx4Q7kNvgGnuBfA&_nc_oc=AdjUfkRKUXaYhgi3wPmeqMxuyqnsrizVTglQN6k3GKRYUHXD1d3je5dlbjiHIOrq5HI&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=ANbPDAMU7jpxKLYAOu2yi3S&oh=00_AYBMBWS9fR_Rp50o3FsPZmdg-pOKGIFYaQm2v3S3s4Xtfw&oe=67856993",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464872682_122214562886199321_3053422423876608456_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHCXiZxmh75ctif1jNkLG3l4ZCBcnT5s8ThkIFydPmzxKlMKyCKmiF5Uk4J-cKqw7enZUYzKkytTMo2vX04juGl&_nc_ohc=THEuVYdTE5UQ7kNvgGGN4TI&_nc_oc=Adi0Lz86C_5Npf1h98TGhjZ5SzDYv4vlt3M6b8QCSUYX-sSDIpzIZ-wL8SKWoR3HRqU&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AOw5ZNzd1VwGsoYNaNRt-Tf&oh=00_AYDnNEXJBwSX2dgKA9C_wB4ON2sZpywBtvPuSQWHSOWcIw&oe=678577CB",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464745694_122214761810199321_8872447672651494276_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHADWMXQzcxYGK3dAmWZJxAL0H6G-3-u3cvQfob7f67dwZfXcj-76KbeYukS9I2zZ3Nc6NIX8h1lwvxDftjTTY7&_nc_ohc=1eHJ2VJrb3oQ7kNvgFaTYcQ&_nc_oc=AdgvuSV3ULyE9fYTB-RrOrFRRrFpwu9f1mImXhKGICnz7oNEL5VSqbIDU6YLdaChtIo&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AEzSv0Pp3h7H-nvH8nKmDas&oh=00_AYAnJQJandHxN0T3J4DDfXNsjozDYruz1PbS717QdtiJCQ&oe=6785637E",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464951099_122214882134199321_3770339283606069306_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHFMf71tDyZCqMKLYrUiWVNSGtcvFFTONRIa1y8UVM41FNQjB0YZScsjha6rSIfrJV4WFxRmDDHrNEdwEeUD0kq&_nc_ohc=U4Xlqbr7boAQ7kNvgE_fZ2S&_nc_oc=AdizbMwNTyGO9ewLSaSv7cM8eXIYgXIUnyW_7mW85ISAlzDZsJ5Dxtkx327YN1ouHdw&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AoDv2q1nOdnm5kTFrBsay2J&oh=00_AYDu-bi0XeM_1vqQVy7l4-jylsCQTlGEKkQ2ygtYv2hatA&oe=67857D39",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/464870791_122214943520199321_6892418401099598512_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH4NmEZYbNe0T-l4Y0tRKsU8FsC5VA3B53wWwLlUDcHnfFz9bY8W4qR9RCyjhG1yRe7mAEg6djBT8xUHwG3AoBf&_nc_ohc=5HAqiRmm97IQ7kNvgGCBzkz&_nc_oc=AdhckFul4oraSCye2Q4yhpMEZIGHtsUGEQq_xDKbocdjP7lm0lR9_PjE3GvPSn5ESmI&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AjAuRe8zHO-Iv3EPgDW96FC&oh=00_AYCAPJknnHj2FqIJjkRun5tRB4xteiB_rrf0-EemEo-dLA&oe=67857C88",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465158320_122215738130199321_5289920200759737093_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeENULetPG6M6BaLhZDI7pJPEd1zov9MXx0R3XOi_0xfHUrJE6r7t1p5a_YfeRsMWG3B69icSF1TB54br6nNyA9j&_nc_ohc=vf3dYjRkIHMQ7kNvgHj6cYi&_nc_oc=AdhLO74YW5wGG5ajfqWY2zrevtk17akU7kPTlGpqAjhrrjLPsW8WANzsTL3Au5AtsNw&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AdVL0EO-VhgILfeTZtSVgCk&oh=00_AYD-Skzvj4Ka9e1KJ4gAfXwob3eo0131ntUV3XNseC2CVA&oe=67858325",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465571621_122216416250199321_4249942052257036160_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFPeflk_xQAKPXNExDHImZeihRHZCWiUa6KFEdkJaJRrkwwUmRaPHocs-vXoXdqfE4M4N5M5Dhg0fhwJLSVSCv6&_nc_ohc=V9wouRZsmHMQ7kNvgGNnVO-&_nc_oc=AdiJi9UUk5KdppGX4vTo0B96SYWAJj8Ud0fPZNObXrzp0pYkmbUtQXmaA4Z83Ai8Uos&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=A2Gb0l-yB5gKnsFfNKTdp67&oh=00_AYDrO85MibxW8YymO0fPgj4J9VqyfvKKOwhkmidbQaKZWQ&oe=678570ED",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465610800_122216921300199321_7456265432716025413_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH7fWxnv-hBTnEEBMIUBS7SthyMvhCKj622HIy-EIqPrccuhaGySyw07wmZDa4-yoM5idKUZq9ZPQBbk6Z4uUO4&_nc_ohc=79LVBcvEZwgQ7kNvgGGj1_Y&_nc_oc=AdjwRxm5s6ninjJiSKQKs81gZenZC-36NAfw7sglB7wdf5WD_g_mxvS-nJDYpjJ66WE&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AT5g73w9YEyqEJo3Oy_mDJP&oh=00_AYBkrNVJji_oEU7dJPzsXlyPYilyc7Fze0ibaeX22NpkiQ&oe=678569DA",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465781755_122217150632199321_8807874907609572125_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFMMq6Qt8z-gu6TRqzfXUwgSvFrttHI5WZK8Wu20cjlZpI40BFJ1ubo7H_JEj4zYr06DkeuZXlHycpxdNAJxTEL&_nc_ohc=Tna0NBeEYbwQ7kNvgHOQzel&_nc_oc=AdhyAgR1ktkNZ3ArRSGHo8mBcycrTwJ6rmTnh3ZBc-HU-HxaVRQh9NefRqAaw0V-7oY&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=A46zdAYYL3o0KHlqtwkjdxl&oh=00_AYDlCVt6RAj2zhwDouANjMLGK9S3yNFUcKjRgNPCjUWYAg&oe=67858B5E",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465839187_122217491312199321_4373908439597277391_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGdA6F4YOGwxITxxhQNjVBkSvVbtloItYRK9Vu2Wgi1hFnb5pu8ub4soWQUxyJ1MtCMsmqg48umkJpjD66d5Ixp&_nc_ohc=5LM-0vkWv-0Q7kNvgEog6sE&_nc_oc=AdiLlCwJrpvBZ0FQ3WVIoyrGLqVdzo86obS47SBhelYRxbkZivR1Ts6Rwzd-gXRlsKw&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AYA7nm7g8yW7u080QYnc5a3&oh=00_AYC1fSdLGwFND0ptTDVx6lt-deR322HYI9sfzOhwOPb4rg&oe=67858B6D",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465778809_122217566822199321_4981256420304068437_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFESHZ7bVgBGwWyqIiQ8yaoatcEMLQa__Zq1wQwtBr_9tOk2adBxa2xm7d5757BqMCp7z6-dEyjk6gJfuzhkjn0&_nc_ohc=utkgOXM_2O8Q7kNvgEvF6J-&_nc_oc=Adgq9SJrdJGcR-twgkuTAk9GF7FzYRlblguHeDq9p1qdM9PQ1WQHpbIVLucFWk-fsIg&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AkwOJBAHDlmUmNuSdazBxeN&oh=00_AYD7gg4NpsyibVWnshVTXDL6pQ7GmblD8d7dncjGdipOCw&oe=67857039",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465890434_122217658910199321_4094661144081863373_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEAb6CR0QMPQK9Qgcae2Ne5rhJnXHBA7QGuEmdccEDtAbj05zSyrRKC-ugKkhwFPFy-mrVeYxbTQwPpK_miC353&_nc_ohc=2XiTwPH_dgsQ7kNvgEXx99q&_nc_oc=AdhMlawS2EnVP6hf7RT2qkcE3d6IUTDrHW3AUbf8Us4ZD-mlwN1XEDn8mia7lD1LWjc&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=A9a2XmT3mhQSQ3suLgKbkFe&oh=00_AYCJbV_cqYB_Vyt7KHG4TF9ykh1PUugUceNQJfGST8y_cw&oe=6785995B",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465926363_122218058780199321_2792818397506236296_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEn57PGjeSDNE_fKpBbkDx3qcmij3QGQvepyaKPdAZC9zeN7UBDZJqVAUvsOVKKS-a04Ik8SyTnDdhakXMmhzx1&_nc_ohc=-AUlLBMb2iMQ7kNvgGoXc17&_nc_oc=AdjwSnDCA-KkpPAxnt50Kq6hSBHc7rjsCz8jU3FetAh8_76KK2grHxELqpOct0_ltqY&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AbYGwcAZN0VXuU4xtlpB5Gk&oh=00_AYA4uC3CyVmNR0j7YwdfS1K8H2vgEaQrDxZ9CqENSAhbWw&oe=67859A94",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465604063_122218146746199321_245278827921937478_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG560b6Vodz0cOZpZ6Ilee_tyE8t39xUgG3ITy3f3FSAXUyatpM1eGWgV473UnRX9VKhWz8J3xC_LlE4YHgN7ZH&_nc_ohc=Q64Z_NFcy0QQ7kNvgGCZ0WJ&_nc_oc=Adi_StEz18adyYRQsgCeI99zaW_uJDkfT3cJ68BQSbEUF11AsfumFDYuqAAqTNWk8do&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AaOPtyzlzUf0htd5-USUReV&oh=00_AYBBM03HKAYnyt-fCdNRupMwybbULRtx7b3RHlTjM8BJrA&oe=67858410",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465924218_122218591688199321_3792343968563404634_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEEpS-qWivYwxgPE_fbY0GdHwXXcMh340QfBddwyHfjRPBchcaygTvabgi_9o73cTVP0gj52vGHUZDGOl84ykt7&_nc_ohc=8AkE84H8yEUQ7kNvgEbvmUq&_nc_oc=AdguZoK-pzUIP8xh6YQQ06-E9tFWjRTITFXDyN1xpGBZrFh9LFdrIkJPLPKfSdpO80U&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AAb8bqTDJYu1UdWmjRREsKg&oh=00_AYAwqFCo4CgSZepWY2JWq3R9ur2bDOIWFMTcfQPAM3Y4Og&oe=67856464",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465789598_122218631888199321_8697904037479163936_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHPOFHs2oD_mOWChqXXbJSivmq7BedChxO-arsF50KHE7L62-gS9fKwpMyI_cMs3IkZYQ8_zVTTi9ZBti-DItZg&_nc_ohc=RYUxJVo65WUQ7kNvgGiX_pQ&_nc_oc=Adila_wIGP1eBkZQAPZaiWIAT4ByByCCZL2qrIUbKgCSTCWTvFxKEnrAj4SfRA-i6OI&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=A_Zx2-MQtOus9NmP-hWhGlO&oh=00_AYCxHaJnHe4TEIxnaBDmUl96ZekyT-5utMYwIB07Dost2A&oe=67857A3E",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465856069_122218654322199321_4015590349496710508_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHdP3eFxKucFOYSiXQht8YhLvsasb-1sz8u-xqxv7WzP6giJYof97jkr8FuvIM5t2sYlWLLP065PLEw-Wo9Fdts&_nc_ohc=eXQQ0uI63pcQ7kNvgFYesEQ&_nc_oc=AdjKzRBR7UBvJKuCKvArRw-htSvThgQd042SP9XzSlGshBBAj1KrT3fgtZcS4qXisNE&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AuZXY6g9jBPfqA29yei04ql&oh=00_AYBPhXfaMYYNt9LoZbdt9PsZGc9tU_yTMfCffB6WVTQXgA&oe=67858909",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465854800_122219209028199321_7932875798286354177_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHlaozVP-EpyZ5HA0OyGDwfQZCQIOU8cWZBkJAg5TxxZg8Rg3VpAX0anFLS7Oyjoob4hPycR4P82DtGf889ta4J&_nc_ohc=9wO8DE_jhogQ7kNvgH_DeY4&_nc_oc=AdgtYLSM2czLhu3NOy6IFLjz6pVkZpye36iah4U-5p94VrIKY1bi84r8mXNmzqFzr_s&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AYoJ9dr-_SCGXg21mU_lzUY&oh=00_AYBqp2lUQ9vC0Vme0g8JYRKdkISfe6SSqfwJkNtjfBv5ag&oe=67857388",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/465870204_122219358602199321_7800295409911222051_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEdSpt4ZmQO4m_nc5n3HMwus0p7xZGJaWezSnvFkYlpZ0wR9J0IaR4eOrtROgJ1ftl4aPtR5YD3wTZjix2hrhjZ&_nc_ohc=8_DKYglQ2u4Q7kNvgGMkND0&_nc_oc=AdgvdGwsblwIxC9Si-VKNHcjl4DSFHhuU965dKeSsGhTCQvLryk_EcX9VA3ellP6QIo&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=AjPC9r-R_Lyl6Vt3Y4GKPGD&oh=00_AYBTKKU1fwsm-DDAiYwRYPGRxCtz8CBGsDJ-4-d4zgmuHQ&oe=6785689A",
-                    "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/466123942_122219459534199321_4107327729871973367_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHxzd7ACyS9K5VvMadqq_HDjpMttI_lqfuOky20j-Wp--3z-oWimXG9xrTCal3SohTSWpPaqmv9N6cV1apXXW19&_nc_ohc=WD3-rKIV0FwQ7kNvgEDlmDL&_nc_oc=AdiHx5K2BVHoG-bBzAOXcwm_mGZuoA1tJpGJubILVP5qhjRAeQOEmzd7-xgotE3EzV0&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=APguJ6XKYKXYzn9q0YdJmfu&oh=00_AYBq8yfoegQA9pQvCipD3RjBPWMojfcBgx-NG9uRxbMd8g&oe=678596E2"
-                ];
-                this.container = document.getElementById('slideshow');
-                this.currentSlide = 0;
-                this.slides = [];
-                this.totalSlides = 0;
-                this.initializeSlideshow();
-                this.startSlideshow();
-            }
-
-            initializeSlideshow() {
-                this.imageUrls.forEach((url, index) => {
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.alt = `Image ${index + 1}`;
-                    img.className = `absolute inset-0 w-full h-full object-cover object-center rounded-lg shadow-lg transition-opacity duration-1000 ease-in-out ${index !== 0 ? 'opacity-0' : 'opacity-100'}`;
-                    this.container.appendChild(img);
-                    this.slides.push(img);
-                });
-                this.totalSlides = this.slides.length;
-            }
-
-            showSlide(index) {
-                this.slides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.style.opacity = '1';
-                    } else {
-                        slide.style.opacity = '0';
-                    }
-                });
-            }
-
-            nextSlide() {
-                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-                this.showSlide(this.currentSlide);
-            }
-
-            startSlideshow() {
-                setInterval(() => this.nextSlide(), 5000);
-            }
-        }
-
-        new Slideshow();
-        
         class VoteVisualizer {
             constructor() {
-                this.data = null;
+                this.apiUrl = 'http://localhost:5000/get_votes';
+                this.categoriesUrl = 'http://localhost:5000/categories';
                 this.currentAwardId = null;
+                this.categoriesData = {};
+                this.rawData = {
+                    timestamps: [],
+                    series: {}
+                };
+                this.lastUpdateTime = null;
                 this.voteChart = null;
-                this.displayMode = 'difference'; 
-                this.nomineeMode = 'top5';
+                this.chartMode = 'gap';
+
+                this.events = [];
+                this.lastProcessedEventIndex = 0;
+                this.notificationsEnabled = false;
+
+                this.nomineeData = {};
+                this.colorPalette = [
+                    "#e74c3c", "#2ecc71", "#9b59b6", "#3498db", "#0f1cd0", "#4b4947",
+                    "#f39c12", "#1abc9c", "#e67e22", "#16a085", "#c0392b", "#8e44ad",
+                    "#27ae60", "#2980b9", "#d35400", "#7f8c8d", "#f1c40f", "#e91e63"
+                ];
+                this.colorIndex = 0;
+
                 this.initializeElements();
-                this.setupEventListeners();
-                this.fetchDataAndUpdateChart();
-                //this.startRealtimeUpdates();
+                this.loadCategories();
+
+                setInterval(() => {
+                    if (this.currentAwardId) {
+                        this.fetchVoteHistory();
+                    }
+                }, 10000);
             }
 
             initializeElements() {
-                this.awardSelect = document.getElementById('awardSelect');
                 this.rankingList = document.getElementById('rankingList');
-                this.voteChartCanvas = document.getElementById('voteChart');
-                this.startDateInput = document.getElementById('startDate');
-                this.endDateInput = document.getElementById('endDate');
-                this.timeRangeSelect = document.getElementById('timeRange');
-                this.timeRangeSelect.value = '15m';
-                this.lastUpdateTime = document.getElementById('lastUpdateTime');
-            }
+                this.chartContainer = document.getElementById('chartContainer');
+                this.rankingTitle = document.getElementById('rankingTitle');
+                this.lastUpdateSpan = document.getElementById('lastUpdate');
+                this.eventLogContainer = document.getElementById('eventLogContainer');
+                this.notifyBtn = document.getElementById('notifyBtn');
+                this.popupNotifyBtn = document.getElementById('popupNotifyBtn');
+                this.groupSelect = document.getElementById('groupSelect');
+                this.awardSelect = document.getElementById('awardSelect');
 
-            setupEventListeners() {
-                this.awardSelect.addEventListener('change', () => {
-                    this.currentAwardId = this.awardSelect.value;
-                    this.fetchVoteHistory();
-                });
-
-                const modeToggleButton = document.getElementById('modeToggle');
-                modeToggleButton.addEventListener('click', () => {
-                    this.displayMode = this.displayMode === 'total' ? 'difference' : 'total';
-                    modeToggleButton.textContent = this.displayMode === 'total' ? 'Xem tổng số vote chênh lệch' : 'Xem tổng số vote';
-                    this.updateRankingList();
-                    this.updateChart();
-                });
-
-                const nomineeToggleButton = document.getElementById('nomineeToggle');
-                nomineeToggleButton.addEventListener('click', () => {
-                    this.nomineeMode = this.nomineeMode === 'top5' ? 'all' : 'top5';
-                    nomineeToggleButton.textContent = this.nomineeMode === 'top5' ? 'Xem tất cả các đề cử' : 'Xem top 5 đề cử';
-                    this.updateChart();
-                });
-
-                this.startDateInput.addEventListener('change', () => {
-                    this.updateRankingList();
-                    this.updateChart();
-                });
-                this.endDateInput.addEventListener('change', () => {
-                    this.updateRankingList();
-                    this.updateChart();
-                });
-                this.timeRangeSelect.addEventListener('change', () => {
-                    this.updateRankingList();
-                    this.updateChart();
-                });
-            }
-
-            async fetchVoteHistory() {
-                try {
-                    const response = await fetch(`https://raw.githubusercontent.com/lzhoang2801/wca-votes/refs/heads/main/vote_histories/${this.currentAwardId}.json`);
-                    this.voteHistory = await response.json();
-
-                    for (const nomineeId in this.voteHistory.nominees) {
-                        this.data[this.currentAwardId].nominees[nomineeId].vote_history = this.voteHistory.nominees[nomineeId].vote_history;
-                    }
-
-                    this.setDateRange();
-                    this.updateRankingList();
-                    this.updateChart();
-                } catch (error) {
-                    console.error(`Error fetching vote history of award ${this.currentAwardId}:`, error);
+                if (this.notifyBtn) {
+                    this.notifyBtn.addEventListener('click', () => this.toggleNotification());
                 }
-            }
-
-            async fetchDataAndUpdateChart() {
-                try {
-                    const response = await fetch('https://raw.githubusercontent.com/lzhoang2801/wca-votes/refs/heads/main/wca_nominees.json');
-                    this.data = await response.json();
-                    
-                    this.populateAwardDropdown();
-                } catch (error) {
-                    console.error("Error fetching data:", error);
-                }
-            }
-
-            async startRealtimeUpdates() {
-                const fetchRealtimeData = async () => {
-                    try {
-                        const response = await fetch('http://127.0.0.1:5001/get_votes');
-                        const voteData = await response.json();
-
-                        for (let nomineeId in this.data[this.currentAwardId].nominees) {
-                            this.data[this.currentAwardId].nominees[nomineeId].vote_history.push(voteData[this.currentAwardId].nominees[nomineeId].lastest_vote);
-                        }
-
-                        this.updateRankingList();
-                        this.updateChart();
-                    } catch (error) {
-                        console.error("Error fetching realtime data:", error);
-                    }
-                };
-
-                await fetchRealtimeData();
                 
-                setInterval(fetchRealtimeData, 2000);
+                if (this.popupNotifyBtn) {
+                    this.popupNotifyBtn.addEventListener('click', () => {
+                        this.toggleNotification();
+                    });
+                }
+
+                if ('serviceWorker' in navigator && 'PushManager' in window) {
+                     navigator.serviceWorker.getRegistration().then(reg => {
+                         if (reg) {
+                             reg.pushManager.getSubscription().then(sub => {
+                                 if (sub) {
+                                     this.notificationsEnabled = true;
+                                     this.updateNotifyButton();
+                                 }
+                             });
+                         }
+                     });
+                }
+
+                this.modeBtns = document.querySelectorAll('[data-mode]');
+                this.modeBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const mode = e.target.dataset.mode;
+                        if (this.chartMode !== mode) {
+                            this.chartMode = mode;
+                            this.modeBtns.forEach(b => b.classList.remove('active'));
+                            e.target.classList.add('active');
+                            this.updateChart();
+                        }
+                    });
+                });
+
+                this.voteChart = echarts.init(this.chartContainer);
+                
+                window.addEventListener('resize', () => {
+                    this.voteChart.resize();
+                    this.updateChart();
+                    this.renderEventVisualizer();
+                });
+
+                if (this.groupSelect) {
+                    this.groupSelect.addEventListener('change', () => this.onGroupChange());
+                }
+                if (this.awardSelect) {
+                    this.awardSelect.addEventListener('change', () => this.onAwardChange());
+                }
             }
 
-            populateAwardDropdown() {
-                this.awardSelect.innerHTML = '';
-                for (const awardId in this.data) {
-                    const option = document.createElement('option');
-                    option.value = awardId;
-                    option.text = this.data[awardId].award_name;
-                    this.awardSelect.add(option);
-                    if (!this.currentAwardId) {
-                        this.currentAwardId = awardId;
+            generateColor(nomineeId) {
+                const hash = nomineeId.split('').reduce((acc, char) => {
+                    return char.charCodeAt(0) + ((acc << 5) - acc);
+                }, 0);
+                return this.colorPalette[Math.abs(hash) % this.colorPalette.length];
+            }
+
+            async loadCategories() {
+                try {
+                    const response = await fetch(this.categoriesUrl);
+                    this.categoriesData = await response.json();
+
+                    if (this.groupSelect) {
+                        this.groupSelect.innerHTML = '<option value="" disabled selected>Chọn nhóm...</option>';
+                        Object.keys(this.categoriesData).forEach(groupKey => {
+                            const option = document.createElement('option');
+                            option.value = groupKey;
+                            option.textContent = groupKey;
+                            this.groupSelect.appendChild(option);
+                        });
+
+                        if (Object.keys(this.categoriesData).length > 0) {
+                            this.groupSelect.value = Object.keys(this.categoriesData)[0];
+                            this.onGroupChange();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading categories:', error);
+                    if (this.groupSelect) {
+                        this.groupSelect.innerHTML = '<option value="" disabled selected>Lỗi tải dữ liệu</option>';
                     }
                 }
-                this.awardSelect.value = this.currentAwardId;
+            }
+
+            onGroupChange() {
+                const selectedGroup = this.groupSelect.value;
+                if (!selectedGroup || !this.categoriesData[selectedGroup]) {
+                    this.awardSelect.disabled = true;
+                    this.awardSelect.innerHTML = '<option value="" disabled selected>Chọn giải thưởng...</option>';
+                    return;
+                }
+
+                const groupData = this.categoriesData[selectedGroup];
+                const awards = groupData.subcategories || groupData;
+
+                this.awardSelect.innerHTML = '<option value="" disabled selected>Chọn giải thưởng...</option>';
+                Object.keys(awards).forEach(awardId => {
+                    const award = awards[awardId];
+                    if (award && award.award_name) {
+                        const option = document.createElement('option');
+                        option.value = awardId;
+                        option.textContent = award.award_name;
+                        this.awardSelect.appendChild(option);
+                    }
+                });
+
+                this.awardSelect.disabled = false;
+
+                if (this.awardSelect.options.length > 1) {
+                    this.awardSelect.value = this.awardSelect.options[1].value;
+                    this.onAwardChange();
+                }
+            }
+
+            onAwardChange() {
+                const selectedAwardId = this.awardSelect.value;
+                if (!selectedAwardId) {
+                    return;
+                }
+
+                this.currentAwardId = selectedAwardId;
+
+                this.rawData = {
+                    timestamps: [],
+                    series: {}
+                };
+                this.nomineeData = {};
+                this.events = [];
+                this.lastProcessedEventIndex = 0;
+                this.lastUpdateTime = null;
+
+                this.rankingList.innerHTML = '<div class="text-center text-white/60 py-10"><i class="fas fa-spinner fa-spin text-2xl"></i><br>Đang tải dữ liệu...</div>';
+                this.eventLogContainer.innerHTML = '';
+                this.rankingTitle.textContent = 'Bảng Xếp Hạng';
+
                 this.fetchVoteHistory();
             }
 
-            setDateRange() {
-                const nominees = this.data[this.currentAwardId].nominees;
-                const allTimestamps = new Set();
-                Object.values(nominees).forEach(nominee => {
-                    nominee.vote_history.forEach(item => {
-                        allTimestamps.add(new Date(item.timestamp).getTime());
+            async toggleNotification() {
+                if (!('serviceWorker' in navigator)) {
+                    alert('Trình duyệt không hỗ trợ Service Worker. Bạn hãy truy cập trang này trên trình duyệt như Chrome, Safari,... để bật thông báo.');
+                    return;
+                }
+
+                if (!('PushManager' in window)) {
+                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                    
+                    if (isIOS) {
+                        alert('Trên thiết bị iOS, bạn cần:\n1. Nhấn nút "Chia sẻ" (Share)\n2. Chọn "Thêm vào Màn hình chính" (Add to Home Screen)\n3. Mở ứng dụng từ màn hình chính để bật thông báo.');
+                    } else {
+                        alert('Trình duyệt không hỗ trợ Push Notification.');
+                    }
+                    return;
+                }
+
+                if (this.notificationsEnabled) {
+                    if (confirm('Bạn có chắc chắn muốn huỷ nhận thông báo?')) {
+                        try {
+                            await this.unsubscribeFromPush();
+                        } catch (e) {
+                            console.error('Unsubscribe error:', e);
+                            alert('Lỗi huỷ đăng ký: ' + e.message);
+                        }
+                    }
+                    return;
+                }
+
+                const permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                    try {
+                        await this.subscribeToPush();
+                    } catch (e) {
+                        console.error('Subscription error:', e);
+                        alert('Lỗi đăng ký: ' + e.message);
+                    }
+                } else {
+                     alert('Bạn đã chặn thông báo.');
+                }
+            }
+
+            async unsubscribeFromPush() {
+                const reg = await navigator.serviceWorker.getRegistration();
+                if (reg) {
+                    const subscription = await reg.pushManager.getSubscription();
+                    if (subscription) {
+                        const baseUrl = this.apiUrl.replace('/get_votes', '');
+                        await fetch(`${baseUrl}/unsubscribe`, {
+                            method: 'POST',
+                            body: JSON.stringify({ endpoint: subscription.endpoint }),
+                            headers: { 'Content-Type': 'application/json' }
+                        });
+                        
+                        await subscription.unsubscribe();
+                        
+                        this.notificationsEnabled = false;
+                        this.updateNotifyButton();
+                        alert('Đã huỷ nhận thông báo thành công.');
+                    }
+                }
+            }
+
+            async subscribeToPush() {
+                const baseUrl = this.apiUrl.replace('/get_votes', '');
+                
+                const keyRes = await fetch(`${baseUrl}/vapid_public_key`);
+                if (!keyRes.ok) throw new Error('Cannot fetch VAPID key');
+                
+                const keyData = await keyRes.json();
+                const publicVapidKey = keyData.publicKey;
+
+                const register = await navigator.serviceWorker.register('/wca-votes/sw.js');
+                await navigator.serviceWorker.ready;
+
+                const subscription = await register.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: this.urlBase64ToUint8Array(publicVapidKey)
+                });
+
+                await fetch(`${baseUrl}/subscribe`, {
+                    method: 'POST',
+                    body: JSON.stringify(subscription),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                this.notificationsEnabled = true;
+                this.updateNotifyButton();
+                new Notification('WeYoung 2025 Vote Visualizer - lzhoang2801', {
+                    body: 'Đã đăng ký nhận thông báo đẩy thành công!',
+                    icon: 'https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg'
+                });
+            }
+
+            urlBase64ToUint8Array(base64String) {
+                const padding = '='.repeat((4 - base64String.length % 4) % 4);
+                const base64 = (base64String + padding)
+                    .replace(/\-/g, '+')
+                    .replace(/_/g, '/');
+
+                const rawData = window.atob(base64);
+                const outputArray = new Uint8Array(rawData.length);
+
+                for (let i = 0; i < rawData.length; ++i) {
+                    outputArray[i] = rawData.charCodeAt(i);
+                }
+                return outputArray;
+            }
+
+            updateNotifyButton() {
+                if (this.notifyBtn) {
+                    const icon = this.notifyBtn.querySelector('i');
+                    if (this.notificationsEnabled) {
+                        icon.className = 'fas fa-bell text-[#d3ad49]';
+                        this.notifyBtn.classList.remove('text-white/80');
+                        this.notifyBtn.classList.add('text-white');
+                        this.notifyBtn.title = "Đã bật thông báo";
+                    } else {
+                        icon.className = 'fas fa-bell-slash';
+                        this.notifyBtn.classList.add('text-white/80');
+                        this.notifyBtn.classList.remove('text-white');
+                        this.notifyBtn.title = "Bật thông báo";
+                    }
+                }
+
+                if (this.popupNotifyBtn) {
+                    if (this.notificationsEnabled) {
+                        this.popupNotifyBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Đã bật thông báo';
+                        this.popupNotifyBtn.classList.add('opacity-75', 'cursor-default');
+                    } else {
+                        this.popupNotifyBtn.innerHTML = '<i class="fas fa-bell mr-2"></i> Bật thông báo';
+                        this.popupNotifyBtn.classList.remove('opacity-75', 'cursor-default');
+                    }
+                }
+            }
+
+            async fetchVoteHistory() {
+                if (!this.currentAwardId) {
+                    return;
+                }
+
+                try {
+                    let url = this.apiUrl;
+                    url += `?award_id=${encodeURIComponent(this.currentAwardId)}`;
+                    
+                    if (this.rawData.timestamps.length > 0 && this.lastUpdateTime) {
+                        url += `&last_updated=${encodeURIComponent(this.lastUpdateTime)}`;
+                    } else {
+                        if (this.rawData.timestamps.length === 0) {
+                            this.rankingList.innerHTML = '<div class="text-center text-white/60 py-10"><i class="fas fa-spinner fa-spin text-2xl"></i><br>Đang cập nhật...</div>';
+                        }
+                    }
+
+                    const response = await fetch(url);
+                    const rawJson = await response.json();
+
+                    if (rawJson.award_name && this.rankingTitle) {
+                        this.rankingTitle.textContent = rawJson.award_name;
+                    }
+
+                    if (Object.keys(this.nomineeData).length === 0 && rawJson.nominees) {
+                        rawJson.nominees.forEach(nominee => {
+                            const nomineeId = nominee.data_member;
+                            if (nomineeId) {
+                                this.nomineeData[nomineeId] = {
+                                    name: nominee.nominee_name || '',
+                                    image: nominee.ava_link || '',
+                                    color: this.generateColor(nomineeId)
+                                };
+                                if (!this.rawData.series[nomineeId]) {
+                                    this.rawData.series[nomineeId] = [];
+                                }
+                            }
+                        });
+                    }
+
+                    Object.keys(this.nomineeData).forEach(nomineeId => {
+                        if (!this.rawData.series[nomineeId]) {
+                            this.rawData.series[nomineeId] = [];
+                        }
+                    });
+
+                    const transformedHistory = {};
+                    if (rawJson.nominees) {
+                        rawJson.nominees.forEach(nominee => {
+                            const nomineeId = nominee.data_member;
+                            if (nomineeId && nominee.vote_history && nominee.vote_history.length > 0) {
+                                transformedHistory[nomineeId] = nominee.vote_history.map(h => ({
+                                    timestamp: h.timestamp,
+                                    vote_count: parseInt(h.vote_count) || 0
+                                }));
+                            }
+                        });
+                    }
+
+                    this.processNewData(transformedHistory);
+                    this.analyzeEvents();
+
+                    if (this.rawData.timestamps.length > 0) {
+                        const latestTimestamp = this.rawData.timestamps[this.rawData.timestamps.length - 1];
+                        this.lastUpdateTime = latestTimestamp;
+                        this.lastUpdateSpan.textContent = `Cập nhật lần cuối: ${latestTimestamp}`;
+                    }
+
+                    this.updateRankingList();
+                    this.renderEventVisualizer();
+                    requestAnimationFrame(() => this.updateChart());
+                } catch (error) {
+                    console.error('Error fetching history:', error);
+                    if (this.rawData.timestamps.length === 0) {
+                        this.rankingList.innerHTML = '<div class="text-center text-white p-4">Lỗi tải dữ liệu. Vui lòng thử lại sau.</div>';
+                    }
+                }
+            }
+
+            processNewData(newRawHistory) {
+                if (!newRawHistory || Object.keys(newRawHistory).length === 0) return;
+
+                const newTimestampsSet = new Set();
+                Object.values(newRawHistory).forEach(records => {
+                    records.forEach(r => newTimestampsSet.add(r.timestamp));
+                });
+                const sortedNewTimes = Array.from(newTimestampsSet).sort();
+
+                if (sortedNewTimes.length === 0) return;
+
+                const nomineeIds = Object.keys(this.nomineeData);
+                const tempMap = {};
+                sortedNewTimes.forEach(ts => tempMap[ts] = {});
+
+                nomineeIds.forEach(id => {
+                    const records = newRawHistory[id] || [];
+                    records.forEach(r => {
+                        if (tempMap[r.timestamp]) {
+                            tempMap[r.timestamp][id] = r.vote_count;
+                        }
                     });
                 });
 
-                const sortedTimestamps = Array.from(allTimestamps).sort();
-                this.minDate = new Date(sortedTimestamps[0]);
-                this.maxDate = new Date(sortedTimestamps[sortedTimestamps.length - 1]);
+                let lastKnownValues = {};
+                nomineeIds.forEach(id => {
+                    const currentSeries = this.rawData.series[id];
+                    lastKnownValues[id] = currentSeries.length > 0 ? currentSeries[currentSeries.length - 1] : 0;
+                });
 
-                const tzOffset = new Date().getTimezoneOffset() * 60000;
-                const minLocalDate = new Date(this.minDate.getTime() - tzOffset);
-                const maxLocalDate = new Date(this.maxDate.getTime() - tzOffset);
+                const lastExistingTime = this.rawData.timestamps.length > 0 ? this.rawData.timestamps[this.rawData.timestamps.length - 1] : '';
 
-                this.startDateInput.min = minLocalDate.toISOString().split('T')[0];
-                this.startDateInput.max = maxLocalDate.toISOString().split('T')[0];
-                this.endDateInput.min = minLocalDate.toISOString().split('T')[0];
-                this.endDateInput.max = maxLocalDate.toISOString().split('T')[0];
-
-                this.startDateInput.value = maxLocalDate.toISOString().split('T')[0];
-                this.endDateInput.value = maxLocalDate.toISOString().split('T')[0];
+                sortedNewTimes.forEach(ts => {
+                    if (ts > lastExistingTime) {
+                        this.rawData.timestamps.push(ts);
+                        nomineeIds.forEach(id => {
+                            const val = tempMap[ts][id];
+                            if (val !== undefined) {
+                                lastKnownValues[id] = val;
+                            }
+                            this.rawData.series[id].push(lastKnownValues[id]);
+                        });
+                    }
+                });
             }
 
-            getRandomColor() {
-                const r = Math.floor(Math.random() * 256);
-                const g = Math.floor(Math.random() * 256);
-                const b = Math.floor(Math.random() * 256);
-                return `rgb(${r}, ${g}, ${b})`;
+            analyzeEvents() {
+                const timestamps = this.rawData.timestamps;
+                const nomineeIds = Object.keys(this.nomineeData);
+                
+                let startIndex = Math.max(1, this.lastProcessedEventIndex);
+                
+                for (let i = startIndex; i < timestamps.length; i++) {
+                    const currentTime = timestamps[i];
+                    
+                    const currentVotes = {};
+                    const prevVotes = {};
+                    let maxVoteCurrent = 0;
+                    
+                    nomineeIds.forEach(id => {
+                        currentVotes[id] = this.rawData.series[id][i];
+                        prevVotes[id] = this.rawData.series[id][i-1];
+                        if (currentVotes[id] > maxVoteCurrent) maxVoteCurrent = currentVotes[id];
+                    });
+
+                    const currentRanking = [...nomineeIds].sort((a, b) => currentVotes[b] - currentVotes[a]);
+                    const prevRanking = [...nomineeIds].sort((a, b) => prevVotes[b] - prevVotes[a]);
+
+                    currentRanking.forEach((id, rankIndex) => {
+                        const prevRankIndex = prevRanking.indexOf(id);
+                        if (rankIndex !== prevRankIndex) {
+                            if (rankIndex < prevRankIndex) {
+                                const gap = id === currentRanking[0] ? 0 : maxVoteCurrent - currentVotes[id];
+                                this.events.unshift({
+                                    type: 'rank_change',
+                                    timestamp: currentTime,
+                                    nomineeId: id,
+                                    detail: `Vươn lên vị trí #${rankIndex + 1}`,
+                                    gap: gap
+                                });
+                            }
+                        }
+                    });
+
+                    nomineeIds.forEach(id => {
+                        const currV = currentVotes[id];
+                        const prevV = prevVotes[id];
+                        if (Math.floor(currV / 1000) > Math.floor(prevV / 1000)) {
+                             const gap = id === currentRanking[0] ? 0 : maxVoteCurrent - currV;
+                             this.events.unshift({
+                                type: 'milestone',
+                                timestamp: currentTime,
+                                nomineeId: id,
+                                detail: `Cán mốc ${Math.floor(currV / 1000)}K vote`,
+                                gap: gap
+                            });
+                        }
+                    });
+                }
+                
+                this.lastProcessedEventIndex = timestamps.length;
+                if (this.events.length > 100) {
+                    this.events = this.events.slice(0, 100);
+                }
+            }
+
+            renderEventVisualizer() {
+                let html = '';
+                if (this.events.length === 0) {
+                    html = '<div class="text-center text-[#5b3612]/50 py-4 text-sm">Chưa có sự kiện nổi bật</div>';
+                } else {
+                    this.events.forEach(e => {
+                        const nominee = this.nomineeData[e.nomineeId];
+                        const [datePart, timePart] = e.timestamp.split(' ');
+                        
+                        let icon, isTop1 = false;
+                        if (e.detail.includes('vị trí #1')) {
+                            icon = '<i class="fas fa-crown text-yellow-500"></i>';
+                            isTop1 = true;
+                        } else {
+                            icon = e.type === 'rank_change' ? '<i class="fas fa-arrow-up text-green-600"></i>' : '<i class="fas fa-flag text-red-600"></i>';
+                        }
+                        
+                        const itemBg = isTop1 ? 'background: rgba(255, 215, 0, 0.1);' : '';
+
+                        html += `
+                            <div class="event-item" style="${itemBg}">
+                                <div class="event-time font-bold">
+                                    <div>${datePart}</div>
+                                    <div>${timePart}</div>
+                                </div>
+                                <div class="event-detail">
+                                    <div class="event-desc text-sm">
+                                        <span class="font-bold" style="color: ${nominee.color};">${nominee.name}</span>
+                                        <span class="mx-1">${icon}</span>
+                                        ${e.detail}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                this.eventLogContainer.innerHTML = html;
             }
 
             updateRankingList() {
-                if (!this.currentAwardId || !this.data) return;
+                const len = this.rawData.timestamps.length;
+                if (len === 0) return;
 
-                const nominees = this.data[this.currentAwardId].nominees;
-                const currentVotes = Object.entries(nominees).map(([id, nominee]) => {
-                    const lastVote = nominee.vote_history[nominee.vote_history.length - 1];
-                    const secondLastVote = nominee.vote_history[nominee.vote_history.length - 2] || lastVote;
-                    const voteDifference = parseInt(lastVote.count) - parseInt(secondLastVote.count);
+                const nomineeIds = Object.keys(this.nomineeData);
+                let rankingData = nomineeIds.map(id => {
+                    const series = this.rawData.series[id];
+                    const currentVote = series[len - 1] || 0;
+                    const previousVote = len > 1 ? series[len - 2] : currentVote;
+                    const voteDifference = currentVote - previousVote;
                     return {
-                        id,
-                        name: nominee.nominee_name,
-                        votes: parseInt(lastVote.count),
-                        avatar: nominee.ava_link,
-                        timestamp: lastVote.timestamp,
-                        voteDifference,
-                        vote_url: nominee.nominee_vote_url
+                        id: id,
+                        name: this.nomineeData[id].name,
+                        image: this.nomineeData[id].image,
+                        votes: currentVote,
+                        voteDifference
                     };
-                })
-                .sort((a, b) => b.votes - a.votes)
-                .slice(0, 10);
+                });
 
-                const latestTimestamp = currentVotes[0].timestamp;
-                this.lastUpdateTime.innerHTML = `Cập nhật lần cuối: ${new Date(latestTimestamp).toLocaleString()}`;
+                rankingData.sort((a, b) => b.votes - a.votes);
 
-                const getRankColor = (index) => {
-                    switch(index) {
-                        case 0: return 'bg-yellow-500';
-                        case 1: return 'bg-gray-400';
-                        case 2: return 'bg-gray-400';
-                        default: return 'bg-gray-200';
-                    }
-                };
+                if (rankingData.length === 0) return;
 
-                const getTextColor = (index) => {
-                    switch(index) {
-                        case 0: return 'text-white';
-                        case 1: return 'text-white';
-                        case 2: return 'text-white';
-                        default: return 'text-gray-800';
-                    }
-                };
+                this.rankingList.innerHTML = '';
 
-                const getDifferenceColor = (difference) => {
-                    return difference > 0 ? 'text-green-500' : 'text-red-500';
-                };
+                rankingData.forEach((item, index) => {
+                    const isTop1 = index === 0;
+                    const diffText = isTop1 ? `<span class="text-yellow-300 font-bold"><i class="fas fa-crown"></i> Dẫn đầu</span>` :
+                        item.voteDifference > 0 ? `<span class="text-sm text-green-300 font-bold">+${item.voteDifference.toLocaleString()}</span>` :
+                            item.voteDifference < 0 ? `<span class="text-sm text-red-500 font-bold">-${item.voteDifference.toLocaleString()}</span>` :
+                                ``;
 
-                this.rankingList.innerHTML = currentVotes.map((nominee, index) => `
-                    <li class="flex items-center p-2 bg-white rounded shadow mb-2">
-                        <div class="rank-badge w-8 h-8 ${getRankColor(index)} rounded-full flex items-center justify-center ${getTextColor(index)} font-bold mr-2">
-                            #${index + 1}
+                    const div = document.createElement('div');
+                    div.className = `ranking-item ${isTop1 ? 'bg-[#5b3612]/80 border border-[#d3ad49]' : ''}`;
+                    div.innerHTML = `
+                        <div class="w-6 sm:w-8 text-center font-bold text-base sm:text-lg text-[#d3ad49]">${index + 1}</div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#d3ad49]/50 mx-2 sm:mx-3 shrink-0">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
                         </div>
-                        <img src="${nominee.avatar}" alt="${nominee.name}" class="w-8 h-8 rounded-full mr-2">
-                        <div class="flex flex-col flex-grow">
-                            <a href="${nominee.vote_url}" target="_blank" class="font-medium text-gray-800 hover:underline" title="Vote ngay">${nominee.name}</a>
-                            <div class="flex justify-between">
-                                <span class="text-sm text-gray-600">${nominee.votes.toLocaleString()} votes</span>
-                                <span class="text-sm ${getDifferenceColor(nominee.voteDifference)} font-bold">${nominee.voteDifference > 0 ? '+' : ''}${nominee.voteDifference.toLocaleString()} votes</span>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-medium text-white truncate text-sm sm:text-base leading-tight">${item.name}</h4>
+                            <div class="flex items-center gap-2 mt-1">
+                                ${diffText}
                             </div>
                         </div>
-                    </li>
-                `).join('');
+                        <div class="text-right pl-2 shrink-0">
+                            <div class="font-bold text-lg sm:text-xl text-white">${item.votes.toLocaleString()}</div>
+                            <div class="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#d3ad49]">Lượt bình chọn</div>
+                        </div>
+                    `;
+                    this.rankingList.appendChild(div);
+                });
             }
 
             updateChart() {
-                if (!this.currentAwardId || !this.data) return;
+                if (this.rawData.timestamps.length === 0) return;
 
-                const nominees = this.data[this.currentAwardId].nominees;
+                const TARGET_POINTS = 2000;
 
-                const startDate = new Date(this.startDateInput.value);
-                const endDate = new Date(this.endDateInput.value);
-                startDate.setHours(0, 0, 0, 0);
-                endDate.setHours(23, 59, 59, 999);
+                let displayTimes = this.rawData.timestamps;
+                let displaySeries = this.rawData.series;
 
-                const allTimestamps = new Set();
-                Object.values(nominees).forEach(nominee => {
-                    nominee.vote_history.forEach(item => {
-                        const timestamp = new Date(item.timestamp).getTime();
-                        if (timestamp >= startDate.getTime() && timestamp <= endDate.getTime()) {
-                            allTimestamps.add(timestamp);
-                        }
-                    });
-                });
-                const sortedTimestamps = Array.from(allTimestamps).sort();
+                if (displayTimes.length > TARGET_POINTS) {
+                    const compressionRatio = Math.ceil(displayTimes.length / TARGET_POINTS);
 
-                const startDateTime = startDate.getTime();
-                const endDateTime = endDate.getTime();
+                    const sampled = { times: [], series: {} };
+                    Object.keys(displaySeries).forEach(k => sampled.series[k] = []);
 
-                const timeRange = this.timeRangeSelect.value;
-                let timeRangeMillis = 1;
-                if (timeRange === '15m') {
-                    timeRangeMillis = 15 * 60 * 1000;
-                } else if (timeRange === '30m') {
-                    timeRangeMillis = 30 * 60 * 1000;
-                } else if (timeRange === '1h') {
-                    timeRangeMillis = 60 * 60 * 1000;
-                }
-
-                let filteredTimestampsWithRange = [];
-                let currentRangeEnd = startDateTime + timeRangeMillis;
-                let lastAddedTimestamp = null;
-
-                sortedTimestamps.forEach(timestamp => {
-                    if (timestamp >= currentRangeEnd) {
-                        if (lastAddedTimestamp !== null) {
-                            filteredTimestampsWithRange.push(lastAddedTimestamp);
-                        }
-                        while (currentRangeEnd < timestamp) {
-                            currentRangeEnd += timeRangeMillis;
+                    for (let i = 0; i < displayTimes.length; i++) {
+                        if (i % compressionRatio === 0 || i === displayTimes.length - 1) {
+                            sampled.times.push(displayTimes[i]);
+                            Object.keys(displaySeries).forEach(k => {
+                                sampled.series[k].push(displaySeries[k][i]);
+                            });
                         }
                     }
-                    lastAddedTimestamp = timestamp;
-                });
-                if (lastAddedTimestamp !== null) {
-                    filteredTimestampsWithRange.push(lastAddedTimestamp);
+                    displayTimes = sampled.times;
+                    displaySeries = sampled.series;
                 }
 
-                const nomineeTotalVotes = Object.entries(nominees).map(([id, nominee]) => {
-                    return { id, nominee, totalVotes: nominee.vote_history[nominee.vote_history.length - 1].count || 0 };
-                });
+                let nomineeIds = Object.keys(this.nomineeData);
+                const isMobile = window.innerWidth < 640;
 
-                const sortedNominees = nomineeTotalVotes.sort((a, b) => b.totalVotes - a.totalVotes);
+                const series = nomineeIds.map(id => {
+                    let data = displaySeries[id];
 
-                const selectedNominees = this.nomineeMode === 'top5' ? sortedNominees.slice(0, 5) : sortedNominees;
-
-                const datasets = selectedNominees.map(({ nominee }) => {
-                    const voteMap = new Map();
-                    let lastCount = 0;
-                    filteredTimestampsWithRange.forEach(timestamp => {
-                        const voteEntry = nominee.vote_history.find(item => 
-                            new Date(item.timestamp).getTime() === timestamp
-                        );
-                        if (voteEntry) {
-                            lastCount = parseInt(voteEntry.count);
+                    if (this.chartMode === 'delta') {
+                        const deltaData = new Array(data.length);
+                        deltaData[0] = 0;
+                        for (let i = 1; i < data.length; i++) {
+                            deltaData[i] = Math.max(0, data[i] - data[i - 1]);
                         }
-                        voteMap.set(timestamp, lastCount);
-                    });
-
-                    let votes = filteredTimestampsWithRange.map(timestamp => voteMap.get(timestamp));
-
-                    if (this.displayMode === 'difference') {
-                        votes = votes.map((count, i) => i === 0 ? 0 : count - votes[i - 1]);
+                        data = deltaData;
+                    } else if (this.chartMode === 'gap') {
+                        const gapData = new Array(data.length);
+                        
+                        for (let i = 0; i < data.length; i++) {
+                            let maxVoteAtTime = 0;
+                            nomineeIds.forEach(nId => {
+                                const val = displaySeries[nId][i] || 0;
+                                if (val > maxVoteAtTime) maxVoteAtTime = val;
+                            });
+                            
+                            const currentVote = data[i] || 0;
+                            gapData[i] = currentVote - maxVoteAtTime; 
+                        }
+                        data = gapData;
                     }
+
+                    const isLargeData = data.length > 1000;
 
                     return {
-                        name: nominee.nominee_name,
+                        name: this.nomineeData[id].name,
                         type: 'line',
-                        data: votes.map((value, index) => ({
-                            value,
-                            nomineeInfo: {
-                                ava_link: nominee.ava_link,
-                                nominee_des: nominee.nominee_des
-                            }
-                        })),
-                        smooth: true,
+                        smooth: isLargeData ? false : true,
+                        sampling: 'lttb',
                         showSymbol: false,
-                        areaStyle: {
-                            opacity: 0.3
-                        },
-                        emphasis: {
-                            focus: 'series'
+                        data: data,
+                        itemStyle: { color: this.nomineeData[id].color },
+                        lineStyle: { width: this.chartMode === 'total' ? 3 : 2 },
+                        areaStyle: this.chartMode === 'delta' ? { opacity: 0.2 } : undefined,
+                        emphasis: { focus: 'series' },
+                        endLabel: {
+                            show: true,
+                            formatter: (params) => params.value.toLocaleString(),
+                            color: this.nomineeData[id].color,
+                            fontWeight: 'bold',
+                            fontSize: isMobile ? 10 : 12
                         }
                     };
                 });
 
-                const labels = filteredTimestampsWithRange.map(ts => new Date(ts).toLocaleString());
+                if (series.length === 0) return;
 
-                const chartOptions = {
-                    title: {
-                        text: 'Biểu đồ thống kê',
-                        left: 'center',
-                        textStyle: {
-                            fontSize: 18,
-                            color: 'rgb(0, 0, 0)'
-                        }
-                    },
+                const option = {
+                    animation: displayTimes.length <= 1000,
+                    backgroundColor: 'transparent',
                     tooltip: {
-                        trigger: 'axis'
+                        trigger: 'axis',
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                        borderColor: '#d3ad49',
+                        textStyle: { color: '#392109' },
+                        order: 'valueDesc'
                     },
                     legend: {
-                        type: 'scroll',
-                        orient: 'horizontal',
-                        bottom: 0,
+                        data: nomineeIds.map(id => this.nomineeData[id].name),
+                        bottom: '0%',
+                        icon: 'circle',
+                        itemGap: 15,
                         textStyle: {
-                            fontSize: 12
-                        }
+                            color: '#392109',
+                            fontSize: isMobile ? 10 : 12
+                        },
+                        type: 'scroll'
                     },
                     grid: {
-                        left: '3%',
-                        right: '1%',
-                        bottom: '5%',
+                        left: '1%',
+                        right: isMobile ? '18%' : '5%',
+                        bottom: 90,
+                        top: '2%',
                         containLabel: true
                     },
+                    graphic: [
+                        {
+                            type: 'text',
+                            left: 'center',
+                            bottom: 65,
+                            style: {
+                                text: '#GaiCon kéo thanh dưới để xem thời gian cụ thể nhé',
+                                fill: 'rgba(91, 54, 18, 1)',
+                                fontSize: 12 ,
+                                fontFamily: 'SVN-Apparat'
+                            }
+                        }
+                    ],
+                    dataZoom: [
+                        {
+                            type: 'slider',
+                            show: true,
+                            xAxisIndex: [0],
+                            bottom: 35,
+                            height: 20,
+                            left: '8%',
+                            right: '8%',
+                            handleSize: '110%',
+                            borderColor: 'rgba(91, 54, 18, 0.15)',
+                            backgroundColor: 'rgba(249, 248, 244, 1)',
+                            fillerColor: 'rgba(211, 173, 73, 0.15)',
+                            borderRadius: 14,
+                            showDataShadow: false,
+                            handleIcon: 'path://M512 512m-208 0a208 208 0 1 0 416 0 208 208 0 1 0-416 0Z M512 192C335.264 192 192 335.264 192 512c0 176.736 143.264 320 320 320s320-143.264 320-320C832 335.264 688.736 192 512 192z M512 800c-159.072 0-288-128.928-288-288 0-159.072 128.928-288 288-288s288 128.928 288 288C800 671.072 671.072 800 512 800z',
+                            handleStyle: {
+                                color: '#fff',
+                                borderColor: '#d3ad49',
+                                borderWidth: 2,
+                                shadowBlur: 3,
+                                shadowColor: 'rgba(0, 0, 0, 0.15)',
+                                shadowOffsetX: 1,
+                                shadowOffsetY: 1
+                            },
+                            textStyle: { color: '#5b3612', fontSize: 11 },
+                            brushSelect: false,
+                            dataBackground: {
+                                lineStyle: { color: '#d3ad49', width: 1, opacity: 0.4 },
+                                areaStyle: { color: '#d3ad49', opacity: 0.1 }
+                            },
+                            selectedDataBackground: {
+                                lineStyle: { color: '#5b3612', width: 1.5 },
+                                areaStyle: { color: '#5b3612', opacity: 0.1 }
+                            }
+                        },
+                        {
+                            type: 'inside',
+                            xAxisIndex: [0],
+                            zoomOnMouseWheel: false,
+                            moveOnMouseWheel: true,
+                            moveOnMouseMove: true
+                        }
+                    ],
                     xAxis: {
                         type: 'category',
-                        data: labels,
+                        boundaryGap: false,
+                        data: displayTimes,
+                        axisLine: { lineStyle: { color: '#5b3612' } },
                         axisLabel: {
-                            rotate: 45,
-                            fontSize: 10
+                            color: '#5b3612',
+                            fontSize: isMobile ? 10 : 12,
+                            rotate: isMobile ? 45 : 0
                         }
                     },
                     yAxis: {
                         type: 'value',
-                        name: this.displayMode === 'total' ? 'Tổng số vote' : 'Tổng số vote chênh lệch',
-                        nameLocation: 'middle',
-                        nameGap: 55,
-                        nameTextStyle: {
-                            fontSize: 12
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        splitLine: {
+                            lineStyle: { color: 'rgba(91, 54, 18, 0.1)' }
+                        },
+                        axisLabel: {
+                            color: '#5b3612',
+                            fontSize: isMobile ? 10 : 12
                         }
                     },
-                    series: datasets
+                    series: series
                 };
 
-                if (!this.voteChart) {
-                    this.voteChart = echarts.init(document.getElementById('voteChart'));
-                }
-
-                this.voteChart.setOption(chartOptions);
-                this.voteChart.resize();
+                this.voteChart.setOption(option);
             }
         }
 
-        new VoteVisualizer();
+        document.addEventListener('DOMContentLoaded', () => {
+            new VoteVisualizer();
+        });
+    </script>
+
+    <div id="promoPopup"
+        class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="relative bg-white w-[95%] max-w-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 transform scale-95 transition-transform duration-300 translate-y-4"
+            id="popupContent">
+
+            <button id="closePopup"
+                class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="p-0">
+                <div class="bg-black flex justify-center items-center relative">
+                    <div class="absolute inset-0 bg-[#C7F442] opacity-20 mix-blend-overlay"></div>
+                    <img id="popupImage" src="images/image_01.jpg" alt="ATVNCG 2024"
+                        class="w-full max-h-[200px] object-cover opacity-90">
+                </div>
+
+                <div class="p-6 text-center space-y-4">
+                    <h3
+                        class="text-xl sm:text-2xl font-black text-black uppercase leading-tight font-['Suisse_Intl'] tracking-tight">
+                        Top 1 đã đến tay cho kim chủ Tech cùng ATVNCG
+                    </h3>
+
+                    <p class="text-sm leading-relaxed text-gray-700">
+                        Gai con hãy tiếp tục vote tại <span class="font-bold text-[#404FC2]">FChoice</span> ở hai hạng
+                        mục
+                        <br>
+                        <span class="font-bold bg-[#C7F442] px-1">"Ngân hàng Kim chủ của năm"</span><br>
+                        và <span class="font-bold bg-[#C7F442] px-1">"Cổ phiếu ngân hàng yêu thích"</span>
+                        để giữ vững vị trí dẫn đầu.
+                    </p>
+
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Để tiện cho việc cập nhật thông tin, Gai con có thể bật thông báo để nhận thông báo khi có sự
+                        kiện mới và cập nhật biến động vote mỗi 10 phút nhé.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
+                        <a href="https://fchoice.vn" target="_blank"
+                            class="inline-block bg-black hover:bg-[#C7F442] text-white hover:text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider text-center w-full sm:w-auto border border-black">
+                            Vote Ngay
+                        </a>
+                        <button id="popupNotifyBtn"
+                            class="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider w-full sm:w-auto border border-black">
+                            <i class="fas fa-bell mr-2"></i> Bật thông báo
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-gray-400 font-bold tracking-widest uppercase">#camonvidaden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            return;
+
+            const popup = document.getElementById('promoPopup');
+            const popupContent = document.getElementById('popupContent');
+            const closeBtn = document.getElementById('closePopup');
+            const popupImage = document.getElementById('popupImage');
+
+            const promoImages = [
+                'image_01.jpg',
+                'image_02.jpg',
+                'image_03.jpg',
+                'image_04.jpg',
+                'image_05.png'
+            ];
+
+            if (promoImages.length > 0) {
+                const randomImage = promoImages[Math.floor(Math.random() * promoImages.length)];
+                popupImage.src = `images/${randomImage}`;
+            }
+
+            setTimeout(() => {
+                popup.classList.remove('opacity-0', 'pointer-events-none');
+                popupContent.classList.remove('scale-95', 'translate-y-4');
+                popupContent.classList.add('scale-100', 'translate-y-0');
+            }, 1500);
+
+            const closePopup = () => {
+                popup.classList.add('opacity-0', 'pointer-events-none');
+                popupContent.classList.remove('scale-100', 'translate-y-0');
+                popupContent.classList.add('scale-95', 'translate-y-4');
+            };
+
+            closeBtn.addEventListener('click', closePopup);
+
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+        });
     </script>
 </body>
+
 </html>
