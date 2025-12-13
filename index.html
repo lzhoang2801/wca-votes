@@ -364,6 +364,7 @@
                 this.events = [];
                 this.lastProcessedEventIndex = 0;
                 this.notificationsEnabled = false;
+                this.subscriptionEndpoint = null;
 
                 this.nomineeData = {};
                 this.colorPalette = [
@@ -391,8 +392,18 @@
                 this.eventLogContainer = document.getElementById('eventLogContainer');
                 this.notifyBtn = document.getElementById('notifyBtn');
                 this.popupNotifyBtn = document.getElementById('popupNotifyBtn');
+                this.settingsBtn = null;
                 this.groupSelect = document.getElementById('groupSelect');
                 this.awardSelect = document.getElementById('awardSelect');
+                this.preferencesModal = document.getElementById('preferencesModal');
+                this.preferencesModalContent = document.getElementById('preferencesModalContent');
+                this.closePreferencesModal = document.getElementById('closePreferencesModal');
+                this.savePreferencesBtn = document.getElementById('savePreferencesBtn');
+                this.skipPreferencesBtn = document.getElementById('skipPreferencesBtn');
+                this.nomineeCheckboxes = document.getElementById('nomineeCheckboxes');
+                this.summaryIntervalSelect = document.getElementById('summaryIntervalSelect');
+                this.promoPopup = document.getElementById('promoPopup');
+                this.popupContent = document.getElementById('popupContent');
 
                 if (this.notifyBtn) {
                     this.notifyBtn.addEventListener('click', () => this.toggleNotification());
@@ -409,6 +420,7 @@
                         if (reg) {
                             reg.pushManager.getSubscription().then(sub => {
                                 if (sub) {
+                                    this.subscriptionEndpoint = sub.endpoint;
                                     this.notificationsEnabled = true;
                                     this.updateNotifyButton();
                                 }
@@ -443,6 +455,26 @@
                 }
                 if (this.awardSelect) {
                     this.awardSelect.addEventListener('change', () => this.onAwardChange());
+                }
+
+                if (this.closePreferencesModal) {
+                    this.closePreferencesModal.addEventListener('click', () => this.hidePreferencesModal());
+                }
+
+                if (this.savePreferencesBtn) {
+                    this.savePreferencesBtn.addEventListener('click', () => this.savePreferences());
+                }
+
+                if (this.skipPreferencesBtn) {
+                    this.skipPreferencesBtn.addEventListener('click', () => this.skipPreferences());
+                }
+
+                if (this.preferencesModal) {
+                    this.preferencesModal.addEventListener('click', (e) => {
+                        if (e.target === this.preferencesModal) {
+                            this.hidePreferencesModal();
+                        }
+                    });
                 }
             }
 
@@ -621,12 +653,11 @@
                     headers: { 'Content-Type': 'application/json' }
                 });
 
+                this.subscriptionEndpoint = subscription.endpoint;
                 this.notificationsEnabled = true;
                 this.updateNotifyButton();
-                new Notification('WeYoung 2025 Vote Visualizer - lzhoang2801', {
-                    body: 'Đã đăng ký nhận thông báo đẩy thành công!',
-                    icon: 'https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg'
-                });
+
+                await this.showPreferencesModal();
             }
 
             urlBase64ToUint8Array(base64String) {
@@ -652,11 +683,29 @@
                         this.notifyBtn.classList.remove('text-white/80');
                         this.notifyBtn.classList.add('text-white');
                         this.notifyBtn.title = "Đã bật thông báo";
+
+                        if (!this.settingsBtn && this.notifyBtn && this.notifyBtn.parentElement) {
+                            this.settingsBtn = document.createElement('button');
+                            this.settingsBtn.className = 'text-white hover:text-[#C7F442] transition-colors ml-2';
+                            this.settingsBtn.title = "Cài đặt thông báo";
+                            this.settingsBtn.innerHTML = '<i class="fas fa-cog"></i>';
+                            this.settingsBtn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                this.showPreferencesModal();
+                            });
+                            this.notifyBtn.parentElement.appendChild(this.settingsBtn);
+                        }
                     } else {
                         icon.className = 'fas fa-bell-slash';
                         this.notifyBtn.classList.add('text-white/80');
                         this.notifyBtn.classList.remove('text-white');
                         this.notifyBtn.title = "Bật thông báo";
+
+                        if (this.settingsBtn) {
+                            this.settingsBtn.remove();
+                            this.settingsBtn = null;
+                        }
                     }
                 }
 
@@ -669,6 +718,232 @@
                         this.popupNotifyBtn.classList.remove('opacity-75', 'cursor-default');
                     }
                 }
+            }
+
+            closePromoPopup() {
+                if (this.promoPopup && this.popupContent) {
+                    this.promoPopup.classList.add('opacity-0', 'pointer-events-none');
+                    this.promoPopup.classList.remove('opacity-100', 'pointer-events-auto');
+                    this.popupContent.classList.remove('scale-100', 'translate-y-0');
+                    this.popupContent.classList.add('scale-95', 'translate-y-4');
+                }
+            }
+
+            async showPreferencesModal() {
+                if (!this.preferencesModal) {
+                    console.error('Preferences modal not found');
+                    return;
+                }
+
+                this.closePromoPopup();
+
+                if (!this.subscriptionEndpoint) {
+                    try {
+                        const reg = await navigator.serviceWorker.getRegistration();
+                        if (reg) {
+                            const sub = await reg.pushManager.getSubscription();
+                            if (sub) {
+                                this.subscriptionEndpoint = sub.endpoint;
+                            } else {
+                                alert('Vui lòng bật thông báo trước khi cài đặt');
+                                return;
+                            }
+                        } else {
+                            alert('Vui lòng bật thông báo trước khi cài đặt');
+                            return;
+                        }
+                    } catch (error) {
+                        console.error('Error getting subscription:', error);
+                        alert('Không thể lấy thông tin đăng ký. Vui lòng bật lại thông báo.');
+                        return;
+                    }
+                }
+
+                this.buildNomineeCheckboxes();
+
+                await this.loadUserPreferences();
+
+                this.preferencesModal.classList.remove('hidden');
+                setTimeout(() => {
+                    this.preferencesModal.classList.remove('opacity-0', 'pointer-events-none');
+                    this.preferencesModal.classList.add('opacity-100', 'pointer-events-auto');
+                    this.preferencesModalContent.classList.remove('scale-95', 'translate-y-4');
+                    this.preferencesModalContent.classList.add('scale-100', 'translate-y-0');
+                }, 10);
+            }
+
+            hidePreferencesModal() {
+                if (!this.preferencesModal) return;
+                this.preferencesModal.classList.add('opacity-0', 'pointer-events-none');
+                this.preferencesModal.classList.remove('opacity-100', 'pointer-events-auto');
+                if (this.preferencesModalContent) {
+                    this.preferencesModalContent.classList.add('scale-95', 'translate-y-4');
+                    this.preferencesModalContent.classList.remove('scale-100', 'translate-y-0');
+                }
+                setTimeout(() => {
+                    this.preferencesModal.classList.add('hidden');
+                }, 300);
+            }
+
+            buildNomineeCheckboxes() {
+                if (!this.nomineeCheckboxes || !this.categoriesData) return;
+
+                this.nomineeCheckboxes.innerHTML = '';
+
+                for (const [groupKey, groupData] of Object.entries(this.categoriesData)) {
+                    const awards = groupData.subcategories || groupData;
+
+                    for (const [awardId, awardData] of Object.entries(awards)) {
+                        if (!awardData.nominees || !Array.isArray(awardData.nominees)) continue;
+
+                        const awardName = awardData.award_name || awardId;
+                        const awardSection = document.createElement('div');
+                        awardSection.className = 'mb-4 p-3 bg-[#0F0F0F] rounded-lg border border-[#333]';
+
+                        const awardTitle = document.createElement('div');
+                        awardTitle.className = 'text-sm font-bold text-[#C7F442] mb-2 uppercase';
+                        awardTitle.textContent = awardName;
+                        awardSection.appendChild(awardTitle);
+
+                        const nomineesList = document.createElement('div');
+                        nomineesList.className = 'space-y-1';
+
+                        awardData.nominees.forEach(nominee => {
+                            const nomineeId = nominee.data_member;
+                            if (!nomineeId) return;
+
+                            const nomineeKey = `${awardId}-${nomineeId}`;
+                            const checkboxWrapper = document.createElement('label');
+                            checkboxWrapper.className = 'flex items-center gap-2 p-2 hover:bg-[#222] rounded cursor-pointer';
+
+                            const checkbox = document.createElement('input');
+                            checkbox.type = 'checkbox';
+                            checkbox.value = nomineeKey;
+                            checkbox.dataset.awardId = awardId;
+                            checkbox.dataset.nomineeId = nomineeId;
+                            checkbox.className = 'w-4 h-4 text-[#C7F442] bg-[#0F0F0F] border-[#333] rounded focus:ring-[#C7F442]';
+
+                            const label = document.createElement('span');
+                            label.className = 'text-sm text-white';
+                            label.textContent = `${nominee.nominee_name || nomineeId} (${awardName})`;
+
+                            checkboxWrapper.appendChild(checkbox);
+                            checkboxWrapper.appendChild(label);
+                            nomineesList.appendChild(checkboxWrapper);
+                        });
+
+                        awardSection.appendChild(nomineesList);
+                        this.nomineeCheckboxes.appendChild(awardSection);
+                    }
+                }
+            }
+
+            async loadUserPreferences() {
+                if (!this.subscriptionEndpoint) {
+                    console.log('No subscription endpoint, using defaults');
+                    return;
+                }
+
+                try {
+                    const baseUrl = this.apiUrl.replace('/get_votes', '');
+                    const response = await fetch(`${baseUrl}/preferences?endpoint=${encodeURIComponent(this.subscriptionEndpoint)}`);
+
+                    if (response.ok) {
+                        const prefs = await response.json();
+                        console.log('Loaded preferences:', prefs);
+
+                        if (this.summaryIntervalSelect && prefs.summary_interval) {
+                            this.summaryIntervalSelect.value = prefs.summary_interval.toString();
+                            console.log('Set summary interval to:', prefs.summary_interval);
+                        }
+
+                        if (prefs.nominee_filter && Array.isArray(prefs.nominee_filter) && prefs.nominee_filter.length > 0) {
+                            const checkboxes = this.nomineeCheckboxes.querySelectorAll('input[type="checkbox"]');
+                            console.log(`Found ${checkboxes.length} checkboxes, checking ${prefs.nominee_filter.length} preferences`);
+
+                            checkboxes.forEach(checkbox => {
+                                const awardId = parseInt(checkbox.dataset.awardId);
+                                const nomineeId = parseInt(checkbox.dataset.nomineeId);
+                                const isSelected = prefs.nominee_filter.some(
+                                    ([a, n]) => parseInt(a) === awardId && parseInt(n) === nomineeId
+                                );
+                                if (isSelected) {
+                                    checkbox.checked = true;
+                                    console.log(`Checked: award ${awardId}, nominee ${nomineeId}`);
+                                }
+                            });
+                        } else {
+                            console.log('No nominee_filter in preferences or empty array');
+                        }
+                    } else {
+                        console.log('No preferences found (status:', response.status, ')');
+                    }
+                } catch (error) {
+                    console.error('Error loading preferences:', error);
+                }
+            }
+
+            async savePreferences() {
+                if (!this.subscriptionEndpoint) return;
+
+                const checkboxes = this.nomineeCheckboxes.querySelectorAll('input[type="checkbox"]:checked');
+                const nomineeFilter = Array.from(checkboxes).map(checkbox => [
+                    parseInt(checkbox.dataset.awardId),
+                    parseInt(checkbox.dataset.nomineeId)
+                ]);
+
+                const summaryInterval = parseInt(this.summaryIntervalSelect.value) || 900;
+
+                try {
+                    const baseUrl = this.apiUrl.replace('/get_votes', '');
+                    const response = await fetch(`${baseUrl}/preferences`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            endpoint: this.subscriptionEndpoint,
+                            nominee_filter: nomineeFilter,
+                            summary_interval: summaryInterval
+                        })
+                    });
+
+                    if (response.ok) {
+                        this.hidePreferencesModal();
+                        new Notification('WeYoung 2025 Vote Visualizer - lzhoang2801', {
+                            body: 'Đã lưu cài đặt thông báo thành công!',
+                            icon: 'https://event.mediacdn.vn/web_images/we_young_2025/wy-logo.svg'
+                        });
+                    } else {
+                        const error = await response.json();
+                        alert('Lỗi lưu cài đặt: ' + (error.error || 'Unknown error'));
+                    }
+                } catch (error) {
+                    console.error('Error saving preferences:', error);
+                    alert('Lỗi lưu cài đặt: ' + error.message);
+                }
+            }
+
+            async skipPreferences() {
+                if (!this.subscriptionEndpoint) {
+                    this.hidePreferencesModal();
+                    return;
+                }
+
+                try {
+                    const baseUrl = this.apiUrl.replace('/get_votes', '');
+                    await fetch(`${baseUrl}/preferences`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            endpoint: this.subscriptionEndpoint,
+                            nominee_filter: [],
+                            summary_interval: 900
+                        })
+                    });
+                } catch (error) {
+                    console.error('Error saving default preferences:', error);
+                }
+
+                this.hidePreferencesModal();
             }
 
             async fetchVoteHistory() {
@@ -1202,40 +1477,51 @@
             </button>
 
             <div class="p-0">
-                <div class="bg-black flex justify-center items-center relative">
-                    <div class="absolute inset-0 bg-[#C7F442] opacity-20 mix-blend-overlay"></div>
-                    <img id="popupImage" src="images/image_01.jpg" alt="ATVNCG 2024"
-                        class="w-full max-h-[200px] object-cover opacity-90">
-                </div>
-
                 <div class="p-6 text-center space-y-4">
+                    <div class="flex justify-center mb-2">
+                        <div class="w-16 h-16 rounded-full bg-[#C7F442]/20 flex items-center justify-center">
+                            <i class="fas fa-bell text-3xl text-[#C7F442]"></i>
+                        </div>
+                    </div>
                     <h3
                         class="text-xl sm:text-2xl font-black text-white uppercase leading-tight font-['Suisse_Intl'] tracking-tight">
-                        Top 1 đã đến tay cho kim chủ Tech cùng ATVNCG
+                        Tính năng thông báo mới
                     </h3>
 
                     <p class="text-sm leading-relaxed text-gray-300">
-                        Gai con hãy tiếp tục vote tại <span class="font-bold text-[#404FC2]">FChoice</span> ở hai hạng
-                        mục
-                        <br>
-                        <span class="font-bold bg-[#C7F442] px-1">"Ngân hàng Kim chủ của năm"</span><br>
-                        và <span class="font-bold bg-[#C7F442] px-1">"Cổ phiếu ngân hàng yêu thích"</span>
-                        để giữ vững vị trí dẫn đầu.
+                        Nhận thông báo <span class="font-bold text-[#C7F442]">mỗi khi</span>:
                     </p>
 
-                    <p class="text-xs text-gray-500 leading-relaxed">
-                        Để tiện cho việc cập nhật thông tin, Gai con có thể bật thông báo để nhận thông báo khi có sự
-                        kiện mới và cập nhật biến động vote mỗi 10 phút nhé.
+                    <div class="text-left space-y-2 text-sm text-gray-300">
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-crown text-yellow-500 mt-1"></i>
+                            <span>Đề cử yêu thích <span class="font-bold text-white">vươn lên vị trí #1</span></span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-arrow-up text-green-500 mt-1"></i>
+                            <span>Thay đổi <span class="font-bold text-white">thứ hạng</span> trong bảng xếp hạng</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-flag text-red-500 mt-1"></i>
+                            <span>Cán mốc <span class="font-bold text-white">vote quan trọng</span> (1K, 5K,
+                                10K...)</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fas fa-clock text-blue-500 mt-1"></i>
+                            <span>Cập nhật <span class="font-bold text-white">tổng kết định kỳ</span> theo tần suất bạn
+                                chọn</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500 leading-relaxed pt-2">
+                        Tùy chỉnh theo dõi <span class="font-bold text-[#C7F442]">đề cử cụ thể</span> và chọn tần suất
+                        thông báo phù hợp với bạn.
                     </p>
 
-                    <div class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
-                        <a href="https://fchoice.vn" target="_blank"
-                            class="inline-block bg-[#C7F442] hover:bg-white text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider text-center w-full sm:w-auto border border-[#C7F442]">
-                            Vote Ngay
-                        </a>
+                    <div class="pt-2 flex flex-col justify-center items-center gap-3">
                         <button id="popupNotifyBtn"
-                            class="inline-flex items-center justify-center bg-transparent hover:bg-[#333] text-white font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider w-full sm:w-auto border border-[#555]">
-                            <i class="fas fa-bell mr-2"></i> Bật thông báo
+                            class="inline-flex items-center justify-center bg-[#C7F442] hover:bg-white text-black font-bold py-3 px-8 rounded-full text-base transition-all uppercase tracking-wider w-full border border-[#C7F442]">
+                            <i class="fas fa-bell mr-2"></i> Bật thông báo ngay
                         </button>
                     </div>
 
@@ -1245,33 +1531,80 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            return;
+    <div id="preferencesModal"
+        class="fixed inset-0 z-[1100] hidden opacity-0 pointer-events-none transition-opacity duration-300"
+        style="background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(4px);">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div id="preferencesModalContent"
+                class="bg-[#1A1A1A] rounded-2xl border border-[#333] shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden transform scale-95 translate-y-4 transition-all duration-300">
+                <div class="p-6 border-b border-[#333] flex items-center justify-between">
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight">Cài đặt thông báo</h3>
+                    <button id="closePreferencesModal" class="text-white/60 hover:text-white transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="p-6 overflow-y-auto" style="max-height: calc(90vh - 120px);">
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold uppercase text-[#999] mb-3">Chọn nominee muốn theo
+                            dõi</label>
+                        <div id="nomineeCheckboxes" class="space-y-2 max-h-64 overflow-y-auto">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="summaryIntervalSelect"
+                            class="block text-sm font-bold uppercase text-[#999] mb-2">Thời gian cập nhật đường
+                            đua</label>
+                        <select id="summaryIntervalSelect"
+                            class="block w-full px-4 py-3 bg-[#0F0F0F] border border-[#333] rounded-lg text-white focus:outline-none focus:border-[#C7F442]">
+                            <option value="900" selected>15 phút</option>
+                            <option value="1800">30 phút</option>
+                            <option value="3600">1 giờ</option>
+                            <option value="7200">2 giờ</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-3 pt-4 border-t border-[#333]">
+                        <button id="savePreferencesBtn"
+                            class="flex-1 bg-[#C7F442] hover:bg-white text-black font-bold py-3 px-6 rounded-lg transition-all uppercase tracking-wider">
+                            Lưu
+                        </button>
+                        <button id="skipPreferencesBtn"
+                            class="px-6 bg-transparent hover:bg-[#333] text-white font-bold py-3 rounded-lg transition-all uppercase tracking-wider border border-[#555]">
+                            Bỏ qua
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
             const popup = document.getElementById('promoPopup');
             const popupContent = document.getElementById('popupContent');
             const closeBtn = document.getElementById('closePopup');
-            const popupImage = document.getElementById('popupImage');
 
-            const promoImages = [
-                'image_01.jpg',
-                'image_02.jpg',
-                'image_03.jpg',
-                'image_04.jpg',
-                'image_05.png'
-            ];
-
-            if (promoImages.length > 0) {
-                const randomImage = promoImages[Math.floor(Math.random() * promoImages.length)];
-                popupImage.src = `images/${randomImage}`;
+            let hasNotification = false;
+            if ('serviceWorker' in navigator && 'PushManager' in window) {
+                try {
+                    const reg = await navigator.serviceWorker.getRegistration();
+                    if (reg) {
+                        const sub = await reg.pushManager.getSubscription();
+                        if (sub) {
+                            hasNotification = true;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error checking notification status:', error);
+                }
             }
 
-            setTimeout(() => {
-                popup.classList.remove('opacity-0', 'pointer-events-none');
-                popupContent.classList.remove('scale-95', 'translate-y-4');
-                popupContent.classList.add('scale-100', 'translate-y-0');
-            }, 1500);
+            if (!hasNotification) {
+                setTimeout(() => {
+                    popup.classList.remove('opacity-0', 'pointer-events-none');
+                    popupContent.classList.remove('scale-95', 'translate-y-4');
+                    popupContent.classList.add('scale-100', 'translate-y-0');
+                }, 1500);
+            }
 
             const closePopup = () => {
                 popup.classList.add('opacity-0', 'pointer-events-none');
