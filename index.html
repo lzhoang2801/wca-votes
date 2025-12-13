@@ -93,7 +93,6 @@
             color: var(--text-color);
         }
 
-
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -320,8 +319,8 @@
     <script>
         class VoteVisualizer {
             constructor() {
-                this.apiUrl = 'http://localhost:5000/get_votes';
-                this.categoriesUrl = 'http://localhost:5000/categories';
+                this.apiUrl = 'https://admin.vasp-pain.org/get_votes';
+                this.categoriesUrl = 'https://admin.vasp-pain.org/categories';
                 this.currentAwardId = null;
                 this.categoriesData = {};
                 this.rawData = {
