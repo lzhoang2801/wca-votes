@@ -825,7 +825,7 @@
 
                             const label = document.createElement('span');
                             label.className = 'text-sm text-white';
-                            label.textContent = `${nominee.nominee_name || nomineeId} (${awardName})`;
+                            label.textContent = `${nominee.nominee_name || nomineeId}`;
 
                             checkboxWrapper.appendChild(checkbox);
                             checkboxWrapper.appendChild(label);
@@ -1545,7 +1545,7 @@
                 </div>
                 <div class="p-6 overflow-y-auto" style="max-height: calc(90vh - 120px);">
                     <div class="mb-6">
-                        <label class="block text-sm font-bold uppercase text-[#999] mb-3">Chọn nominee muốn theo
+                        <label class="block text-sm font-bold uppercase text-[#999] mb-3">Chọn đề cử muốn theo
                             dõi</label>
                         <div id="nomineeCheckboxes" class="space-y-2 max-h-64 overflow-y-auto">
                         </div>
